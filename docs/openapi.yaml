@@ -1,0 +1,194 @@
+openapi: 3.0.3
+info:
+  title: Teşekkür Panosu – Veri ve Yayın API'si
+  version: "1.0"
+  description: |
+    PAÜ Mühendislik Fakültesi Teşekkür Panosu sitesinin veri uçları.
+
+    **Sunucu kodu yoktur.** Site statiktir: aşağıdaki "Site verisi" uçları, sitenin yanında
+    duran düz JSON dosyalarıdır ve tarayıcı bunları `fetch` ile okur.
+
+    **Yayın**, yönetim panelinin (`/yonetim/`) GitHub REST API'sine yaptığı iki çağrıyla olur:
+    dosyanın güncel sürümünü (`sha`) okur, sonra yeni içeriği o sürümün üzerine yazar.
+    Yetki, personelin tarayıcısında saklanan ve yalnızca bu depoya yazabilen bir
+    fine-grained token iledir.
+servers:
+  - url: ../
+    description: Site (GitHub Pages; ileride PAÜ alt alan adı)
+tags:
+  - name: Site verisi
+    description: Sitenin okuduğu statik JSON dosyaları
+  - name: Yayın (GitHub API)
+    description: Yönetim panelinin değişiklikleri kaydetmek için kullandığı çağrılar
+
+paths:
+  /data/bagiscilar.json:
+    get:
+      tags: [Site verisi]
+      summary: Panodaki bağışçılar
+      description: Panodaki her plaka bir kayıttır. Sıralama ve yer `satir`/`sutun` alanlarından gelir.
+      responses:
+        "200":
+          description: Bağışçı listesi
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _aciklama: { type: object, description: Alanların açıklaması (personel için not) }
+                  bagiscilar:
+                    type: array
+                    items: { $ref: "#/components/schemas/Bagisci" }
+  /data/tarihce.json:
+    get:
+      tags: [Site verisi]
+      summary: Fakültenin tarihçesi
+      responses:
+        "200":
+          description: Tarih sırasıyla olaylar
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _aciklama: { type: string }
+                  olaylar:
+                    type: array
+                    items: { $ref: "#/components/schemas/Olay" }
+  /data/site.json:
+    get:
+      tags: [Site verisi]
+      summary: Genel ayarlar ve iletişim bilgisi
+      responses:
+        "200":
+          description: Site ayarları
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Site" }
+
+  /repos/{sahip}/{depo}/contents/{yol}:
+    servers:
+      - url: https://api.github.com
+        description: GitHub REST API
+    parameters:
+      - { name: sahip, in: path, required: true, schema: { type: string }, example: Gurkann20 }
+      - { name: depo, in: path, required: true, schema: { type: string }, example: mf-pano }
+      - name: yol
+        in: path
+        required: true
+        schema: { type: string, enum: [data/bagiscilar.json, data/site.json] }
+    get:
+      tags: [Yayın (GitHub API)]
+      summary: Dosyanın güncel sürümünü oku
+      description: Yayından önce dosyanın `sha` değeri alınır; aynı anda başka biri değiştirdiyse çakışma böylece fark edilir.
+      security: [{ githubToken: [] }]
+      parameters:
+        - { name: ref, in: query, schema: { type: string, default: main } }
+      responses:
+        "200":
+          description: Dosya bilgisi
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sha: { type: string, description: Dosyanın sürüm kimliği }
+                  content: { type: string, description: Base64 kodlu dosya içeriği }
+        "401": { description: Token geçersiz }
+        "404": { description: Dosya veya depo bulunamadı }
+    put:
+      tags: [Yayın (GitHub API)]
+      summary: Dosyayı güncelle (siteye yayınla)
+      description: Yeni JSON içeriği bir commit olarak kaydedilir; GitHub Pages siteyi birkaç dakika içinde yeniden yayınlar.
+      security: [{ githubToken: [] }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [message, content, branch]
+              properties:
+                message: { type: string, example: "Bağışçı eklendi: Mehmet Hilmi Serter" }
+                content: { type: string, description: Base64 kodlu yeni JSON içeriği }
+                branch: { type: string, example: main }
+                sha: { type: string, description: GET ile alınan güncel sürüm (dosya varsa zorunlu) }
+      responses:
+        "200": { description: Güncellendi }
+        "409": { description: Dosya bu arada başkası tarafından değiştirildi (sha uyuşmuyor) }
+        "422": { description: Geçersiz istek }
+
+components:
+  securitySchemes:
+    githubToken:
+      type: http
+      scheme: bearer
+      description: Yalnızca bu depoya, yalnızca "Contents" yazma izni olan fine-grained token.
+  schemas:
+    Bagisci:
+      type: object
+      required: [id, ad, tur, satir, sutun, yayinla]
+      properties:
+        id: { type: string, description: "URL'de kullanılır; değişmez (QR linkleri buna bağlı)", example: cafer-sadik-abalioglu }
+        ad: { type: string, description: Panodaki yazımı, example: Cafer Sadık Abalıoğlu }
+        kisaAd: { type: string, description: Uzun kurum adlarının plakadaki kısa hali }
+        tur: { type: string, enum: [kisi, kurum, dernek-vakif] }
+        satir: { type: integer, minimum: 1, maximum: 14, description: Fiziksel panodaki satır }
+        sutun: { type: integer, minimum: 1, maximum: 4, description: Fiziksel panodaki sütun }
+        unvan: { type: string, example: Sanayici }
+        yasam:
+          type: object
+          properties:
+            dogum: { type: string, example: "1920" }
+            vefat: { type: string, nullable: true, description: "null = hayatta" }
+        ozet: { type: string, description: Tek satırlık özet (paylaşım önizlemesi) }
+        biyografi: { type: array, items: { type: string }, description: Paragraflar }
+        katki:
+          type: array
+          description: Fakülteye katkıları
+          items:
+            type: object
+            properties:
+              yil: { type: string, example: "1974" }
+              metin: { type: string }
+        durum: { type: string, enum: [dogrulandi, ekip-notu, eksik], description: Araştırma durumu }
+        yayinla: { type: boolean, description: "false ise biyografi gizlenir (ör. hayattaki kişilerde onay gelene kadar)" }
+        foto: { type: string, description: "Yalnızca izinli fotoğraf; assets/foto/<id>.webp" }
+        kaynaklar:
+          type: array
+          items:
+            type: object
+            properties:
+              ad: { type: string }
+              url: { type: string, format: uri }
+    Olay:
+      type: object
+      required: [tarih, baslik]
+      properties:
+        tarih: { type: string, description: "Serbest metin; yıl ve varsa ay okunur", example: "4 Şubat 1971" }
+        baslik: { type: string, example: Şehir bir araya geliyor }
+        metin: { type: string, description: İçindeki bağışçı adları otomatik olarak kişi sayfalarına bağlanır }
+        kaynak: { type: string, enum: [belge, pau-mf, pau] }
+        vurgu: { type: boolean }
+    Site:
+      type: object
+      properties:
+        pano:
+          type: object
+          properties:
+            sutun: { type: integer, example: 4 }
+            satir: { type: integer, example: 14 }
+        sonGuncelleme: { type: string, format: date }
+        iletisim:
+          type: object
+          properties:
+            baslik: { type: string }
+            aciklama: { type: string }
+            telefon: { type: string }
+            eposta: { type: string, format: email }
+            adres: { type: string }
+        baglantilar:
+          type: object
+          properties:
+            fakulte: { type: string, format: uri }
+            universite: { type: string, format: uri }

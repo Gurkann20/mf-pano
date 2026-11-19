@@ -143,3 +143,7 @@ python tools/sunucu.py
 - Pano olay metnine göre boy değiştiriyordu → bütün olaylar `.cetvel__slayt` olarak aynı grid hücresinde üst üste; yükseklik en uzun olaya göre sabit (telefon 716px, masaüstü 580px; test edildi). Görünmeyen slaytlar `inert` + aria-hidden.
 - Gürkan "1-2 saniyede bir kendi geçen slayt sunusu" istedi → SURE 2500 ms, olaylar yana kayarak (0,6 sn) değişiyor; ileri sağdan, geri soldan. Not: uzun metinler 2,5 sn'de okunmayabilir; gerekirse SURE artırılır (js/timeline.js).
 - Sürüm ?v=20261119r.
+
+## 2026-11-19 (12): Teknik özet + Swagger
+- docs/TEKNIK-OZET.md: hocaya anlatım için diller, mimari, barındırma, yönetim, gizlilik, test, olası sorular.
+- docs/openapi.yaml + docs/swagger.html: statik JSON uçları (bagiscilar/tarihce/site) ve yönetim panelinin GitHub Contents API çağrıları (GET sha, PUT). Swagger UI 5.17.14 (jsdelivr). "Try it out" denendi: 200.
