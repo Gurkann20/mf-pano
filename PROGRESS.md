@@ -157,3 +157,8 @@ python tools/sunucu.py
 - Karar bekleyen: Ali Yağlı ve Ahmet Nazif Zorlu vefat ettiği için yayinla:true yapılabilir (Gürkan/dekanlık).
 - Gürkan: vefat edenlerin biyografisi de yayınlansın → Ali Yağlı ve Ahmet Nazif Zorlu yayinla:true. Özkardeşler ve Sait Kalaycıoğlu kaynak eksikliği yüzünden hâlâ gizli.
 - Gürkan "hepsini aç" dedi (AskUserQuestion): 16 gizli biyografi yayinla:true (hayattakiler ve kaynağı eksik ekip notları dahil). İtiraz gelirse ilgili kayıt yayinla:false. Hiç bilgisi olmayan 7 kişi: Tahsin Cem, Orhan Koru, Mehmet Küçüker, Faruk Basmacı, Nalan Devrent, Emirayşe–Ramazan Özen, Mehmet Hilmi Serter.
+
+## 2026-11-19 (14): Katkı taraması
+- PAÜ haberlerinden doğrulandı: Şemsettin Terzioğlu → Deprem Bilimi ve Mühendisliği Laboratuvarı bağışı (protokol Nisan 2021, lab onun adını taşıyor). Ömer Aydan → bu laboratuvara deprem sarsma masası (PAÜ Haber 6.9.2022).
+- Bulunamadı (dekanlığa sorulacak): Ali Yağlı, Ceyhan Saldanlı, Ahmet Nazif Zorlu, Erhan Boyvat, Hisataka Tano, Nihat Kömürcüoğlu Vakfı, İrfan Yolcular, Nalan Devrent, Emirayşe–Ramazan Özen, Mehmet Hilmi Serter katkıları; Tahsin Cem, Orhan Koru, Mehmet Küçüker, Faruk Basmacı hayatları.
+- Dekanlık için soru listesi: ozel/DEKANLIGA-SORULAR.md (git dışı)

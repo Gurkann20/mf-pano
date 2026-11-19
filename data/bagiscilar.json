@@ -661,18 +661,31 @@
       "tur": "kisi",
       "satir": 6,
       "sutun": 2,
-      "ozet": "Terzioğlu İnşaat'ın kurucusu.",
+      "ozet": "Terzioğlu İnşaat'ın kurucusu; fakültenin deprem laboratuvarı onun adını taşıyor.",
       "biyografi": [
         "İnşaat mühendisi. 1978'de temellerini attığı Terzioğlu İnşaat, proje, taahhüt ve konut alanlarında çalışan Denizli'nin köklü inşaat firmalarından biri oldu."
       ],
-      "katki": [],
-      "durum": "ekip-notu",
+      "katki": [
+        {
+          "yil": "2021",
+          "metin": "Mühendislik Fakültesi Deprem Bilimi ve Mühendisliği Laboratuvarı'nın binası ve cihazları için bağış (Terzioğlu Mühendislik ile bağış protokolü, Nisan 2021). Laboratuvar bugün Şemseddin Terzioğlu Deprem Bilimi ve Mühendisliği Laboratuvarı adını taşıyor."
+        }
+      ],
+      "durum": "dogrulandi",
       "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {
           "ad": "Terzioğlu Mühendislik – Kurumsal",
           "url": "https://terzioglumuhendislik.com/kurumsal"
+        },
+        {
+          "ad": "PAÜ Haber – Deprem laboratuvarı (2021)",
+          "url": "https://haber.pau.edu.tr/Haber/earthquake-laboratory-in-the-making-at-pau"
+        },
+        {
+          "ad": "PAÜ Haber – PAÜ ile Ryukyus Üniversitesi (6 Eylül 2022)",
+          "url": "https://haber.pau.edu.tr/Haber/bilateral-cooperation-between-pau-and-ryukyus-university-to-increase"
         }
       ],
       "unvan": "İnşaat mühendisi"
@@ -789,9 +802,15 @@
       },
       "ozet": "Japonya'da çalışan kaya mekaniği uzmanı; PAÜ fahri profesörü.",
       "biyografi": [
-        "1955 doğumlu. İTÜ Maden Mühendisliği'nden (1979) sonra Newcastle Üniversitesi'nde yüksek lisans, Nagoya Üniversitesi'nde doktora (1989) yaptı. Tokai Üniversitesi'nin ardından Ryukyu Üniversitesi'nde profesör olarak çalıştı. 2008'de Pamukkale Üniversitesi'nden fahri profesörlük unvanı aldı."
+        "1955 doğumlu. İTÜ Maden Mühendisliği'nden (1979) sonra Newcastle Üniversitesi'nde yüksek lisans, Nagoya Üniversitesi'nde doktora (1989) yaptı. Tokai Üniversitesi'nin ardından Ryukyu Üniversitesi'nde profesör olarak çalıştı. 2008'de Pamukkale Üniversitesi'nden fahri profesörlük unvanı aldı.",
+        "Uluslararası Kaya Mekaniği ve Kaya Mühendisliği Birliği'nin başkan yardımcılarından; 2022'de Ryukyus Üniversitesi'nden bir bilim heyetiyle PAÜ'yü ziyaret ederek Salda Gölü ve Sillyon Antik Kenti üzerine ortak çalışmalar planladı."
       ],
-      "katki": [],
+      "katki": [
+        {
+          "yil": "2021–2022",
+          "metin": "Şemseddin Terzioğlu Deprem Bilimi ve Mühendisliği Laboratuvarı'na deprem sarsma masası bağışı."
+        }
+      ],
       "durum": "dogrulandi",
       "yayinla": true,
       "foto": null,
@@ -803,6 +822,10 @@
         {
           "ad": "IACSIT – Prof. Dr. Ömer Aydan",
           "url": "https://www.iacsit.org/index.php?m=content&c=index&a=show&catid=47&id=520"
+        },
+        {
+          "ad": "PAÜ Haber – PAÜ ile Ryukyus Üniversitesi (6 Eylül 2022)",
+          "url": "https://haber.pau.edu.tr/Haber/bilateral-cooperation-between-pau-and-ryukyus-university-to-increase"
         }
       ]
     },
