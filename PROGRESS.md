@@ -169,3 +169,10 @@ python tools/sunucu.py
 
 ## 2026-11-19 (16): Yönetim paneli kilidi
 - Gürkan: "buraya herkes girebilir, güvenli değil gibi" → panel artık kilitli açılıyor (body.kilitli): anahtar yoksa yalnızca "Personel girişi" (anahtar alanı + katlanmış depo bilgisi, adresten dolu). Anahtarsız JSON-indir modu kaldırıldı. 401'de anahtar silinip yeniden kilitleniyor. "Bağlantıyı kes" → "Çıkış yap". Test: telefon + masaüstü, sahte anahtar reddedildi, localStorage'a bir şey yazılmadı.
+
+## 2026-11-19 (17): Kullanıcı adı + şifreyle giriş
+- Gürkan anahtar ekranını "saçma" buldu, tek kullanıcı + güçlü şifre istedi. Statik sitede sunucu yok → GitHub token kullanıcı adı+şifreyle şifrelenip yonetim/giris.json'a konuyor (yonetim/sifreleme.js: PBKDF2-SHA256 600k + AES-256-GCM). Giriş ekranı: kullanıcı adı + şifre. Oturum sessionStorage (tarayıcı kapanınca biter); eski localStorage anahtarı siliniyor. "Bağlantı ayarları" penceresi kaldırıldı, yerine "Çıkış yap".
+- yonetim/kurulum.html: proje sorumlusu token + kullanıcı adı + şifre girer; token test edilir, şifrelenir, doğrulanır ve giris.json depoya yazılır. Şifre ≥12 karakter, harf+rakam.
+- Test (sahte token): yanlış şifre/kullanıcı reddedildi; doğru şifre çözdü, GitHub 401 → kilitli kaldı; dosyada token düz metin yok.
+- Yönetim dosyalarına da ?v= eklendi (Gürkan'ın tarayıcısı eski yonetim.js'i gösteriyordu). Sürüm değişince yonetim/index.html ve kurulum.html'deki ?v= de güncellenmeli.
+- SIRADAKİ: Gürkan GitHub'da fine-grained token oluşturup kurulum.html ile girişi kuracak (henüz giris.json yok → panel "Panel henüz kurulmadı" der).

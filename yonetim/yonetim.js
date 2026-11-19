@@ -1,6 +1,8 @@
 // Pano yönetim paneli.
-// Veriyi okur, formla düzenletir; "Siteye yayınla" ile GitHub'a commit atar
-// (bağlantı yoksa JSON indirilir). Kod bilgisi gerekmez.
+// Personel kullanıcı adı + şifreyle girer; şifre, yonetim/giris.json içindeki şifreli GitHub
+// erişim anahtarını çözer. Veriyi okur, formla düzenletir; "Siteye yayınla" ile GitHub'a
+// commit atar. Kod bilgisi gerekmez.
+import { coz } from "./sifreleme.js?v=20261119t";
 
 const SATIR = 14, SUTUN = 4;
 const AYAR_ANAHTARI = "pano-yonetim-ayar";
@@ -62,8 +64,11 @@ function b64Coz(b64) {
 }
 
 /* ---------------- GitHub ---------------- */
+// Oturum yalnızca bu sekme açıkken sürer; tarayıcı kapanınca yeniden şifre sorulur.
+// (Eski sürümün kalıcı olarak sakladığı anahtar varsa silinir.)
+try { localStorage.removeItem(AYAR_ANAHTARI); } catch { /* boş */ }
 function ayarlar() {
-  try { return JSON.parse(localStorage.getItem(AYAR_ANAHTARI)) || {}; } catch { return {}; }
+  try { return JSON.parse(sessionStorage.getItem(AYAR_ANAHTARI)) || {}; } catch { return {}; }
 }
 const bagli = () => { const a = ayarlar(); return !!(a.sahip && a.depo && a.token); };
 
@@ -108,10 +113,7 @@ async function dosyaYaz(yol, b64, mesaj) {
 // Erişim anahtarı yoksa panel kilitli: yalnızca giriş ekranı görünür, form hiç açılmaz.
 function kilitle(kilitli) {
   document.body.classList.toggle("kilitli", kilitli);
-  if (kilitli) {
-    girisFormDoldur();
-    $("#giris-form").elements.token.focus();
-  }
+  if (kilitli) $("#giris-form").elements.kullanici.focus();
 }
 
 async function yukle() {
@@ -124,9 +126,9 @@ async function yukle() {
   } catch (e) {
     // anahtar iptal edilmiş ya da süresi dolmuşsa yeniden giriş istensin
     if (e.durum === 401) {
-      localStorage.removeItem(AYAR_ANAHTARI);
+      sessionStorage.removeItem(AYAR_ANAHTARI);
       kilitle(true);
-      $("#giris-hata").textContent = "Erişim anahtarının süresi dolmuş ya da iptal edilmiş. Proje sorumlusundan yenisini isteyin.";
+      $("#giris-hata").textContent = "Panelin GitHub anahtarının süresi dolmuş ya da iptal edilmiş. Proje sorumlusu kurulum sayfasından yenilemeli.";
       return;
     }
     bildir(`Veri yüklenemedi: ${e.detay || e.message}`, true);
@@ -143,7 +145,7 @@ async function yukle() {
 function baglantiGoster() {
   const el = $("#baglanti-durum");
   const a = ayarlar();
-  el.textContent = bagli() ? `Bağlı: ${a.sahip}/${a.depo}` : "Bağlantı yok";
+  el.textContent = bagli() ? "Oturum açık" : "Oturum kapalı";
   el.classList.toggle("var", bagli());
 }
 
@@ -388,7 +390,7 @@ $("#json-indir").addEventListener("click", () => {
 });
 
 $("#yayinla").addEventListener("click", async () => {
-  if (!bagli()) { $("#ayarlar").showModal(); bildir("Yayınlamak için önce GitHub bağlantısını kurun.", true); return; }
+  if (!bagli()) { kilitle(true); bildir("Oturum kapanmış; yeniden giriş yapın.", true); return; }
   const d = $("#yayinla");
   d.disabled = true; d.textContent = "Yayınlanıyor…";
   const ozet = durum.degisiklikler.map((x) => x.metin);
@@ -405,7 +407,7 @@ $("#yayinla").addEventListener("click", async () => {
   } catch (e) {
     const neden = e.durum === 409 || e.durum === 422
       ? "Dosya bu arada başka biri tarafından değiştirilmiş. Değişikliklerinizi not alıp sayfayı yenileyin."
-      : e.durum === 401 || e.durum === 403 ? "Token geçersiz ya da yazma izni yok. Bağlantı ayarlarını kontrol edin."
+      : e.durum === 401 || e.durum === 403 ? "Panelin GitHub anahtarı geçersiz ya da yazma izni yok. Proje sorumlusuna haber verin."
       : `Yayınlanamadı (${e.detay || e.message}).`;
     bildir(neden, true);
   } finally {
@@ -418,83 +420,48 @@ window.addEventListener("beforeunload", (e) => {
   if (durum.degisiklikler.length) { e.preventDefault(); e.returnValue = ""; }
 });
 
-/* ---------------- Giriş ve bağlantı ayarları ---------------- */
-// Depo bilgisi: GitHub Pages'te adresten çıkarılır (gurkann20.github.io/mf-pano → Gurkann20/mf-pano)
-function varsayilanDepo() {
-  const a = ayarlar();
-  const gp = location.hostname.endsWith(".github.io");
-  return {
-    sahip: a.sahip || (gp ? location.hostname.split(".")[0] : "Gurkann20"),
-    depo: a.depo || (gp ? location.pathname.split("/")[1] || "" : "mf-pano"),
-    dal: a.dal || "main",
-  };
-}
-function girisFormDoldur() {
-  const f = $("#giris-form").elements;
-  const v = varsayilanDepo();
-  if (!f.sahip.value) f.sahip.value = v.sahip;
-  if (!f.depo.value) f.depo.value = v.depo;
-}
-function ayarFormDoldur() {
-  const a = ayarlar();
-  const f = $("#ayar-form").elements;
-  const v = varsayilanDepo();
-  f.sahip.value = v.sahip;
-  f.depo.value = v.depo;
-  f.dal.value = v.dal;
-  f.token.value = a.token || "";
-}
-
-/** Anahtarı dener; yazma izni varsa kaydeder. Hata metni döner, başarıda null. */
-async function baglan(yeni) {
-  if (!yeni.sahip || !yeni.depo || !yeni.token) return "Erişim anahtarını girin.";
-  const eski = localStorage.getItem(AYAR_ANAHTARI);
-  localStorage.setItem(AYAR_ANAHTARI, JSON.stringify(yeni));
-  try {
-    const depo = await gh("");
-    if (!depo.permissions?.push) throw Object.assign(new Error("x"), { detay: "Bu anahtarın panoyu değiştirme izni yok." });
-    durum.sha = {};
-    return null;
-  } catch (e) {
-    if (eski) localStorage.setItem(AYAR_ANAHTARI, eski); else localStorage.removeItem(AYAR_ANAHTARI);
-    return e.durum === 401 ? "Erişim anahtarı geçersiz."
-      : e.durum === 404 ? "Depo bulunamadı (depo bilgisi ya da anahtarın izni yanlış)."
-      : e.detay || e.message;
-  }
-}
-
+/* ---------------- Giriş (kullanıcı adı + şifre) ---------------- */
 $("#giris-form").addEventListener("submit", async (ev) => {
   ev.preventDefault();
   const f = ev.target.elements;
+  const kullanici = f.kullanici.value.trim(), sifre = f.sifre.value;
+  const hataYaz = (m) => { $("#giris-hata").textContent = m; };
+  if (!kullanici || !sifre) return hataYaz("Kullanıcı adı ve şifreyi girin.");
   const dugme = $("#giris-dugme");
-  dugme.disabled = true; dugme.textContent = "Kontrol ediliyor…";
-  const hata = await baglan({ sahip: f.sahip.value.trim(), depo: f.depo.value.trim(), dal: varsayilanDepo().dal, token: f.token.value.trim() });
-  dugme.disabled = false; dugme.textContent = "Giriş yap";
-  $("#giris-hata").textContent = hata || "";
-  if (hata) return;
-  f.token.value = "";
-  await yukle();
-  bildir("Giriş yapıldı.");
+  dugme.disabled = true; dugme.textContent = "Kontrol ediliyor…"; hataYaz("");
+  try {
+    const yanit = await fetch(`giris.json?t=${Date.now()}`, { cache: "no-store" });
+    if (yanit.status === 404) throw new Error("Panel henüz kurulmadı. Proje sorumlusu kurulum sayfasından kurmalı.");
+    if (!yanit.ok) throw new Error("Giriş bilgisi okunamadı; internet bağlantısını kontrol edin.");
+    const giris = await yanit.json();
+    const token = await coz(giris, kullanici, sifre);
+    sessionStorage.setItem(AYAR_ANAHTARI, JSON.stringify({ sahip: giris.sahip, depo: giris.depo, dal: giris.dal || "main", token }));
+    try {
+      const depo = await gh("");
+      if (!depo.permissions?.push) throw Object.assign(new Error("x"), { detay: "Panelin GitHub anahtarının yazma izni yok. Proje sorumlusuna haber verin." });
+    } catch (e) {
+      sessionStorage.removeItem(AYAR_ANAHTARI);
+      throw new Error(e.durum === 401 ? "Panelin GitHub anahtarının süresi dolmuş. Proje sorumlusu kurulum sayfasından yenilemeli." : e.detay || e.message);
+    }
+    f.sifre.value = "";
+    durum.sha = {};
+    await yukle();
+    bildir("Giriş yapıldı.");
+  } catch (e) {
+    f.sifre.value = "";
+    hataYaz(e.message);
+  } finally {
+    dugme.disabled = false; dugme.textContent = "Giriş yap";
+  }
 });
 
-$("#ayarlar-ac").addEventListener("click", () => { ayarFormDoldur(); $("#ayar-hata").textContent = ""; $("#ayarlar").showModal(); });
-$("#baglan").addEventListener("click", async () => {
-  const f = $("#ayar-form").elements;
-  if (durum.degisiklikler.length && !confirm("Yayınlanmamış değişiklikler var; bağlanınca veri GitHub'dan yeniden yüklenecek ve bu değişiklikler kaybolacak. Devam edilsin mi?")) return;
-  const hata = await baglan({ sahip: f.sahip.value.trim(), depo: f.depo.value.trim(), dal: f.dal.value.trim() || "main", token: f.token.value.trim() });
-  if (hata) { $("#ayar-hata").textContent = hata; return; }
-  $("#ayarlar").close();
-  await yukle();
-  bildir("Bağlantı kuruldu.");
-});
-$("#baglanti-kes").addEventListener("click", () => {
+$("#cikis").addEventListener("click", () => {
   if (durum.degisiklikler.length && !confirm("Yayınlanmamış değişiklikler kaybolacak. Çıkış yapılsın mı?")) return;
-  localStorage.removeItem(AYAR_ANAHTARI);
+  sessionStorage.removeItem(AYAR_ANAHTARI);
   durum.sha = {};
   durum.degisiklikler = [];
-  $("#ayarlar").close();
   kilitle(true);
-  bildir("Çıkış yapıldı; anahtar bu tarayıcıdan silindi.");
+  bildir("Çıkış yapıldı.");
 });
 
 /* ---------------- Sekmeler ---------------- */

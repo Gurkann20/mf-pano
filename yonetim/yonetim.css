@@ -129,7 +129,7 @@ body.kilitli .sekmeler,
 body.kilitli main,
 body.kilitli .yayin-cubugu,
 body.kilitli #baglanti-durum,
-body.kilitli #ayarlar-ac,
+body.kilitli #cikis,
 body.kilitli .ust__sag a { display: none !important; }
 body:not(.kilitli) .giris-ekrani { display: none; }
 .giris-ekrani { display: grid; justify-items: center; padding: clamp(24px, 8vh, 80px) 16px; }

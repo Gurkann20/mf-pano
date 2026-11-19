@@ -6,9 +6,9 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Pano Yönetimi · PAÜ MF</title>
   <link rel="icon" href="../assets/logo/muhendislik-logo.webp" type="image/webp">
-  <link rel="stylesheet" href="../css/tokens.css">
-  <link rel="stylesheet" href="yonetim.css">
-  <script type="module" src="yonetim.js"></script>
+  <link rel="stylesheet" href="../css/tokens.css?v=20261119t">
+  <link rel="stylesheet" href="yonetim.css?v=20261119t">
+  <script type="module" src="yonetim.js?v=20261119t"></script>
 </head>
 <body class="kilitli">
   <header class="ust">
@@ -17,8 +17,8 @@
       <span class="alt-yazi">PAÜ Mühendislik Fakültesi · Teşekkür Panosu</span>
     </div>
     <div class="ust__sag">
-      <span class="baglanti" id="baglanti-durum">Bağlantı yok</span>
-      <button type="button" class="dugme ikincil" id="ayarlar-ac">Bağlantı ayarları</button>
+      <span class="baglanti" id="baglanti-durum">Oturum açık</span>
+      <button type="button" class="dugme ikincil" id="cikis">Çıkış yap</button>
       <a class="dugme ikincil" href="../" target="_blank" rel="noopener">Siteyi aç ↗</a>
     </div>
   </header>
@@ -27,15 +27,9 @@
   <section class="giris-ekrani" id="giris" aria-labelledby="giris-baslik">
     <form class="kart dar" id="giris-form" novalidate>
       <h1 id="giris-baslik">Personel girişi</h1>
-      <p class="soluk">Bu sayfa yalnızca dekanlık personeli içindir. Panoyu düzenlemek için size verilen <strong>erişim anahtarını</strong> girin. Anahtar bu tarayıcıda hatırlanır; bir daha sorulmaz.</p>
-      <label>Erişim anahtarı <input name="token" type="password" class="girdi" autocomplete="off" placeholder="github_pat_…" required></label>
-      <details class="kucuk">
-        <summary>Depo bilgileri</summary>
-        <div class="satir2">
-          <label>Kullanıcı / kurum <input name="sahip" class="girdi"></label>
-          <label>Depo adı <input name="depo" class="girdi"></label>
-        </div>
-      </details>
+      <p class="soluk">Bu sayfa yalnızca dekanlık personeli içindir.</p>
+      <label>Kullanıcı adı <input name="kullanici" class="girdi" autocomplete="username" autocapitalize="none" spellcheck="false" required></label>
+      <label>Şifre <input name="sifre" type="password" class="girdi" autocomplete="current-password" required></label>
       <p class="hata" id="giris-hata" role="alert"></p>
       <div class="form-alt">
         <a class="dugme ikincil" href="../">Siteye dön</a>
@@ -198,8 +192,8 @@
           <li><strong>İsim kaldırmak:</strong> Plakayı seçip <em>Panodan kaldır</em>.</li>
           <li><strong>Yayınlamak:</strong> Alttaki çubukta <em>Siteye yayınla</em>’ya basın. Site 1–2 dakika içinde güncellenir. Yayınlamadan sayfayı kapatırsanız değişiklikler kaybolur.</li>
         </ol>
-        <h3>İlk kurulum (bir kez)</h3>
-        <p>Panoyu düzenlemek için proje sorumlusundan bir <strong>erişim anahtarı (token)</strong> alın ve giriş ekranına girin. Anahtar yalnızca bu tarayıcıda saklanır; ortak bilgisayarlarda iş bitince <em>Bağlantı ayarları → Çıkış yap</em>’a basın.</p>
+        <h3>Giriş ve çıkış</h3>
+        <p>Panele proje sorumlusunun verdiği <strong>kullanıcı adı ve şifreyle</strong> girilir. Tarayıcı kapanınca oturum biter. Ortak bilgisayarlarda iş bitince sağ üstteki <em>Çıkış yap</em>’a basın.</p>
         <p>Yayınlama hata verirse <em>JSON indir</em> ile dosyayı indirip proje sorumlusuna gönderebilirsiniz.</p>
         <h3>Kurallar</h3>
         <ul>
@@ -221,27 +215,6 @@
     </div>
   </div>
 
-  <!-- Bağlantı ayarları -->
-  <dialog id="ayarlar">
-    <form method="dialog" class="kart" id="ayar-form">
-      <h2>GitHub bağlantısı</h2>
-      <p class="soluk kucuk">Sitenin kodunun bulunduğu depo. Token, yalnızca bu depoya “Contents: Read and write” izni olan <em>fine-grained</em> bir anahtar olmalı.</p>
-      <div class="satir2">
-        <label>Kullanıcı / kurum <input name="sahip" class="girdi" placeholder="ör. pau-mf" required></label>
-        <label>Depo adı <input name="depo" class="girdi" placeholder="ör. tesekkur-panosu" required></label>
-      </div>
-      <div class="satir2">
-        <label>Dal <input name="dal" class="girdi" value="main"></label>
-        <label>Token <input name="token" type="password" class="girdi" autocomplete="off" placeholder="github_pat_…"></label>
-      </div>
-      <p class="hata" id="ayar-hata" role="alert"></p>
-      <div class="form-alt">
-        <button type="button" class="dugme tehlike" id="baglanti-kes">Çıkış yap</button>
-        <button value="iptal" class="dugme ikincil" formnovalidate>Kapat</button>
-        <button type="button" class="dugme birincil" id="baglan">Bağlan ve test et</button>
-      </div>
-    </form>
-  </dialog>
 
   <div class="bildirim" id="bildirim" role="status" aria-live="polite"></div>
 </body>

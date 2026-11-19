@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Panel Kurulumu · PAÜ MF</title>
+  <link rel="icon" href="../assets/logo/muhendislik-logo.webp" type="image/webp">
+  <link rel="stylesheet" href="../css/tokens.css?v=20261119t">
+  <link rel="stylesheet" href="yonetim.css?v=20261119t">
+  <style>
+    .kurulum { display: grid; justify-items: center; padding: clamp(24px, 6vh, 64px) 16px; }
+    .kurulum .kart { width: 100%; max-width: 560px; display: grid; gap: 14px; }
+    .kurulum h1 { margin: 0; font-size: 1.4rem; }
+    .kurulum h2 { margin: 8px 0 0; font-size: 1.05rem; }
+    .kurulum p, .kurulum ol { margin: 0; }
+    .kurulum ol { padding-left: 1.2em; display: grid; gap: 4px; }
+    .kurulum label { display: grid; gap: 6px; }
+    .kurulum .tamam { color: #0a7a3a; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <header class="ust">
+    <div>
+      <strong>Panel kurulumu</strong>
+      <span class="alt-yazi">Yalnızca proje sorumlusu için · bir kez yapılır</span>
+    </div>
+  </header>
+
+  <main class="kurulum">
+    <form class="kart" id="kurulum-form" novalidate>
+      <h1>Personel girişini kur</h1>
+      <p class="soluk">Bu sayfa, personelin yönetim paneline <strong>kullanıcı adı ve şifreyle</strong> girebilmesini sağlar. GitHub erişim anahtarı bu kullanıcı adı ve şifreyle şifrelenip depoya <code>yonetim/giris.json</code> olarak kaydedilir. Şifre hiçbir yere kaydedilmez; unutulursa bu sayfadan yenisi kurulur.</p>
+
+      <h2>1. GitHub erişim anahtarı</h2>
+      <ol class="kucuk">
+        <li><a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → Fine-grained token oluştur</a> sayfasını açın.</li>
+        <li><em>Repository access</em>: yalnızca bu sitenin deposunu seçin.</li>
+        <li><em>Permissions → Contents</em>: <strong>Read and write</strong>. Başka izin vermeyin.</li>
+        <li>Oluşan <code>github_pat_…</code> anahtarını aşağıya yapıştırın.</li>
+      </ol>
+      <label>Erişim anahtarı <input name="token" type="password" class="girdi" autocomplete="off" placeholder="github_pat_…" required></label>
+      <details class="kucuk">
+        <summary>Depo bilgileri</summary>
+        <div class="satir2" style="margin-top:10px">
+          <label>Kullanıcı / kurum <input name="sahip" class="girdi"></label>
+          <label>Depo adı <input name="depo" class="girdi"></label>
+        </div>
+      </details>
+
+      <h2>2. Personelin gireceği kullanıcı adı ve şifre</h2>
+      <label>Kullanıcı adı <input name="kullanici" class="girdi" autocomplete="off" autocapitalize="none" spellcheck="false" required></label>
+      <label>Şifre <small class="soluk">(en az 12 karakter; harf, rakam ve işaret karışık)</small><input name="sifre" type="password" class="girdi" autocomplete="new-password" required></label>
+      <label>Şifre (tekrar) <input name="sifre2" type="password" class="girdi" autocomplete="new-password" required></label>
+
+      <p class="hata" id="kurulum-hata" role="alert"></p>
+      <p id="kurulum-sonuc" class="tamam" role="status"></p>
+      <div class="form-alt">
+        <a class="dugme ikincil" href="./">Panele git</a>
+        <button type="submit" class="dugme birincil" id="kur">Kur ve kaydet</button>
+      </div>
+    </form>
+  </main>
+
+  <script type="module">
+    import { sifrele, coz } from "./sifreleme.js?v=20261119t";
+    const f = document.getElementById("kurulum-form");
+    const hata = (m) => { document.getElementById("kurulum-hata").textContent = m; };
+    const sonuc = (m) => { document.getElementById("kurulum-sonuc").textContent = m; };
+
+    // Depo bilgisi adresten: gurkann20.github.io/mf-pano → Gurkann20/mf-pano
+    const gp = location.hostname.endsWith(".github.io");
+    f.sahip.value = gp ? location.hostname.split(".")[0] : "Gurkann20";
+    f.depo.value = gp ? location.pathname.split("/")[1] || "" : "mf-pano";
+
+    async function gh(depo, token, yol, secenek = {}) {
+      const y = await fetch(`https://api.github.com/repos/${encodeURIComponent(depo.sahip)}/${encodeURIComponent(depo.depo)}${yol}`, {
+        ...secenek,
+        headers: { Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28", Authorization: `Bearer ${token}`,
+          ...(secenek.body ? { "Content-Type": "application/json" } : {}) },
+      });
+      if (!y.ok) { const e = new Error(`GitHub ${y.status}`); e.durum = y.status; try { e.detay = (await y.json()).message; } catch {} throw e; }
+      return y.status === 204 ? null : y.json();
+    }
+    const b64 = (metin) => { const b = new TextEncoder().encode(metin); let s = ""; b.forEach((x) => s += String.fromCharCode(x)); return btoa(s); };
+
+    f.addEventListener("submit", async (ev) => {
+      ev.preventDefault();
+      hata(""); sonuc("");
+      const token = f.token.value.trim(), kullanici = f.kullanici.value.trim(), sifre = f.sifre.value;
+      const depo = { sahip: f.sahip.value.trim(), depo: f.depo.value.trim(), dal: "main" };
+      if (!token || !kullanici || !sifre) return hata("Bütün alanları doldurun.");
+      if (sifre !== f.sifre2.value) return hata("Şifreler aynı değil.");
+      if (sifre.length < 12) return hata("Şifre en az 12 karakter olmalı.");
+      if (!/[A-Za-zÇĞİÖŞÜçğıöşü]/.test(sifre) || !/\d/.test(sifre)) return hata("Şifrede hem harf hem rakam olmalı.");
+      const d = document.getElementById("kur");
+      d.disabled = true; d.textContent = "Kuruluyor…";
+      try {
+        const bilgi = await gh(depo, token, "");
+        if (!bilgi.permissions?.push) throw new Error("Bu anahtarın depoya yazma izni yok (Contents: Read and write verin).");
+        const giris = await sifrele(token, kullanici, sifre, depo);
+        if (await coz(giris, kullanici, sifre) !== token) throw new Error("Şifreleme doğrulanamadı.");
+        const yol = "yonetim/giris.json";
+        let sha;
+        try { sha = (await gh(depo, token, `/contents/${yol}?ref=main`)).sha; } catch (e) { if (e.durum !== 404) throw e; }
+        await gh(depo, token, `/contents/${yol}`, { method: "PUT", body: JSON.stringify({
+          message: "Yönetim paneli girişi güncellendi", branch: "main",
+          content: b64(JSON.stringify(giris, null, 2) + "\n"), ...(sha ? { sha } : {}) }) });
+        f.token.value = ""; f.sifre.value = ""; f.sifre2.value = "";
+        sonuc("Kuruldu. 1–2 dakika sonra personel bu kullanıcı adı ve şifreyle panele girebilir.");
+      } catch (e) {
+        hata(e.durum === 401 ? "Erişim anahtarı geçersiz." : e.durum === 404 ? "Depo bulunamadı (depo bilgisi ya da anahtarın izni yanlış)." : e.detay || e.message);
+      } finally {
+        d.disabled = false; d.textContent = "Kur ve kaydet";
+      }
+    });
+  </script>
+</body>
+</html>

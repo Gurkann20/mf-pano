@@ -44,8 +44,8 @@ Fakülte girişindeki bağışçı panosunun dijital karşılığı. Panonun alt
 
 - `/yonetim/` sayfasında form ile isim ekleme, düzenleme ve kaldırma yapılıyor. Panonun 4×14 mini haritası var; aynı yere iki isim konmasını engelliyor.
 - "Siteye yayınla" butonu, GitHub REST API (Contents API) ile JSON dosyasını güncelliyor. Site birkaç dakika içinde kendiliğinden yenileniyor.
-- **Yetki:** Personel, yalnızca bu depoya ve yalnızca dosya içeriğine yazabilen bir erişim anahtarı (fine-grained token) kullanıyor. Anahtar yalnızca personelin kendi tarayıcısında saklanıyor, sitede yok.
-- **Kilit:** Erişim anahtarı girilmeden panelde yalnızca "Personel girişi" ekranı görünüyor; form açılmıyor. Anahtar geçersizse ya da süresi dolmuşsa panel yeniden kilitleniyor.
+- **Yetki:** Panelin kullandığı GitHub anahtarı yalnızca bu depoya ve yalnızca dosya içeriğine yazabiliyor (fine-grained token). Sitede yalnızca şifrelenmiş hâli var.
+- **Giriş:** Personel kullanıcı adı ve şifreyle giriyor. Sunucu olmadığı için şifre bir sunucuda kontrol edilmiyor. Bunun yerine GitHub erişim anahtarı bu kullanıcı adı ve şifreyle şifrelenip (PBKDF2 + AES-256-GCM, tarayıcının Web Crypto API'si) depoda tutuluyor. Doğru şifre anahtarı çözüyor, yanlış şifre çözemiyor. Şifre hiçbir yerde saklanmıyor; oturum tarayıcı kapanınca bitiyor.
 - **Yayınlama hata verirse:** Giriş yapmış personel güncel JSON dosyasını indirip elle gönderebiliyor.
 - Veri uçları ve API çağrıları **Swagger** dokümanında: `/docs/swagger.html`.
 
