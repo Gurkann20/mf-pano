@@ -131,3 +131,6 @@ python tools/sunucu.py
 - Gürkan'ın iPhone'u eski sürümü gösteriyordu (GitHub Pages index.html'i ~10 dk önbellekte tutuyor). Not: değişiklikten sonra telefonda görmek için 10 dk bekle / sekmeyi kapatıp aç.
 - Plaka etrafında kalan çerçeve: iOS'ta :hover dokunulan plakada takılı kalıyordu → hover yalnızca @media (hover:hover). Dönüşteki otomatik odak `sessiz-odak` sınıfıyla çerçevesiz (odak yine plakada, ekran okuyucu için).
 - Cetvel: yalnızca yıl verilen olaylar yılın ortası yerine tam yıl çizgisine oturuyor (konum +0). Sürüm ?v=20261119m.
+
+## 2026-11-19 (9): Telefonda eşit aralıklı cetvel
+- Telefonda zamanla orantılı cetvelde 1974–77 olayları iç içe geçiyordu → telefonda olaylar eşit aralıkla (`ARALIK`, `ox(i)`), yalnızca seçili olayın yılı işaretin altında. Sonda bir boş aralık: imleç son olaydan sonra da kayıyor. Masaüstü değişmedi. Sürüm ?v=20261119o.

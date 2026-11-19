@@ -118,6 +118,7 @@ PAÜ sitesinin (pau.edu.tr) renklerine uyumlu olmalı. Aşağıdaki değerler **
 - Kart/kutu ve dikey çizgi kullanılmaz (revizyon 2). Mühendislik cetveli: yıl çentikleri, olaylar ay hassasiyetiyle cetvele yerleşir.
 - Seçili olay üstte: gümüş dolgulu büyük yıl + tarih, başlık, metin, kaynak. Oklar, cetvel üzerindeki işaretler, klavye okları ve telefonda yana kaydırma ile gezilir.
 - Masaüstünde cetvel genişliğe sığar; telefonda yatay kaydırılır. `#/tarihce` adresi bu bölüme kaydırır.
+- **Telefonda** olaylar cetvele eşit aralıkla dizilir (zamanla orantılı değil; dar ekranda 1974–77 olayları üst üste biniyordu), yalnızca seçili olayın yılı yazılır.
 - **Otomatik ilerleme:** İmleç bir sonraki olaya 8 sn'de doğrusal kayar, arkasında "geçen zaman" çizgisi dolar; varınca olay değişir, sonda başa döner. Sondan başa dönüşte imleç geri kaymaz, doğrudan başa atlar. Her zaman otomatik başlar; yalnızca durdur düğmesiyle, bölüm ekranda değilken ve sekme gizliyken bekler. Otomatik geçişte aria-live kapalıdır.
 
 ### 5.3 Dijital pano (sitenin kalbi)
