@@ -155,3 +155,4 @@ python tools/sunucu.py
 - Doğrulanamayanlar siteye konmadı, ozel/notlar.json'a yazıldı (Tano'nun Nihon Üni., Terzioğlu doğum/okul, Saldanlı ELDER, İrfan Yolcular kimlik eşleşmesi, Boyvat'ın sponsorluğu).
 - Hâlâ bilgi yok: Faruk Basmacı, Nalan Devrent, Emirayşe – Ramazan Özen, Mehmet Hilmi Serter.
 - Karar bekleyen: Ali Yağlı ve Ahmet Nazif Zorlu vefat ettiği için yayinla:true yapılabilir (Gürkan/dekanlık).
+- Gürkan: vefat edenlerin biyografisi de yayınlansın → Ali Yağlı ve Ahmet Nazif Zorlu yayinla:true. Özkardeşler ve Sait Kalaycıoğlu kaynak eksikliği yüzünden hâlâ gizli.

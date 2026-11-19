@@ -205,6 +205,7 @@ Kurallar:
 - Fotoğraf sadece aile/kurum izniyle eklenir.
 - Hayattaki kişilerin (Musa Çelikkol, Ceyhan Saldanlı, Erhan Boyvat vb.) biyografisi kendilerinin onayı olmadan canlıya alınmaz. (Ali Yağlı 2024'te, Muhsin Özcan 2026'da vefat etti.)
 - Vefat bilgisi yalnızca bir haber/resmî kaynakla doğrulanınca yazılır.
+- Vefat etmiş bağışçıların biyografisi (kaynakla doğrulanmışsa) yayınlanır (Gürkan, 2026-11-19: "vefat etse bile yaz, onlar da destek vermiş").
 - Cenaze, sağlık, aile içi olaylar gibi özel ayrıntılar yazılmaz.
 - İç notlar yayınlanan hiçbir dosyada yer almaz: `ozel/notlar.json` (gitignore). `js/data.js` yine de olası bir `notlar` alanını yüklerken siler.
 - Siteye analytics/çerez eklenmez.
