@@ -1,9 +1,9 @@
 // Tarihçe: ölçüm cetveli. Olaylar ay hassasiyetiyle cetvele yerleşir;
 // seçili olay üstte büyük okunur. Ok tuşları, kaydırma ve dokunma ile gezilir.
 
-import { esc, guvenliUrl } from "./data.js?v=20261119j";
-import { t } from "./i18n.js?v=20261119j";
-import { hareketAz } from "./effects.js?v=20261119j";
+import { esc, guvenliUrl } from "./data.js?v=20261119l";
+import { t } from "./i18n.js?v=20261119l";
+import { hareketAz } from "./effects.js?v=20261119l";
 
 const DURDUR_IKON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="3.5" height="14" rx="1"/><rect x="14" y="5" width="3.5" height="14" rx="1"/></svg>';
 const OYNAT_IKON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
@@ -45,14 +45,18 @@ export function cetvelCiz(kap, veri) {
 
   const bas = Math.floor(Math.min(...olaylar.map((o) => o.konum)));
   const son = Math.floor(Math.max(...olaylar.map((o) => o.konum))) + 1;
-  // Masaüstünde cetvel genişliğe sığar; telefonda yakın olaylar ayrışsın diye geniş tutulup kaydırılır.
-  const YIL_PX = innerWidth >= 860 ? Math.max(44, Math.floor((kap.clientWidth - 56) / (son - bas))) : 80;
+  // Cetvel her ekranda genişliğe sığar; tüm çizelge kaydırmadan görünür.
+  const masaustu = innerWidth >= 860;
+  const YIL_PX = Math.max(masaustu ? 44 : 5, Math.floor((kap.clientWidth - (masaustu ? 56 : 64)) / (son - bas)));
   const x = (k) => Math.round((k - bas) * YIL_PX);
   const olayYillari = new Set(olaylar.map((o) => Math.floor(o.konum)));
+  // Yıllar sıkışınca yalnızca 5'in katı yıllar yazılır (yazılar üst üste binmesin)
+  const adim = YIL_PX >= 36 ? 1 : YIL_PX >= 18 ? 2 : 5;
 
   let etiketler = "";
   for (let y = bas; y <= son; y++) {
-    etiketler += `<span class="cetvel__etiket${olayYillari.has(y) ? " olayli" : ""}" style="left:${x(y)}px">${y}</span>`;
+    if (adim > 1 && y % adim !== 0) continue;
+    etiketler += `<span class="cetvel__etiket${adim === 1 && olayYillari.has(y) ? " olayli" : ""}" style="left:${x(y)}px">${y}</span>`;
   }
   // Birbirine çok yakın işaretler basamaklanır (iğneleri farklı boyda) ki üst üste binmesin.
   let oncekiX = -999, seviye = 0;

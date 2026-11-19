@@ -49,8 +49,12 @@ export function kaziGozle(plakalar, ilkKaziBitince) {
   gorununce(liste, (p) => {
     if (ilk && ilkKaziBitince) { ilk = false; setTimeout(ilkKaziBitince, 1500); }
     const gecikme = Number(p.dataset.kaziGecikme || 0);
+    const sure = parseInt(p.style.getPropertyValue("--kazi-sure"), 10) || 900;
     setTimeout(() => {
       p.classList.add("kaziniyor");
+      // Kazıma bitince sınıfları kaldır: pano gizlenip yeniden açıldığında
+      // (kişi sayfasından dönüş) tarayıcı bütün harf animasyonlarını baştan oynatmasın.
+      setTimeout(() => p.classList.remove("kazinacak", "kaziniyor"), sure + 450);
     }, gecikme);
   }, { esik: 0.4 });
 }

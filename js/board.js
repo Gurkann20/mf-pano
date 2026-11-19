@@ -1,8 +1,8 @@
 // Dijital pano: plakalar, filtreler, arama.
 
-import { esc, sadelestir, plakaAdi, ilkYil, DEMO } from "./data.js?v=20261119j";
-import { t } from "./i18n.js?v=20261119j";
-import { kaziHtml, kaziGozle, egimBagla, duvarEgimiBagla } from "./effects.js?v=20261119j";
+import { esc, sadelestir, plakaAdi, ilkYil, DEMO } from "./data.js?v=20261119l";
+import { t } from "./i18n.js?v=20261119l";
+import { kaziHtml, kaziGozle, egimBagla, duvarEgimiBagla } from "./effects.js?v=20261119l";
 
 const durum = { tur: "hepsi", sorgu: "" };
 let veri = null;
@@ -134,7 +134,11 @@ export function panoCiz(v) {
   // Açılışın tek gösterişli anı: plakalar sırayla kazınır, sonra panonun üzerinden bir ışık geçer.
   const cerceve = document.getElementById("pano-cerceve");
   duvarEgimiBagla(cerceve);
-  kaziGozle(pano.querySelectorAll(".plaka"), () => cerceve.classList.add("isildi"));
+  kaziGozle(pano.querySelectorAll(".plaka"), () => {
+    cerceve.classList.add("isildi");
+    // ışık bir kez geçsin; panoya her dönüşte yeniden oynamasın
+    setTimeout(() => cerceve.classList.remove("isildi"), 2900);
+  });
 }
 
 /** Kişi sayfasından dönüşte ilgili plakayı bul. */

@@ -50,6 +50,7 @@
   padding-bottom: .06em;
 }
 @keyframes baslik-isik { from { background-position: 100% 0; } to { background-position: 0% 0; } }
+.acilis-bitti .giris h1 { animation: none; background-position: 0 0; }
 @media (min-width: 860px) { .giris h1 { max-width: none; } }
 .giris__alt { color: #f1e9e4; font-size: var(--t-buyuk); line-height: 1.45; max-width: 40ch; margin: 0; text-shadow: 0 2px 10px rgba(0,0,0,.8); }
 
@@ -356,7 +357,13 @@
   .plaka__ad { font-size: clamp(.56rem, 2.5vw, .72rem); line-height: 1.12; font-stretch: 75%; letter-spacing: 0; hyphens: none; }
   .plaka__ad .kelime { white-space: normal; }
   .plaka__alt { margin-top: 1px; font-size: clamp(.5rem, 2.1vw, .6rem); }
+  /* telefonda harf harf yerine plaka başına tek beliriş (ekranda 30 plaka aynı anda) */
+  .js .plaka.kazinacak .harf { opacity: 1; }
+  .plaka.kaziniyor .harf { animation: none; display: inline; }
+  .js .plaka.kazinacak .plaka__ad, .js .plaka.kazinacak .plaka__alt { opacity: 0; }
+  .plaka.kaziniyor .plaka__ad, .plaka.kaziniyor .plaka__alt { animation: ad-belir var(--kazi-sure, 900ms) ease-out forwards; }
 }
+@keyframes ad-belir { to { opacity: 1; } }
 
 /* =========================================================
    TARİH CETVELİ

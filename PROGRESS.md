@@ -120,3 +120,9 @@ python tools/sunucu.py
 - QR görselleri masaüstünde: QR-site.png, QR-sunum-demo.png (?demo=1). Geçici adres; kalıcı QR basılmadı.
 - Gürkan iPhone'da "telefon görüntüsü kötü" dedi → ≤600px: ince çerçeve (--cerceve 12px), 96px madalyon, plaka 58px, küçük yazı, 6px aralık. Bir ekrana ~12 satır sığıyor (önce ~7). Sürüm ?v=20261119i.
 - Sonraki: hocanın geri bildirimi; telefondaki görüntüde başka neyi beğenmediğini sor.
+
+## 2026-11-19 (7): Telefonda 4 sütun, akıcılık, tarihçe sığdırma
+- Pano telefonda da 4 sütun, fiziksel konumlarla; plaka adı Archivo dar kesim (font-stretch 75%).
+- Takılma sebebi: pano gizlenip geri açılınca (kişi sayfasından dönüş) ~450 harf animasyonu + çerçeve ışığı + başlık ışığı baştan oynuyordu. Kazıma bitince `kazinacak/kaziniyor` sınıfları kaldırılıyor; `isildi` 2.9 sn sonra kaldırılıyor; başlık ışığı `body.acilis-bitti` ile tek sefer. Dönüşte artık yalnızca sayfa geçişi çalışıyor.
+- Telefonda kazıma harf harf değil, plaka başına tek beliriş (lazer çizgisi aynı).
+- Tarihçe cetveli telefonda genişliğe sığıyor (YIL_PX ≈ 8), etiketler 5 yılda bir. Sürüm ?v=20261119l.
