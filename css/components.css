@@ -341,7 +341,18 @@
 .hikaye .bolum__giris { color: #f1e9e4; }
 .kadife-pano .cetvel__serit { margin: 0 calc(-1 * clamp(16px, 4vw, 48px)); padding: 0 clamp(16px, 4vw, 48px); }
 .kadife-pano { --cerceve: clamp(16px, 2.6vw, 30px); border-width: 8px; }
-@media (max-width: 600px) { .pano-cerceve { border-width: 8px; } }
+/* Telefon: ince çerçeve, küçük madalyon, sıkı plakalar → bir ekrana daha çok isim sığar */
+@media (max-width: 600px) {
+  .pano-cerceve, .kadife-pano { --cerceve: 12px; border-width: 6px; }
+  .pano-cerceve::before, .kadife-pano::before { inset: 3px; border-width: 7px; filter: none; }
+  .pano-cerceve::after { display: none; }
+  .pano-ic { padding: 0 8px 14px; }
+  .pano-madalyon { width: 96px; margin: 16px auto; }
+  .pano { gap: 6px; }
+  .plaka { min-height: 58px; padding: 7px 6px 6px; box-shadow: inset 0 1px 0 rgba(255,255,255,.9), inset 0 -1px 0 rgba(0,0,0,.25), 0 3px 8px rgba(0,0,0,.5); }
+  .plaka__ad { font-size: .8rem; line-height: 1.15; }
+  .plaka__alt { margin-top: 2px; font-size: .68rem; }
+}
 
 /* =========================================================
    TARİH CETVELİ
