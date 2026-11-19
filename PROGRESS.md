@@ -134,3 +134,7 @@ python tools/sunucu.py
 
 ## 2026-11-19 (9): Telefonda eşit aralıklı cetvel
 - Telefonda zamanla orantılı cetvelde 1974–77 olayları iç içe geçiyordu → telefonda olaylar eşit aralıkla (`ARALIK`, `ox(i)`), yalnızca seçili olayın yılı işaretin altında. Sonda bir boş aralık: imleç son olaydan sonra da kayıyor. Masaüstü değişmedi. Sürüm ?v=20261119o.
+
+## 2026-11-19 (10): Sade cetvel
+- Sol okta bozulma: geri animasyon sınıfı `geri`, kişi sayfasındaki `.geri` bağlantı stiliyle çakışıyordu (display:inline-flex) → sınıf adı `ters`.
+- Cetvel yeniden: eşit aralıklı noktalar, tek çizgi, çentik/iğne/imleç yok; yıllar yalnızca gerektiği yerde (masaüstü: her yılın ilk olayı, telefon: seçili). Oynat/durdur düğmesi kaldırıldı. Mavi çizgi 8 sn'lik sürünme yerine olay değişince 0,45 sn'de uzanıyor. Sürüm ?v=20261119p.

@@ -406,7 +406,7 @@
 .cetvel__kaynak { font-size: .85rem !important; margin: 0; }
 .cetvel__olay.degisti > * { animation: olay-gir .45s var(--yumusak) both; }
 .cetvel__olay.degisti > :nth-child(2) { animation-delay: 50ms; }
-.cetvel__olay.geri > * { animation-name: olay-gir-geri; }
+.cetvel__olay.ters > * { animation-name: olay-gir-geri; }
 @keyframes olay-gir { from { opacity: 0; transform: translateX(24px); } }
 @keyframes olay-gir-geri { from { opacity: 0; transform: translateX(-24px); } }
 
@@ -415,7 +415,6 @@
 .cetvel__oklar { display: flex; gap: 8px; }
 .cetvel__ok { width: 48px; padding: 0; }
 .cetvel__ok:disabled { opacity: .35; cursor: default; }
-.cetvel__oynat svg { width: 16px; height: 16px; }
 
 /* Cetvel şeridi: yatay kaydırılır */
 .cetvel__serit {
@@ -428,58 +427,45 @@
           mask-image: linear-gradient(90deg, transparent, #000 var(--kenar), #000 calc(100% - var(--kenar)), transparent);
 }
 .cetvel__serit::-webkit-scrollbar { display: none; }
+/* Cetvel: tek çizgi, olay noktaları, altında yalnızca olayların yılları */
 .cetvel__olcek {
   position: relative;
-  height: 120px;
+  height: 64px;
   margin: 0 28px;
-  /* ölçek: çeyrek yıl kısa, yıl uzun çentik */
-  background:
-    linear-gradient(var(--cizgi-guclu), var(--cizgi-guclu)) 0 58px / 100% 1px no-repeat,
-    repeating-linear-gradient(90deg, rgba(201,209,219,.55) 0 1px, transparent 1px var(--yil-px)) 0 58px / 100% 18px no-repeat,
-    repeating-linear-gradient(90deg, rgba(201,209,219,.28) 0 1px, transparent 1px calc(var(--yil-px) / 4)) 0 58px / 100% 8px no-repeat;
+  background: linear-gradient(var(--cizgi-guclu), var(--cizgi-guclu)) 0 20px / 100% 1px no-repeat;
 }
 .cetvel__etiket {
-  position: absolute; top: 82px;
+  position: absolute; top: 36px;
   transform: translateX(-50%);
-  font-size: .75rem; color: var(--yazi-soluk); font-variant-numeric: tabular-nums;
-  pointer-events: none;
+  font-size: .78rem; color: var(--yazi-soluk); font-variant-numeric: tabular-nums;
+  pointer-events: none; white-space: nowrap;
+  transition: color var(--hizli);
 }
-.cetvel__etiket.olayli { color: var(--yazi); font-weight: 600; }
+.cetvel__etiket.secili { color: var(--yazi); font-weight: 600; }
+/* telefonda tek etiket: seçili yıl, noktayla birlikte kayar */
+.cetvel__etiket--secili {
+  left: 0; color: var(--yazi); font-weight: 600;
+  transition: transform .45s var(--yumusak);
+}
 .cetvel__isaret {
-  --s: 0;
-  position: absolute; top: calc(24px - var(--s) * 12px); width: 22px; height: calc(52px + var(--s) * 12px); margin-left: -11px;
-  border: 0; padding: 0; background: transparent;
-  display: flex; justify-content: center;
-}
-.cetvel__isaret::before {
-  /* iğne */
-  content: ""; width: 2px; height: calc(34px + var(--s) * 12px); margin-top: 4px;
-  background: var(--gumus); border-radius: 1px;
-  transition: background-color var(--hizli);
+  position: absolute; top: 0; width: 28px; height: 40px; margin-left: -14px;
+  border: 0; padding: 0; background: transparent; cursor: pointer;
 }
 .cetvel__isaret::after {
-  content: ""; position: absolute; top: 0; left: 50%;
-  width: 10px; height: 10px; margin-left: -5px; border-radius: 50%;
+  content: ""; position: absolute; top: 15px; left: 50%;
+  width: 11px; height: 11px; margin-left: -5.5px; border-radius: 50%;
   background: var(--zemin); border: 2px solid var(--gumus);
   transition: background-color var(--hizli), border-color var(--hizli), transform var(--hizli);
 }
-.cetvel__isaret:hover::after { background: var(--gumus); }
-.cetvel__isaret[aria-current="true"]::before { background: var(--mavi-acik); }
-.cetvel__isaret[aria-current="true"]::after { background: var(--mavi-acik); border-color: var(--mavi-acik); transform: scale(1.3); }
-/* geçen zaman: cetvelin başından imlece kadar dolan çizgi */
+@media (hover: hover) { .cetvel__isaret:hover::after { background: var(--gumus); } }
+.cetvel__isaret[aria-current="true"]::after { background: var(--mavi-acik); border-color: var(--mavi-acik); transform: scale(1.35); }
+/* mavi çizgi: olay değişince hızla bir sonraki noktaya uzanır */
 .cetvel__gecen {
-  position: absolute; left: 0; top: 57px; width: 100%; height: 3px;
-  background: linear-gradient(90deg, rgba(108,192,240,.15), var(--mavi-acik));
+  position: absolute; left: 0; top: 19px; width: 100%; height: 3px; border-radius: 2px;
+  background: linear-gradient(90deg, rgba(108,192,240,.25), var(--mavi-acik));
   transform-origin: left center; transform: scaleX(0);
   pointer-events: none;
-  transition: transform .5s var(--yumusak);
-}
-/* kumpas çenesi: seçili olaya kayar */
-.cetvel__imlec {
-  position: absolute; top: 20px; left: 0; width: 2px; height: 74px;
-  background: linear-gradient(var(--mavi-acik), transparent);
-  pointer-events: none;
-  transition: transform .5s var(--yumusak);
+  transition: transform .45s var(--yumusak);
 }
 
 /* =========================================================

@@ -113,13 +113,13 @@ PAÜ sitesinin (pau.edu.tr) renklerine uyumlu olmalı. Aşağıdaki değerler **
 - Küçük üst başlık "Mühendislik Fakültesi", büyük başlık **"Teşekkür Panosu"**, bir cümlelik açıklama.
 - Hemen altında filtreler, arama ve pano (§5.3). Sayaçlar, "50" rozeti, aşağı kaydır işareti yok.
 
-### 5.2 Tarihçe: ölçüm cetveli (panonun altında)
+### 5.2 Tarihçe: cetvel (panonun altında)
 
-- Kart/kutu ve dikey çizgi kullanılmaz (revizyon 2). Mühendislik cetveli: yıl çentikleri, olaylar ay hassasiyetiyle cetvele yerleşir.
-- Seçili olay üstte: gümüş dolgulu büyük yıl + tarih, başlık, metin, kaynak. Oklar, cetvel üzerindeki işaretler, klavye okları ve telefonda yana kaydırma ile gezilir.
-- Masaüstünde cetvel genişliğe sığar; telefonda yatay kaydırılır. `#/tarihce` adresi bu bölüme kaydırır.
-- **Telefonda** olaylar cetvele eşit aralıkla dizilir (zamanla orantılı değil; dar ekranda 1974–77 olayları üst üste biniyordu), yalnızca seçili olayın yılı yazılır.
-- **Otomatik ilerleme:** İmleç bir sonraki olaya 8 sn'de doğrusal kayar, arkasında "geçen zaman" çizgisi dolar; varınca olay değişir, sonda başa döner. Sondan başa dönüşte imleç geri kaymaz, doğrudan başa atlar. Her zaman otomatik başlar; yalnızca durdur düğmesiyle, bölüm ekranda değilken ve sekme gizliyken bekler. Otomatik geçişte aria-live kapalıdır.
+- Kart/kutu ve dikey çizgi kullanılmaz. Tek yatay çizgi üzerinde olay noktaları; olaylar **eşit aralıkla** dizilir (1976'da 5 olay var, zamanla orantılı dizilince üst üste biniyordu). Çentik, iğne yok (Gürkan: "çizgiler kötü duruyor").
+- Altında yalnızca gerekli yıllar: masaüstünde her yılın ilk olayının altında yıl; telefonda yalnızca seçili olayın yılı.
+- Seçili olay üstte: gümüş dolgulu büyük yıl + tarih, başlık, metin, kaynak. Gezinme: önceki/sonraki okları, noktalar, klavye okları, telefonda yana kaydırma. Oynat/durdur düğmesi yok.
+- **Otomatik ilerleme:** Her olay 8 sn kalır, sonra mavi çizgi hızla (0,45 sn) bir sonraki noktaya uzanır. Sondan başa dönüşte çizgi anında sıfırlanır. Hep çalışır; yalnızca bölüm ekranda değilken, sekme gizliyken ve klavyeyle cetvelde gezinilirken bekler. Otomatik geçişte aria-live kapalıdır.
+- `#/tarihce` adresi bu bölüme kaydırır.
 
 ### 5.3 Dijital pano (sitenin kalbi)
 

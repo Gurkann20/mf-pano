@@ -1,12 +1,10 @@
 // Tarihçe: ölçüm cetveli. Olaylar ay hassasiyetiyle cetvele yerleşir;
 // seçili olay üstte büyük okunur. Ok tuşları, kaydırma ve dokunma ile gezilir.
 
-import { esc, guvenliUrl } from "./data.js?v=20261119o";
-import { t } from "./i18n.js?v=20261119o";
-import { hareketAz } from "./effects.js?v=20261119o";
+import { esc, guvenliUrl } from "./data.js?v=20261119p";
+import { t } from "./i18n.js?v=20261119p";
+import { hareketAz } from "./effects.js?v=20261119p";
 
-const DURDUR_IKON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="3.5" height="14" rx="1"/><rect x="14" y="5" width="3.5" height="14" rx="1"/></svg>';
-const OYNAT_IKON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
 const AYLAR = ["ocak", "şubat", "mart", "nisan", "mayıs", "haziran", "temmuz", "ağustos", "eylül", "ekim", "kasım", "aralık"];
 
 const SOL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>';
@@ -45,35 +43,30 @@ export function cetvelCiz(kap, veri) {
   const bagla = baglayici(veri.liste);
 
   const bas = Math.floor(Math.min(...olaylar.map((o) => o.konum)));
-  const son = Math.floor(Math.max(...olaylar.map((o) => o.konum))) + 1;
-  // Masaüstünde cetvel zamanla orantılıdır ve genişliğe sığar. Telefonda 37 yıl dar ekrana
-  // sığınca 1974–77 arası olaylar üst üste biner; orada olaylar eşit aralıkla dizilir
-  // (her olay bir çentik) ve yalnızca seçili olayın yılı yazılır.
+  const son = Math.floor(Math.max(...olaylar.map((o) => o.konum)));
+  const yilOf = (o) => String(o.tarih).match(/\d{4}/)[0];
+  // Olaylar cetvele eşit aralıkla dizilir (1976'da 5 olay var; zamanla orantılı dizilince
+  // noktalar üst üste biniyordu). Masaüstünde her yılın ilk olayının altında yıl yazar;
+  // telefonda yer dar olduğu için yalnızca seçili olayın yılı yazar.
   const masaustu = innerWidth >= 860;
-  const ARALIK = masaustu ? 0 : Math.max(14, Math.floor((kap.clientWidth - 64) / olaylar.length));
-  const YIL_PX = masaustu ? Math.max(44, Math.floor((kap.clientWidth - 56) / (son - bas))) : ARALIK;
-  const x = (k) => Math.round((k - bas) * YIL_PX);
-  const ox = (i) => masaustu ? x(olaylar[i].konum) : i * ARALIK;
-  const genislik = masaustu ? x(son) : ARALIK * olaylar.length; // sonda bir boş aralık: imleç son olaydan sonra da kayar
-  const olayYillari = new Set(olaylar.map((o) => Math.floor(o.konum)));
-  // Yıllar sıkışınca yalnızca 5'in katı yıllar yazılır (yazılar üst üste binmesin)
-  const adim = YIL_PX >= 36 ? 1 : YIL_PX >= 18 ? 2 : 5;
+  const n = olaylar.length;
+  const ARALIK = Math.max(masaustu ? 40 : 14, Math.floor((kap.clientWidth - (masaustu ? 96 : 56)) / Math.max(1, n - 1)));
+  const ox = (i) => i * ARALIK;
+  const genislik = ARALIK * Math.max(1, n - 1);
 
-  let etiketler = masaustu ? "" : '<span class="cetvel__etiket olayli cetvel__etiket--secili"></span>';
-  for (let y = bas; masaustu && y <= son; y++) {
-    if (adim > 1 && y % adim !== 0) continue;
-    etiketler += `<span class="cetvel__etiket${adim === 1 && olayYillari.has(y) ? " olayli" : ""}" style="left:${x(y)}px">${y}</span>`;
+  let etiketler = "";
+  if (masaustu) {
+    let onceki = "";
+    olaylar.forEach((o, i) => {
+      const y = yilOf(o);
+      if (y !== onceki) etiketler += `<span class="cetvel__etiket" data-yil="${y}" style="left:${ox(i)}px">${y}</span>`;
+      onceki = y;
+    });
+  } else {
+    etiketler = '<span class="cetvel__etiket cetvel__etiket--secili"></span>';
   }
-  // Birbirine çok yakın işaretler basamaklanır (iğneleri farklı boyda) ki üst üste binmesin.
-  let oncekiX = -999, seviye = 0;
-  const seviyeler = olaylar.map((o, i) => {
-    const px = ox(i);
-    seviye = masaustu && px - oncekiX < 16 ? (seviye + 1) % 3 : 0;
-    oncekiX = px;
-    return seviye;
-  });
   const isaretler = olaylar.map((o, i) => `
-    <button type="button" class="cetvel__isaret" style="left:${ox(i)}px;--s:${seviyeler[i]}" data-i="${i}"
+    <button type="button" class="cetvel__isaret" style="left:${ox(i)}px" data-i="${i}"
       aria-label="${esc(o.tarih)}: ${esc(o.baslik)}" aria-current="false"></button>`).join("");
 
   kap.innerHTML = `
@@ -81,110 +74,58 @@ export function cetvelCiz(kap, veri) {
     <div class="cetvel__alt">
       <span class="cetvel__sayac"></span>
       <div class="cetvel__oklar">
-        <button type="button" class="dugme cetvel__ok cetvel__oynat" aria-pressed="true"></button>
         <button type="button" class="dugme cetvel__ok" data-yon="-1" aria-label="Önceki olay">${SOL}</button>
         <button type="button" class="dugme cetvel__ok" data-yon="1" aria-label="Sonraki olay">${SAG}</button>
       </div>
     </div>
     <div class="cetvel__serit">
-      <div class="cetvel__olcek" style="width:${genislik + 1}px;--yil-px:${YIL_PX}px" role="group" aria-label="Tarih cetveli, ${bas}–${son}">
-        ${etiketler}
+      <div class="cetvel__olcek" style="width:${genislik + 1}px" role="group" aria-label="Tarih cetveli, ${bas}–${son}">
         <span class="cetvel__gecen" aria-hidden="true"></span>
-        <span class="cetvel__imlec" aria-hidden="true"></span>
+        ${etiketler}
         ${isaretler}
       </div>
     </div>`;
 
   const alan = kap.querySelector(".cetvel__olay");
   const serit = kap.querySelector(".cetvel__serit");
-  const imlec = kap.querySelector(".cetvel__imlec");
   const gecen = kap.querySelector(".cetvel__gecen");
   const olcek = kap.querySelector(".cetvel__olcek");
   const sayac = kap.querySelector(".cetvel__sayac");
-  const oynatDugme = kap.querySelector(".cetvel__oynat");
   const [geriOk, ileriOk] = kap.querySelectorAll(".cetvel__ok[data-yon]");
   const isaretDugmeleri = [...kap.querySelectorAll(".cetvel__isaret")];
+  const yilEtiketleri = [...kap.querySelectorAll(".cetvel__etiket[data-yil]")];
   const seciliEtiket = kap.querySelector(".cetvel__etiket--secili");
   let secili = -1;
 
   /* ---------- Otomatik ilerleme ----------
-     İmleç bir sonraki olaya doğru SURE boyunca yavaşça kayar, arkasında "geçen zaman"
-     çizgisi dolar; işarete varınca olay değişir. Son olaydan sonra başa döner.
-     Fare üzerindeyken, klavyeyle içindeyken, ekranda değilken ya da sekme gizliyken bekler. */
+     Her olay SURE kadar ekranda kalır; sonra mavi çizgi hızla bir sonraki noktaya uzanır
+     ve olay değişir. Son olaydan sonra başa döner (çizgi geri sarılmaz, sıfırdan başlar).
+     Her zaman çalışır; yalnızca bölüm ekranda değilken, sekme gizliyken ve klavyeyle
+     cetvelin içinde gezinilirken bekler. Elle seçimden sonra süre baştan sayılır. */
   const SURE = 8000;
-  const KISA = 520; // elle seçimde imlecin yerine oturma süresi
-  let oynuyor = true; // her zaman otomatik başlar; yalnızca durdur düğmesiyle durur
   const engeller = new Set();
-  let zamanlayici = null, kayiyor = false, kaymaBasi = 0, kalan = SURE, hedefIndeks = 0;
+  let zamanlayici = null;
 
-  const aktif = () => oynuyor && engeller.size === 0;
-
-  function konumla(px, sure = 0) {
-    // sure < 0: hiç geçiş olmadan anında yerleş (sondan başa dönüş)
-    const gecis = sure > 0 ? `transform ${sure}ms linear` : sure < 0 ? "none" : "";
-    imlec.style.transition = gecis;
-    gecen.style.transition = gecis;
-    imlec.style.transform = `translateX(${px - 1}px)`;
-    gecen.style.transform = `scaleX(${(px / genislik).toFixed(4)})`;
-    // anında atlamayı tarayıcıya işlet; yoksa hemen ardından gelen kayma eski konumdan başlar
-    if (sure < 0) void imlec.offsetWidth;
-  }
-
-  function ilerle() {
-    zamanlayici = null;
-    if (!aktif()) return;
-    hedefIndeks = (secili + 1) % olaylar.length;
-    // son olaydan sonra cetvelin sonuna kayar, sonra başa atlar
-    konumla(hedefIndeks !== 0 ? ox(hedefIndeks) : genislik, kalan);
-    kayiyor = true;
-    kaymaBasi = performance.now();
-    zamanlayici = setTimeout(() => {
-      zamanlayici = null; kayiyor = false; kalan = SURE;
-      goster(hedefIndeks, { oto: true });
-    }, kalan);
-  }
-
-  function durdur() {
+  function planla() {
     clearTimeout(zamanlayici); zamanlayici = null;
-    if (!kayiyor) return;
-    kayiyor = false;
-    kalan = Math.max(400, kalan - (performance.now() - kaymaBasi));
-    // imleci ve çizgiyi bulundukları yerde dondur
-    for (const el of [imlec, gecen]) {
-      const anlik = getComputedStyle(el).transform;
-      el.style.transition = "none";
-      el.style.transform = anlik;
-    }
-  }
-
-  function durumGuncelle() {
-    oynatDugme.innerHTML = oynuyor ? DURDUR_IKON : OYNAT_IKON;
-    oynatDugme.setAttribute("aria-label", oynuyor ? "Otomatik ilerlemeyi durdur" : "Otomatik ilerlemeyi başlat");
-    oynatDugme.setAttribute("aria-pressed", String(oynuyor));
-    // Otomatik geçişler ekran okuyucuyu her birkaç saniyede bir konuşturmasın
-    alan.setAttribute("aria-live", aktif() ? "off" : "polite");
-    if (aktif() && !zamanlayici) ilerle();
-    else if (!aktif() && zamanlayici) durdur();
+    if (engeller.size === 0) zamanlayici = setTimeout(() => goster((secili + 1) % n, { oto: true }), SURE);
   }
   const engelle = (ad, varMi) => {
     if (varMi) engeller.add(ad); else engeller.delete(ad);
-    durumGuncelle();
+    // Otomatik geçişler ekran okuyucuyu her birkaç saniyede bir konuşturmasın
+    alan.setAttribute("aria-live", engeller.size === 0 ? "off" : "polite");
+    if (engeller.size === 0) { if (!zamanlayici) planla(); }
+    else { clearTimeout(zamanlayici); zamanlayici = null; }
   };
 
-  function planla(oto) {
-    clearTimeout(zamanlayici); zamanlayici = null; kayiyor = false;
-    if (!oto) kalan = SURE - KISA;
-    if (aktif()) zamanlayici = setTimeout(ilerle, oto ? 0 : KISA);
-  }
-
   function goster(i, { animasyon = true, oto = false } = {}) {
-    if (i < 0 || i >= olaylar.length || i === secili) return;
-    // otomatik döngü sondan başa dönerken geri geri kaymasın, doğrudan başa atlasın
-    const basaDonus = oto && i === 0 && secili === olaylar.length - 1;
+    if (i < 0 || i >= n || i === secili) return;
+    // sondan başa dönüşte çizgi geri geri sarılmasın, anında sıfırlansın
+    const basaDonus = oto && i === 0 && secili === n - 1;
     const yon = i > secili || basaDonus ? 1 : -1;
     secili = i;
     const o = olaylar[i];
-    const yil = String(o.tarih).match(/\d{4}/)[0];
+    const yil = yilOf(o);
     const kaynak = t.kaynak[o.kaynak];
     const kUrl = kaynak && guvenliUrl(kaynak.url);
     alan.innerHTML = `
@@ -196,25 +137,27 @@ export function cetvelCiz(kap, veri) {
         ${kaynak ? `<p class="cetvel__kaynak">Kaynak: ${kUrl ? `<a href="${esc(kUrl)}" rel="noopener">${esc(kaynak.ad)}</a>` : esc(kaynak.ad)}</p>` : ""}
       </div>`;
     if (animasyon && !hareketAz()) {
-      alan.classList.remove("degisti", "geri");
+      alan.classList.remove("degisti", "ters");
       void alan.offsetWidth;
       alan.classList.add("degisti");
-      alan.classList.toggle("geri", yon < 0);
+      alan.classList.toggle("ters", yon < 0);
     }
     isaretDugmeleri.forEach((b, j) => b.setAttribute("aria-current", String(j === i)));
+    yilEtiketleri.forEach((e) => e.classList.toggle("secili", e.dataset.yil === yil));
     const px = ox(i);
-    if (seciliEtiket) { seciliEtiket.textContent = yil; seciliEtiket.style.left = `${px}px`; }
-    konumla(px, basaDonus ? -1 : 0);
-    sayac.textContent = `${i + 1} / ${olaylar.length}`;
+    if (seciliEtiket) { seciliEtiket.textContent = yil; seciliEtiket.style.transform = `translateX(calc(${px}px - 50%))`; }
+    gecen.style.transition = basaDonus || !animasyon ? "none" : "";
+    gecen.style.transform = `scaleX(${(px / genislik).toFixed(4)})`;
+    if (seciliEtiket) seciliEtiket.style.transition = gecen.style.transition;
+    sayac.textContent = `${i + 1} / ${n}`;
     geriOk.disabled = i === 0;
-    ileriOk.disabled = i === olaylar.length - 1;
+    ileriOk.disabled = i === n - 1;
     const hedef = px + olcek.offsetLeft - serit.clientWidth / 2;
-    serit.scrollTo({ left: Math.max(0, hedef), behavior: animasyon && !basaDonus && !hareketAz() ? "smooth" : "instant" });
-    planla(oto);
+    if (serit.scrollWidth > serit.clientWidth) serit.scrollTo({ left: Math.max(0, hedef), behavior: animasyon && !hareketAz() ? "smooth" : "instant" });
+    planla();
   }
 
   kap.addEventListener("click", (e) => {
-    if (e.target.closest(".cetvel__oynat")) { oynuyor = !oynuyor; return durumGuncelle(); }
     const isaret = e.target.closest(".cetvel__isaret");
     if (isaret) return goster(Number(isaret.dataset.i));
     const ok = e.target.closest(".cetvel__ok[data-yon]");
@@ -245,6 +188,9 @@ export function cetvelCiz(kap, veri) {
   alan.addEventListener("pointercancel", () => { baslangic = null; });
   alan.style.touchAction = "pan-y";
 
+  // klavyeyle cetvelde gezinen kişi okurken olay değişmesin
+  kap.addEventListener("focusin", (e) => { if (e.target.matches(":focus-visible")) engelle("klavye", true); });
+  kap.addEventListener("focusout", (e) => { if (!kap.contains(e.relatedTarget)) engelle("klavye", false); });
+
   goster(0, { animasyon: false });
-  durumGuncelle();
 }
