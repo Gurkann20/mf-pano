@@ -1,9 +1,9 @@
 // Tarihçe: ölçüm cetveli. Olaylar ay hassasiyetiyle cetvele yerleşir;
 // seçili olay üstte büyük okunur. Ok tuşları, kaydırma ve dokunma ile gezilir.
 
-import { esc, guvenliUrl } from "./data.js?v=20261119p";
-import { t } from "./i18n.js?v=20261119p";
-import { hareketAz } from "./effects.js?v=20261119p";
+import { esc, guvenliUrl } from "./data.js?v=20261119r";
+import { t } from "./i18n.js?v=20261119r";
+import { hareketAz } from "./effects.js?v=20261119r";
 
 const AYLAR = ["ocak", "şubat", "mart", "nisan", "mayıs", "haziran", "temmuz", "ağustos", "eylül", "ekim", "kasım", "aralık"];
 
@@ -87,6 +87,23 @@ export function cetvelCiz(kap, veri) {
     </div>`;
 
   const alan = kap.querySelector(".cetvel__olay");
+  // Bütün olaylar aynı hücrede üst üste durur: pano en uzun olayın yüksekliğini alır,
+  // olay değişince boyutu oynamaz; olaylar slayt gibi yana kayarak değişir.
+  alan.innerHTML = olaylar.map((o) => {
+    const yil = yilOf(o);
+    const kaynak = t.kaynak[o.kaynak];
+    const kUrl = kaynak && guvenliUrl(kaynak.url);
+    return `<div class="cetvel__slayt" aria-hidden="true" inert>
+      <div class="cetvel__yil" aria-hidden="true">${esc(yil)}</div>
+      <div class="cetvel__metin">
+        ${String(o.tarih).trim() !== yil ? `<p class="cetvel__tarih">${esc(o.tarih)}</p>` : ""}
+        <h3>${esc(o.baslik)}</h3>
+        <p>${bagla(o.metin || "")}</p>
+        ${kaynak ? `<p class="cetvel__kaynak">Kaynak: ${kUrl ? `<a href="${esc(kUrl)}" rel="noopener">${esc(kaynak.ad)}</a>` : esc(kaynak.ad)}</p>` : ""}
+      </div>
+    </div>`;
+  }).join("");
+  const slaytlar = [...alan.children];
   const serit = kap.querySelector(".cetvel__serit");
   const gecen = kap.querySelector(".cetvel__gecen");
   const olcek = kap.querySelector(".cetvel__olcek");
@@ -98,11 +115,11 @@ export function cetvelCiz(kap, veri) {
   let secili = -1;
 
   /* ---------- Otomatik ilerleme ----------
-     Her olay SURE kadar ekranda kalır; sonra mavi çizgi hızla bir sonraki noktaya uzanır
+     Her olay SURE kadar ekranda kalır (slayt sunusu); sonra mavi çizgi hızla bir sonraki noktaya uzanır
      ve olay değişir. Son olaydan sonra başa döner (çizgi geri sarılmaz, sıfırdan başlar).
      Her zaman çalışır; yalnızca bölüm ekranda değilken, sekme gizliyken ve klavyeyle
      cetvelin içinde gezinilirken bekler. Elle seçimden sonra süre baştan sayılır. */
-  const SURE = 8000;
+  const SURE = 2500; // slayt sunusu: her olay 2,5 sn
   const engeller = new Set();
   let zamanlayici = null;
 
@@ -123,25 +140,26 @@ export function cetvelCiz(kap, veri) {
     // sondan başa dönüşte çizgi geri geri sarılmasın, anında sıfırlansın
     const basaDonus = oto && i === 0 && secili === n - 1;
     const yon = i > secili || basaDonus ? 1 : -1;
+    const onceki = secili;
     secili = i;
-    const o = olaylar[i];
-    const yil = yilOf(o);
-    const kaynak = t.kaynak[o.kaynak];
-    const kUrl = kaynak && guvenliUrl(kaynak.url);
-    alan.innerHTML = `
-      <div class="cetvel__yil" aria-hidden="true">${esc(yil)}</div>
-      <div class="cetvel__metin">
-        ${String(o.tarih).trim() !== yil ? `<p class="cetvel__tarih">${esc(o.tarih)}</p>` : ""}
-        <h3>${esc(o.baslik)}</h3>
-        <p>${bagla(o.metin || "")}</p>
-        ${kaynak ? `<p class="cetvel__kaynak">Kaynak: ${kUrl ? `<a href="${esc(kUrl)}" rel="noopener">${esc(kaynak.ad)}</a>` : esc(kaynak.ad)}</p>` : ""}
-      </div>`;
-    if (animasyon && !hareketAz()) {
-      alan.classList.remove("degisti", "ters");
-      void alan.offsetWidth;
-      alan.classList.add("degisti");
-      alan.classList.toggle("ters", yon < 0);
+    const yil = yilOf(olaylar[i]);
+    const yeni = slaytlar[i], eski = slaytlar[onceki];
+    if (eski) {
+      // yeni slayt gideceği yönün tersinden girer, eskisi öbür yana çıkar
+      const kay = animasyon && !hareketAz();
+      yeni.style.transition = "none";
+      yeni.classList.toggle("sol", yon < 0);
+      void yeni.offsetWidth;
+      yeni.style.transition = kay ? "" : "none";
+      eski.style.transition = kay ? "" : "none";
+      eski.classList.remove("aktif");
+      eski.classList.toggle("sol", yon > 0);
+      eski.setAttribute("aria-hidden", "true"); eski.inert = true;
     }
+    else yeni.style.transition = "none"; // ilk açılışta kaymadan görünsün
+    yeni.classList.remove("sol");
+    yeni.classList.add("aktif");
+    yeni.removeAttribute("aria-hidden"); yeni.inert = false;
     isaretDugmeleri.forEach((b, j) => b.setAttribute("aria-current", String(j === i)));
     yilEtiketleri.forEach((e) => e.classList.toggle("secili", e.dataset.yil === yil));
     const px = ox(i);

@@ -381,12 +381,20 @@
    ========================================================= */
 .hikaye .bolum__giris { margin-bottom: clamp(32px, 6vw, 56px); }
 
-.cetvel__olay {
-  display: grid; gap: 8px 48px;
-  min-height: 300px;
-  align-items: start;
+/* olaylar aynı hücrede üst üste: yükseklik en uzun olaya göre sabit, slayt gibi kayar */
+.cetvel__olay { display: grid; overflow: hidden; }
+.cetvel__slayt {
+  grid-area: 1 / 1;
+  display: grid; gap: 8px 48px; align-items: start; align-content: start;
+  transform: translateX(105%); opacity: 0; visibility: hidden;
+  transition: transform .6s var(--yumusak), opacity .6s var(--yumusak), visibility 0s .6s;
 }
-@media (min-width: 860px) { .cetvel__olay { grid-template-columns: auto minmax(0, 1fr); min-height: 260px; } }
+.cetvel__slayt.sol { transform: translateX(-105%); }
+.cetvel__slayt.aktif {
+  transform: none; opacity: 1; visibility: visible;
+  transition: transform .6s var(--yumusak), opacity .6s var(--yumusak), visibility 0s;
+}
+@media (min-width: 860px) { .cetvel__slayt { grid-template-columns: auto minmax(0, 1fr); } }
 .cetvel__yil {
   font-size: clamp(4.2rem, 19vw, 8.5rem);
   font-stretch: var(--genis);
@@ -404,11 +412,6 @@
 .cetvel__metin p { color: var(--yazi-soluk); font-size: 1.05rem; line-height: 1.65; }
 .cetvel__metin p a { color: var(--yazi); text-decoration-color: var(--mavi-acik); }
 .cetvel__kaynak { font-size: .85rem !important; margin: 0; }
-.cetvel__olay.degisti > * { animation: olay-gir .45s var(--yumusak) both; }
-.cetvel__olay.degisti > :nth-child(2) { animation-delay: 50ms; }
-.cetvel__olay.ters > * { animation-name: olay-gir-geri; }
-@keyframes olay-gir { from { opacity: 0; transform: translateX(24px); } }
-@keyframes olay-gir-geri { from { opacity: 0; transform: translateX(-24px); } }
 
 .cetvel__alt { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 28px 0 14px; }
 .cetvel__sayac { color: var(--yazi-soluk); font-variant-numeric: tabular-nums; font-size: .92rem; }

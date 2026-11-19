@@ -138,3 +138,8 @@ python tools/sunucu.py
 ## 2026-11-19 (10): Sade cetvel
 - Sol okta bozulma: geri animasyon sınıfı `geri`, kişi sayfasındaki `.geri` bağlantı stiliyle çakışıyordu (display:inline-flex) → sınıf adı `ters`.
 - Cetvel yeniden: eşit aralıklı noktalar, tek çizgi, çentik/iğne/imleç yok; yıllar yalnızca gerektiği yerde (masaüstü: her yılın ilk olayı, telefon: seçili). Oynat/durdur düğmesi kaldırıldı. Mavi çizgi 8 sn'lik sürünme yerine olay değişince 0,45 sn'de uzanıyor. Sürüm ?v=20261119p.
+
+## 2026-11-19 (11): Tarihçe slayt sunusu
+- Pano olay metnine göre boy değiştiriyordu → bütün olaylar `.cetvel__slayt` olarak aynı grid hücresinde üst üste; yükseklik en uzun olaya göre sabit (telefon 716px, masaüstü 580px; test edildi). Görünmeyen slaytlar `inert` + aria-hidden.
+- Gürkan "1-2 saniyede bir kendi geçen slayt sunusu" istedi → SURE 2500 ms, olaylar yana kayarak (0,6 sn) değişiyor; ileri sağdan, geri soldan. Not: uzun metinler 2,5 sn'de okunmayabilir; gerekirse SURE artırılır (js/timeline.js).
+- Sürüm ?v=20261119r.
