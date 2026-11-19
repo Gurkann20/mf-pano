@@ -147,3 +147,11 @@ python tools/sunucu.py
 ## 2026-11-19 (12): Teknik özet + Swagger
 - docs/TEKNIK-OZET.md: hocaya anlatım için diller, mimari, barındırma, yönetim, gizlilik, test, olası sorular.
 - docs/openapi.yaml + docs/swagger.html: statik JSON uçları (bagiscilar/tarihce/site) ve yönetim panelinin GitHub Contents API çağrıları (GET sha, PUT). Swagger UI 5.17.14 (jsdelivr). "Try it out" denendi: 200.
+
+## 2026-11-19 (13): İŞKUR araştırması işlendi
+- Kaynak: proje klasöründeki "İŞKUR ARAŞTIRMA.docx" (arkadaşın araştırması). *.docx .gitignore'a eklendi.
+- Kaynak sayfalar web-fetch ile kontrol edildi: Ali Yağlı vefat 2024 (Hizmet Gazetesi), Muhsin Özcan vefat 2026 (d20haber), Erhan Boyvat (EMS Makina), Şemsettin Terzioğlu (şirket sitesi), İrfan Yolcular (Ekonomim) doğrulandı. Açılmayan: J-GLOBAL/researchmap (Tano), PAÜ fahri doktora (Zorlu).
+- bagiscilar.json: Ali Yağlı, Ceyhan Saldanlı, Muhsin Özcan, Ahmet Nazif Zorlu, Erhan Boyvat, Şemsettin Terzioğlu, İrfan Yolcular, Nihat Kömürcüoğlu Vakfı, İnceoğlu Makine biyografileri (kendi cümlelerimizle). Hayattakiler ve kaynağı zayıf olanlar yayinla:false.
+- Doğrulanamayanlar siteye konmadı, ozel/notlar.json'a yazıldı (Tano'nun Nihon Üni., Terzioğlu doğum/okul, Saldanlı ELDER, İrfan Yolcular kimlik eşleşmesi, Boyvat'ın sponsorluğu).
+- Hâlâ bilgi yok: Faruk Basmacı, Nalan Devrent, Emirayşe – Ramazan Özen, Mehmet Hilmi Serter.
+- Karar bekleyen: Ali Yağlı ve Ahmet Nazif Zorlu vefat ettiği için yayinla:true yapılabilir (Gürkan/dekanlık).

@@ -514,20 +514,27 @@
       "satir": 5,
       "sutun": 1,
       "ozet": "1976-77 akademi kampanyasının bağışçılarından.",
-      "biyografi": [],
+      "biyografi": [
+        "Kökleri 1944'e uzanıyor: Hacı Ahmet İnceoğlu, Baki Abalıoğlu ve Cafer Sadık Abalıoğlu'nun ortaklığıyla Denizli'de, Eski Çal Yolu üzerinde günde 25 ton öğüten ilk un fabrikası kuruldu.",
+        "1976'da İzmir Karayolu üzerinde günde 150 ton kapasiteli yeni fabrika açıldı. 2006–2007'deki yeniden yapılanmayla ürünler İNCEOĞLUN markasıyla satılmaya başlandı; yenilemelerle kapasite günde 300 tona ulaştı. Şirket bugün Merkezefendi'de un ve tahıl ürünleri üretiyor."
+      ],
       "katki": [
         {
           "yil": "1976-1977",
           "metin": "Akademiyi yaşatma kampanyasına bağış"
         }
       ],
-      "durum": "eksik",
-      "yayinla": true,
+      "durum": "ekip-notu",
+      "yayinla": false,
       "foto": null,
       "kaynaklar": [
         {
           "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
           "url": null
+        },
+        {
+          "ad": "İNCEOĞLUN – LinkedIn",
+          "url": "https://www.linkedin.com/company/inceoglun/"
         }
       ]
     },
@@ -564,11 +571,12 @@
       "unvan": "Elektrik mühendisi, sanayici",
       "yasam": {
         "dogum": "1952",
-        "vefat": null
+        "vefat": "2024"
       },
-      "ozet": "Aydem Enerji'nin kurucu ortağı.",
+      "ozet": "Aydem Holding'in kurucu ortaklarından; Denizli'nin enerji sanayicisi.",
       "biyografi": [
-        "1952'de Denizli'de doğdu, 1976'da İTÜ Elektrik-Elektronik Fakültesi'nden mezun oldu. 1980'de Ceyhan Saldanlı ile Denizli'de Elsan Elektrik'i kurdu; bu şirket Aydem Enerji grubunun ilk adımı oldu."
+        "1952'de Denizli'de doğdu, 1976'da İTÜ Elektrik Fakültesi'ni bitirdi. 1980'de Ceyhan Saldanlı ile birlikte Elsan Elektrik'i kurdu; bu şirket bugünkü Aydem grubunun ilk adımı oldu.",
+        "1995'te Aydem Yenilenebilir Enerji'nin kuruluşunda yer aldı; Aydem Holding'de uzun yıllar yönetim kurulu üyesi ve başkan yardımcısı olarak çalıştı. 2024'te hayatını kaybetti."
       ],
       "katki": [],
       "durum": "dogrulandi",
@@ -582,6 +590,10 @@
         {
           "ad": "Aydem Enerji – Tarihçe",
           "url": "https://www.aydemenerji.com.tr/history"
+        },
+        {
+          "ad": "Hizmet Gazetesi (29 Eylül 2024)",
+          "url": "https://www.hizmetgazetesi.com.tr/duayen-is-insani-ali-yagli-hayatini-kaybetti"
         }
       ]
     },
@@ -598,7 +610,8 @@
       },
       "ozet": "Aydem Holding Yönetim Kurulu Başkanı.",
       "biyografi": [
-        "1954'te Denizli'de doğdu, 1975'te İTÜ Elektrik-Elektronik Fakültesi'nden mezun oldu. Kamuda çalıştıktan sonra 1980'de Elsan Elektrik'in, ardından Tümaş Mermer'in kurucu ortakları arasında yer aldı; 1991'de Aydem ile enerji sektörüne girdi. Aydem Holding Yönetim Kurulu Başkanı."
+        "1954'te Denizli'de doğdu, 1975'te İTÜ Elektrik Fakültesi'nden mezun oldu. Bir süre kamuda çalıştıktan sonra 1980'de Elsan Elektrik'in, ardından Tümaş Mermer'in kurucu ortakları arasında yer aldı.",
+        "1991'de Aydem ile elektrik dağıtım ve perakende alanına girdi, 1995'te Aydem Yenilenebilir Enerji'nin kuruluşunda yer aldı. Bugün Aydem Holding Yönetim Kurulu Başkanı."
       ],
       "katki": [],
       "durum": "dogrulandi",
@@ -624,7 +637,8 @@
       },
       "ozet": "Zorlu Holding'in Yönetim Kurulu Başkanı; Babadağlı sanayici.",
       "biyografi": [
-        "28 Ağustos 1944'te Denizli'nin Babadağ ilçesinde doğdu. Babası Mehmet Zorlu'nun 1953'te Babadağ'da iki dokuma tezgâhıyla başlattığı aile işini, ağabeyi Zeki Zorlu ile birlikte Türkiye'nin önde gelen sanayi gruplarından Zorlu Holding'e dönüştürdü. 2 Kasım 2026'da İstanbul'da vefat etti."
+        "28 Ağustos 1944'te Denizli'nin Babadağ ilçesinde doğdu. Babası Mehmet Zorlu'nun Babadağ'da dokuma tezgâhlarıyla başlattığı aile işini ağabeyi Zeki Zorlu ile birlikte büyüttü.",
+        "1970'te işlerini İstanbul'a taşıdı, 1976'da Korteks'i kurdu, 1990'da şirketleri Zorlu Holding çatısında topladı ve 1994'te Vestel'i bünyesine katarak elektronik ve beyaz eşyaya yöneldi. Grup zamanla enerji, gayrimenkul ve metalurji gibi alanlara da yayıldı. Mehmet Zorlu Vakfı aracılığıyla eğitim ve kültür alanında çalışmalar yürüttü. 2 Kasım 2026'da İstanbul'da vefat etti."
       ],
       "katki": [],
       "durum": "dogrulandi",
@@ -634,6 +648,10 @@
         {
           "ad": "Wikipedia – Ahmet Nazif Zorlu",
           "url": "https://en.wikipedia.org/wiki/Ahmet_Nazif_Zorlu"
+        },
+        {
+          "ad": "PAÜ Fahri Doktora – Ahmet Nazif Zorlu",
+          "url": "https://www.pau.edu.tr/fahridoktora/tr/sayfa/ahmet-nazif-zorlu"
         }
       ]
     },
@@ -643,13 +661,21 @@
       "tur": "kisi",
       "satir": 6,
       "sutun": 2,
-      "ozet": "",
-      "biyografi": [],
+      "ozet": "Terzioğlu İnşaat'ın kurucusu.",
+      "biyografi": [
+        "İnşaat mühendisi. 1978'de temellerini attığı Terzioğlu İnşaat, proje, taahhüt ve konut alanlarında çalışan Denizli'nin köklü inşaat firmalarından biri oldu."
+      ],
       "katki": [],
-      "durum": "eksik",
-      "yayinla": true,
+      "durum": "ekip-notu",
+      "yayinla": false,
       "foto": null,
-      "kaynaklar": []
+      "kaynaklar": [
+        {
+          "ad": "Terzioğlu Mühendislik – Kurumsal",
+          "url": "https://terzioglumuhendislik.com/kurumsal"
+        }
+      ],
+      "unvan": "İnşaat mühendisi"
     },
     {
       "id": "muhsin-ozcan",
@@ -660,7 +686,8 @@
       "unvan": "Sanayici",
       "ozet": "Ardöküm A.Ş. Yönetim Kurulu Başkanı; adını taşıyan imalat merkezinin bağışçısı.",
       "biyografi": [
-        "Denizli'nin köklü sanayi kuruluşlarından Ardöküm Merdane Sanayi A.Ş.'nin Yönetim Kurulu Başkanı."
+        "İş hayatına 1960'ta küçük bir atölyede soğuk demircilikle başladı. 1967'de haddeciliğe, 1987'de Denizli Organize Sanayi Bölgesi'nde dökümcülüğe geçti; kurucusu ve yönetim kurulu başkanı olduğu Ardöküm, Denizli'nin köklü sanayi kuruluşlarından biri oldu.",
+        "2025'te Pamukkale Üniversitesi Makine Mühendisliği Bölümü'ne kendi adını taşıyan talaşlı imalat merkezini kazandırdı. 2026'da hayatını kaybetti."
       ],
       "katki": [
         {
@@ -675,8 +702,16 @@
         {
           "ad": "PAÜ Haber – Ardöküm bağışı (15 Eylül 2025)",
           "url": "https://haber.pau.edu.tr/Haber/pau-adds-a-new-collaboration-to-university-industry-partnerships-meaningful-donation-from-ardokum-as"
+        },
+        {
+          "ad": "D20 Haber (26 Mayıs 2026)",
+          "url": "https://d20haber.com/yasam/sivil-yasam/denizli-is-insani-muhsin-ozcan-vefat-etti"
         }
-      ]
+      ],
+      "yasam": {
+        "dogum": null,
+        "vefat": "2026"
+      }
     },
     {
       "id": "erhan-boyvat",
@@ -684,13 +719,26 @@
       "tur": "kisi",
       "satir": 6,
       "sutun": 4,
-      "ozet": "",
-      "biyografi": [],
+      "ozet": "PAÜ Makine Mühendisliği mezunu; EMS Makina'nın Yönetim Kurulu Başkanı.",
+      "biyografi": [
+        "1975'te Ankara'da doğdu, 1998'de Pamukkale Üniversitesi Makine Mühendisliği Bölümü'nden mezun oldu.",
+        "2001'de Ankara'da evsel atıkların daha verimli taşınması üzerine çalışmaya başladı; atık taşıma treylerleri, çöp aktarma istasyonları ve tıbbi atık tesisleri alanında faaliyet gösteren EMS Makina'yı büyüttü. 2010'da Ankara Sanayi Odası 2. Organize Sanayi Bölgesi'nde fabrikanın temelini attı. EMS Makina Yönetim Kurulu Başkanı."
+      ],
       "katki": [],
-      "durum": "eksik",
-      "yayinla": true,
+      "durum": "dogrulandi",
+      "yayinla": false,
       "foto": null,
-      "kaynaklar": []
+      "kaynaklar": [
+        {
+          "ad": "EMS Makina – Kurumsal",
+          "url": "https://emsmakina.com/tr/kurumsal"
+        }
+      ],
+      "unvan": "Makine mühendisi, sanayici",
+      "yasam": {
+        "dogum": "1975",
+        "vefat": null
+      }
     },
     {
       "id": "nalan-devrent",
@@ -712,13 +760,21 @@
       "tur": "dernek-vakif",
       "satir": 7,
       "sutun": 2,
-      "ozet": "",
-      "biyografi": [],
+      "ozet": "Heykel sanatını ve Denizli'nin kültürel tanıtımını destekleyen vakıf.",
+      "biyografi": [
+        "Nihat Kömürcüoğlu tarafından 2016'da kuruldu. Başta heykel olmak üzere kültür ve sanat çalışmalarını destekliyor, Denizli'nin tarihî ve kültürel zenginliğini tanıtmayı amaçlıyor.",
+        "Düzenlediği Uluslararası Taş Heykel Kolonisi'nde farklı ülkelerden sanatçılar Denizli'de buluşup mermer ve traverten gibi yerel taşlardan eserler üretiyor; sanat öğrencileri de bu üretimi yakından izleme fırsatı buluyor."
+      ],
       "katki": [],
-      "durum": "eksik",
-      "yayinla": true,
+      "durum": "ekip-notu",
+      "yayinla": false,
       "foto": null,
-      "kaynaklar": []
+      "kaynaklar": [
+        {
+          "ad": "Nihat Kömürcüoğlu Kültür Sanat Vakfı",
+          "url": "https://nkvakfi.wixsite.com/"
+        }
+      ]
     },
     {
       "id": "omer-aydan",
@@ -743,6 +799,10 @@
         {
           "ad": "Kitap tanıtımı (CRC Press)",
           "url": "https://abbeys.com.au/book/time-dependency-in-rock-mechanics-and-rock-engineering-9781032097282.do"
+        },
+        {
+          "ad": "IACSIT – Prof. Dr. Ömer Aydan",
+          "url": "https://www.iacsit.org/index.php?m=content&c=index&a=show&catid=47&id=520"
         }
       ]
     },
@@ -788,13 +848,22 @@
       "tur": "kisi",
       "satir": 8,
       "sutun": 2,
-      "ozet": "",
-      "biyografi": [],
+      "ozet": "NİT Örme'nin kurucusu.",
+      "biyografi": [
+        "Ankara Anadolu Teknik Lisesi'nin ardından Hacettepe Üniversitesi Elektrik-Elektronik Mühendisliği'nde okudu. 1985–1995 arasında AK-AL Tekstil, Ören Bayan ve TETAŞ gibi firmalarda yöneticilik yaptı.",
+        "1995'te elektronik düz örme makineleri üreten NİT Örme'yi kurdu."
+      ],
       "katki": [],
-      "durum": "eksik",
-      "yayinla": true,
+      "durum": "ekip-notu",
+      "yayinla": false,
       "foto": null,
-      "kaynaklar": []
+      "kaynaklar": [
+        {
+          "ad": "Ekonomim – Rüştü Bozkurt (9 Eylül 2021)",
+          "url": "https://www.ekonomim.com/kose-yazisi/irfan-yolcularin-hikayesini-nasil-okumaliyiz/633169"
+        }
+      ],
+      "unvan": "Elektrik-elektronik mühendisi, sanayici"
     },
     {
       "id": "mehmet-hilmi-serter",

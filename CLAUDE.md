@@ -203,7 +203,8 @@ Kurallar:
 
 - Biyografiler kendi cümlelerimizle yazılır. Hiçbir siteden metin kopyalanmaz (Abalıoğlu Holding gibi kaynaklar yalnızca bilgi kaynağıdır).
 - Fotoğraf sadece aile/kurum izniyle eklenir.
-- Hayattaki kişilerin (Musa Çelikkol, Ali Yağlı, Ceyhan Saldanlı, Muhsin Özcan vb.) biyografisi kendilerinin onayı olmadan canlıya alınmaz.
+- Hayattaki kişilerin (Musa Çelikkol, Ceyhan Saldanlı, Erhan Boyvat vb.) biyografisi kendilerinin onayı olmadan canlıya alınmaz. (Ali Yağlı 2024'te, Muhsin Özcan 2026'da vefat etti.)
+- Vefat bilgisi yalnızca bir haber/resmî kaynakla doğrulanınca yazılır.
 - Cenaze, sağlık, aile içi olaylar gibi özel ayrıntılar yazılmaz.
 - İç notlar yayınlanan hiçbir dosyada yer almaz: `ozel/notlar.json` (gitignore). `js/data.js` yine de olası bir `notlar` alanını yüklerken siler.
 - Siteye analytics/çerez eklenmez.
@@ -254,5 +255,5 @@ Her adım bitince çalışır durumda commit at.
 - Logolar pau.edu.tr'den alındı. Fakülte logosu yalnızca 113 px PNG; dekanlıktan SVG/yüksek çözünürlüklü hâli istenmeli.
 - Kalıcı adres: PAÜ alt alan adı mı, yönlendirme mi?
 - Dekanlık iletişim bilgisi (alt bilgi ve "Bize ulaşın" için) onaylanmalı.
-- Satır 5–8'deki isimlerin bilgileri (arkadaşın araştırması gelince JSON güncellenecek).
+- Satır 5–8: İŞKUR araştırması (2026-11-19) işlendi. Hâlâ bilgi yok: Faruk Basmacı, Nalan Devrent, Emirayşe – Ramazan Özen, Mehmet Hilmi Serter. Doğrulanacaklar ozel/notlar.json içinde.
 - İngilizce sürüm gerekip gerekmediği.

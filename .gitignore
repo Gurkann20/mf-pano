@@ -15,3 +15,7 @@ desktop.ini
 # Referans için indirilen dosyalar (siteye ait değil)
 paü-mf.htm
 paü.webp
+
+# Word belgeleri (iç araştırma, yayınlanmaz)
+*.docx
+~$*
