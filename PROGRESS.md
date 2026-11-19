@@ -114,3 +114,9 @@ python tools/sunucu.py
 - Son olayda imleç artık durmuyor, cetvelin sonuna kayıyor; sonra başa atlıyor.
 - Test (kare kare ölçüm, telefon + masaüstü): son olayda ileri, başa dönüşte ilk karede başta, sonra hep ileri.
 - Sürüm `?v=20261119h`.
+
+## 2026-11-19 (6): Yayın + telefon düzeni
+- GitHub: https://github.com/Gurkann20/mf-pano (public), Pages açık → https://gurkann20.github.io/mf-pano/ . Commit kimliği yalnızca bu depoda: Gürkan Aktaş / öğrenci e-postası (Gürkan onayladı).
+- QR görselleri masaüstünde: QR-site.png, QR-sunum-demo.png (?demo=1). Geçici adres; kalıcı QR basılmadı.
+- Gürkan iPhone'da "telefon görüntüsü kötü" dedi → ≤600px: ince çerçeve (--cerceve 12px), 96px madalyon, plaka 58px, küçük yazı, 6px aralık. Bir ekrana ~12 satır sığıyor (önce ~7). Sürüm ?v=20261119i.
+- Sonraki: hocanın geri bildirimi; telefondaki görüntüde başka neyi beğenmediğini sor.
