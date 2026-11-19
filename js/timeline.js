@@ -1,9 +1,9 @@
 // Tarihçe: ölçüm cetveli. Olaylar ay hassasiyetiyle cetvele yerleşir;
 // seçili olay üstte büyük okunur. Ok tuşları, kaydırma ve dokunma ile gezilir.
 
-import { esc, guvenliUrl } from "./data.js?v=20261119i";
-import { t } from "./i18n.js?v=20261119i";
-import { hareketAz } from "./effects.js?v=20261119i";
+import { esc, guvenliUrl } from "./data.js?v=20261119j";
+import { t } from "./i18n.js?v=20261119j";
+import { hareketAz } from "./effects.js?v=20261119j";
 
 const DURDUR_IKON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="3.5" height="14" rx="1"/><rect x="14" y="5" width="3.5" height="14" rx="1"/></svg>';
 const OYNAT_IKON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';

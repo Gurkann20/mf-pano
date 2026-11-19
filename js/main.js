@@ -4,12 +4,12 @@
 //   #/kisi/<id>   kişi / kurum sayfası
 //   #/tarihce     ana sayfa → tarihçeye kaydır (eski bağlantılar için)
 
-import { veriYukle, DEMO, esc } from "./data.js?v=20261119i";
-import { panoCiz, plakaBul, iletisimBagla } from "./board.js?v=20261119i";
-import { kisiCiz, metaSifirla } from "./person.js?v=20261119i";
-import { cetvelCiz } from "./timeline.js?v=20261119i";
-import { hareketAz } from "./effects.js?v=20261119i";
-import { t } from "./i18n.js?v=20261119i";
+import { veriYukle, DEMO, esc } from "./data.js?v=20261119j";
+import { panoCiz, plakaBul, iletisimBagla } from "./board.js?v=20261119j";
+import { kisiCiz, metaSifirla } from "./person.js?v=20261119j";
+import { cetvelCiz } from "./timeline.js?v=20261119j";
+import { hareketAz } from "./effects.js?v=20261119j";
+import { t } from "./i18n.js?v=20261119j";
 
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 

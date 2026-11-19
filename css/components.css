@@ -215,12 +215,13 @@
   position: relative; z-index: 1;
   list-style: none; margin: 0; padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* telefonda da gerçek panodaki gibi 4 sütun, plakalar fiziksel yerlerinde */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
 }
+.pano:not(.pano--suzgec) .yuva { grid-row: var(--r); grid-column: var(--c); }
 @media (min-width: 860px) {
-  .pano { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px 22px; }
-  .pano:not(.pano--suzgec) .yuva { grid-row: var(--r); grid-column: var(--c); }
+  .pano { gap: 14px 22px; }
 }
 .yuva[hidden] { display: none; }
 
@@ -344,14 +345,17 @@
 /* Telefon: ince çerçeve, küçük madalyon, sıkı plakalar → bir ekrana daha çok isim sığar */
 @media (max-width: 600px) {
   .pano-cerceve, .kadife-pano { --cerceve: 12px; border-width: 6px; }
+  .pano-cerceve { margin-inline: -8px; }
   .pano-cerceve::before, .kadife-pano::before { inset: 3px; border-width: 7px; filter: none; }
   .pano-cerceve::after { display: none; }
-  .pano-ic { padding: 0 8px 14px; }
+  .pano-ic { padding: 0 6px 12px; }
   .pano-madalyon { width: 96px; margin: 16px auto; }
-  .pano { gap: 6px; }
-  .plaka { min-height: 58px; padding: 7px 6px 6px; box-shadow: inset 0 1px 0 rgba(255,255,255,.9), inset 0 -1px 0 rgba(0,0,0,.25), 0 3px 8px rgba(0,0,0,.5); }
-  .plaka__ad { font-size: .8rem; line-height: 1.15; }
-  .plaka__alt { margin-top: 2px; font-size: .68rem; }
+  .pano { gap: 5px 4px; }
+  /* 4 sütunda dar plakalar: Archivo'nun dar kesimi, gerçek plakalardaki gibi */
+  .plaka { min-height: 50px; padding: 5px 3px 4px; box-shadow: inset 0 1px 0 rgba(255,255,255,.9), inset 0 -1px 0 rgba(0,0,0,.25), 0 2px 5px rgba(0,0,0,.5); }
+  .plaka__ad { font-size: clamp(.56rem, 2.5vw, .72rem); line-height: 1.12; font-stretch: 75%; letter-spacing: 0; hyphens: none; }
+  .plaka__ad .kelime { white-space: normal; }
+  .plaka__alt { margin-top: 1px; font-size: clamp(.5rem, 2.1vw, .6rem); }
 }
 
 /* =========================================================
