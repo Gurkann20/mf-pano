@@ -166,3 +166,6 @@ python tools/sunucu.py
 ## 2026-11-19 (15): Demo modu kaldırıldı, personel bağlantısı
 - Gürkan: sunum normal siteden yapılacak, ayrı link gereksiz → ?demo=1 ve TASLAK etiketi koddan kaldırıldı (ayrıca yayinla:false kayıtları herkese açıyordu).
 - Gürkan: yönetim paneli ayrı link olunca unutulur → sitenin alt bilgisinde küçük "Personel: panoyu düzenle" bağlantısı (yonetim/). Token olmadan panel hiçbir şey değiştiremiyor. Panel depo sahibi/adını adresten kendisi dolduruyor, token tarayıcıda hatırlanıyor (localStorage). Yönetim sayfasına favicon eklendi. Sürüm ?v=20261119s.
+
+## 2026-11-19 (16): Yönetim paneli kilidi
+- Gürkan: "buraya herkes girebilir, güvenli değil gibi" → panel artık kilitli açılıyor (body.kilitli): anahtar yoksa yalnızca "Personel girişi" (anahtar alanı + katlanmış depo bilgisi, adresten dolu). Anahtarsız JSON-indir modu kaldırıldı. 401'de anahtar silinip yeniden kilitleniyor. "Bağlantıyı kes" → "Çıkış yap". Test: telefon + masaüstü, sahte anahtar reddedildi, localStorage'a bir şey yazılmadı.

@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="yonetim.css">
   <script type="module" src="yonetim.js"></script>
 </head>
-<body>
+<body class="kilitli">
   <header class="ust">
     <div>
       <strong>Pano Yönetimi</strong>
@@ -22,6 +22,27 @@
       <a class="dugme ikincil" href="../" target="_blank" rel="noopener">Siteyi aç ↗</a>
     </div>
   </header>
+
+  <!-- ============ GİRİŞ (anahtar yokken yalnızca bu görünür) ============ -->
+  <section class="giris-ekrani" id="giris" aria-labelledby="giris-baslik">
+    <form class="kart dar" id="giris-form" novalidate>
+      <h1 id="giris-baslik">Personel girişi</h1>
+      <p class="soluk">Bu sayfa yalnızca dekanlık personeli içindir. Panoyu düzenlemek için size verilen <strong>erişim anahtarını</strong> girin. Anahtar bu tarayıcıda hatırlanır; bir daha sorulmaz.</p>
+      <label>Erişim anahtarı <input name="token" type="password" class="girdi" autocomplete="off" placeholder="github_pat_…" required></label>
+      <details class="kucuk">
+        <summary>Depo bilgileri</summary>
+        <div class="satir2">
+          <label>Kullanıcı / kurum <input name="sahip" class="girdi"></label>
+          <label>Depo adı <input name="depo" class="girdi"></label>
+        </div>
+      </details>
+      <p class="hata" id="giris-hata" role="alert"></p>
+      <div class="form-alt">
+        <a class="dugme ikincil" href="../">Siteye dön</a>
+        <button type="submit" class="dugme birincil" id="giris-dugme">Giriş yap</button>
+      </div>
+    </form>
+  </section>
 
   <nav class="sekmeler" aria-label="Bölümler">
     <button type="button" class="sekme" aria-pressed="true" data-sekme="pano">Bağışçılar</button>
@@ -178,8 +199,8 @@
           <li><strong>Yayınlamak:</strong> Alttaki çubukta <em>Siteye yayınla</em>’ya basın. Site 1–2 dakika içinde güncellenir. Yayınlamadan sayfayı kapatırsanız değişiklikler kaybolur.</li>
         </ol>
         <h3>İlk kurulum (bir kez)</h3>
-        <p>Yayınlamak için bu bilgisayarın GitHub’a bağlanması gerekir. Proje sorumlusundan bir <strong>erişim anahtarı (token)</strong> alın ve <em>Bağlantı ayarları</em>’na girin. Anahtar yalnızca bu tarayıcıda saklanır; ortak bilgisayarlarda iş bitince <em>Bağlantıyı kes</em>’e basın.</p>
-        <p>Bağlantı yoksa <em>JSON indir</em> ile dosyayı indirip proje sorumlusuna gönderebilirsiniz.</p>
+        <p>Panoyu düzenlemek için proje sorumlusundan bir <strong>erişim anahtarı (token)</strong> alın ve giriş ekranına girin. Anahtar yalnızca bu tarayıcıda saklanır; ortak bilgisayarlarda iş bitince <em>Bağlantı ayarları → Çıkış yap</em>’a basın.</p>
+        <p>Yayınlama hata verirse <em>JSON indir</em> ile dosyayı indirip proje sorumlusuna gönderebilirsiniz.</p>
         <h3>Kurallar</h3>
         <ul>
           <li>Biyografiler kendi cümlelerimizle yazılır; başka siteden metin kopyalanmaz.</li>
@@ -215,7 +236,7 @@
       </div>
       <p class="hata" id="ayar-hata" role="alert"></p>
       <div class="form-alt">
-        <button type="button" class="dugme tehlike" id="baglanti-kes">Bağlantıyı kes</button>
+        <button type="button" class="dugme tehlike" id="baglanti-kes">Çıkış yap</button>
         <button value="iptal" class="dugme ikincil" formnovalidate>Kapat</button>
         <button type="button" class="dugme birincil" id="baglan">Bağlan ve test et</button>
       </div>

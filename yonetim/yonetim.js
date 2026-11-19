@@ -105,20 +105,30 @@ async function dosyaYaz(yol, b64, mesaj) {
 }
 
 /* ---------------- Yükleme ---------------- */
+// Erişim anahtarı yoksa panel kilitli: yalnızca giriş ekranı görünür, form hiç açılmaz.
+function kilitle(kilitli) {
+  document.body.classList.toggle("kilitli", kilitli);
+  if (kilitli) {
+    girisFormDoldur();
+    $("#giris-form").elements.token.focus();
+  }
+}
+
 async function yukle() {
+  if (!bagli()) return kilitle(true);
+  kilitle(false);
   try {
-    if (bagli()) {
-      const [b, s] = await Promise.all([dosyaOku(YOL.bagiscilar), dosyaOku(YOL.site).catch(() => "{}")]);
-      durum.belge = JSON.parse(b);
-      durum.site = JSON.parse(s);
-    } else {
-      const [b, s] = await Promise.all([
-        fetch(`../${YOL.bagiscilar}`, { cache: "no-cache" }).then((r) => r.json()),
-        fetch(`../${YOL.site}`, { cache: "no-cache" }).then((r) => r.json()).catch(() => ({})),
-      ]);
-      durum.belge = b; durum.site = s;
-    }
+    const [b, s] = await Promise.all([dosyaOku(YOL.bagiscilar), dosyaOku(YOL.site).catch(() => "{}")]);
+    durum.belge = JSON.parse(b);
+    durum.site = JSON.parse(s);
   } catch (e) {
+    // anahtar iptal edilmiş ya da süresi dolmuşsa yeniden giriş istensin
+    if (e.durum === 401) {
+      localStorage.removeItem(AYAR_ANAHTARI);
+      kilitle(true);
+      $("#giris-hata").textContent = "Erişim anahtarının süresi dolmuş ya da iptal edilmiş. Proje sorumlusundan yenisini isteyin.";
+      return;
+    }
     bildir(`Veri yüklenemedi: ${e.detay || e.message}`, true);
     return;
   }
@@ -133,7 +143,7 @@ async function yukle() {
 function baglantiGoster() {
   const el = $("#baglanti-durum");
   const a = ayarlar();
-  el.textContent = bagli() ? `Bağlı: ${a.sahip}/${a.depo}` : "Bağlantı yok (yalnızca JSON indir)";
+  el.textContent = bagli() ? `Bağlı: ${a.sahip}/${a.depo}` : "Bağlantı yok";
   el.classList.toggle("var", bagli());
 }
 
@@ -408,43 +418,83 @@ window.addEventListener("beforeunload", (e) => {
   if (durum.degisiklikler.length) { e.preventDefault(); e.returnValue = ""; }
 });
 
-/* ---------------- Ayarlar ---------------- */
+/* ---------------- Giriş ve bağlantı ayarları ---------------- */
+// Depo bilgisi: GitHub Pages'te adresten çıkarılır (gurkann20.github.io/mf-pano → Gurkann20/mf-pano)
+function varsayilanDepo() {
+  const a = ayarlar();
+  const gp = location.hostname.endsWith(".github.io");
+  return {
+    sahip: a.sahip || (gp ? location.hostname.split(".")[0] : "Gurkann20"),
+    depo: a.depo || (gp ? location.pathname.split("/")[1] || "" : "mf-pano"),
+    dal: a.dal || "main",
+  };
+}
+function girisFormDoldur() {
+  const f = $("#giris-form").elements;
+  const v = varsayilanDepo();
+  if (!f.sahip.value) f.sahip.value = v.sahip;
+  if (!f.depo.value) f.depo.value = v.depo;
+}
 function ayarFormDoldur() {
   const a = ayarlar();
   const f = $("#ayar-form").elements;
-  // GitHub Pages'te çalışıyorsa depo bilgisini adresten tahmin et
-  const gp = location.hostname.endsWith(".github.io");
-  f.sahip.value = a.sahip || (gp ? location.hostname.split(".")[0] : "");
-  f.depo.value = a.depo || (gp ? location.pathname.split("/")[1] || "" : "");
-  f.dal.value = a.dal || "main";
+  const v = varsayilanDepo();
+  f.sahip.value = v.sahip;
+  f.depo.value = v.depo;
+  f.dal.value = v.dal;
   f.token.value = a.token || "";
 }
-$("#ayarlar-ac").addEventListener("click", () => { ayarFormDoldur(); $("#ayar-hata").textContent = ""; $("#ayarlar").showModal(); });
-$("#baglan").addEventListener("click", async () => {
-  const f = $("#ayar-form").elements;
-  const yeni = { sahip: f.sahip.value.trim(), depo: f.depo.value.trim(), dal: f.dal.value.trim() || "main", token: f.token.value.trim() };
-  if (!yeni.sahip || !yeni.depo || !yeni.token) { $("#ayar-hata").textContent = "Tüm alanları doldurun."; return; }
-  if (durum.degisiklikler.length && !confirm("Yayınlanmamış değişiklikler var; bağlanınca veri GitHub'dan yeniden yüklenecek ve bu değişiklikler kaybolacak. Devam edilsin mi?")) return;
+
+/** Anahtarı dener; yazma izni varsa kaydeder. Hata metni döner, başarıda null. */
+async function baglan(yeni) {
+  if (!yeni.sahip || !yeni.depo || !yeni.token) return "Erişim anahtarını girin.";
   const eski = localStorage.getItem(AYAR_ANAHTARI);
   localStorage.setItem(AYAR_ANAHTARI, JSON.stringify(yeni));
   try {
     const depo = await gh("");
-    if (!depo.permissions?.push) throw Object.assign(new Error("Bu token ile depoya yazma izni yok."), { detay: "Bu token ile depoya yazma izni yok." });
+    if (!depo.permissions?.push) throw Object.assign(new Error("x"), { detay: "Bu anahtarın panoyu değiştirme izni yok." });
     durum.sha = {};
-    $("#ayarlar").close();
-    await yukle();
-    bildir("Bağlantı kuruldu.");
+    return null;
   } catch (e) {
     if (eski) localStorage.setItem(AYAR_ANAHTARI, eski); else localStorage.removeItem(AYAR_ANAHTARI);
-    $("#ayar-hata").textContent = e.durum === 401 ? "Token geçersiz." : e.durum === 404 ? "Depo bulunamadı (ad ya da token izni yanlış)." : e.detay || e.message;
+    return e.durum === 401 ? "Erişim anahtarı geçersiz."
+      : e.durum === 404 ? "Depo bulunamadı (depo bilgisi ya da anahtarın izni yanlış)."
+      : e.detay || e.message;
   }
+}
+
+$("#giris-form").addEventListener("submit", async (ev) => {
+  ev.preventDefault();
+  const f = ev.target.elements;
+  const dugme = $("#giris-dugme");
+  dugme.disabled = true; dugme.textContent = "Kontrol ediliyor…";
+  const hata = await baglan({ sahip: f.sahip.value.trim(), depo: f.depo.value.trim(), dal: varsayilanDepo().dal, token: f.token.value.trim() });
+  dugme.disabled = false; dugme.textContent = "Giriş yap";
+  $("#giris-hata").textContent = hata || "";
+  if (hata) return;
+  f.token.value = "";
+  await yukle();
+  bildir("Giriş yapıldı.");
+});
+
+$("#ayarlar-ac").addEventListener("click", () => { ayarFormDoldur(); $("#ayar-hata").textContent = ""; $("#ayarlar").showModal(); });
+$("#baglan").addEventListener("click", async () => {
+  const f = $("#ayar-form").elements;
+  if (durum.degisiklikler.length && !confirm("Yayınlanmamış değişiklikler var; bağlanınca veri GitHub'dan yeniden yüklenecek ve bu değişiklikler kaybolacak. Devam edilsin mi?")) return;
+  const hata = await baglan({ sahip: f.sahip.value.trim(), depo: f.depo.value.trim(), dal: f.dal.value.trim() || "main", token: f.token.value.trim() });
+  if (hata) { $("#ayar-hata").textContent = hata; return; }
+  $("#ayarlar").close();
+  await yukle();
+  bildir("Bağlantı kuruldu.");
 });
 $("#baglanti-kes").addEventListener("click", () => {
+  if (durum.degisiklikler.length && !confirm("Yayınlanmamış değişiklikler kaybolacak. Çıkış yapılsın mı?")) return;
   localStorage.removeItem(AYAR_ANAHTARI);
   durum.sha = {};
+  durum.degisiklikler = [];
   $("#ayarlar").close();
-  baglantiGoster();
-  bildir("Bağlantı kesildi; token bu tarayıcıdan silindi.");
+  kilitle(true);
+  bildir("Çıkış yapıldı; anahtar bu tarayıcıdan silindi.");
 });
 
 /* ---------------- Sekmeler ---------------- */

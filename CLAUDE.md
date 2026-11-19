@@ -31,7 +31,7 @@ Ziyaretçilerin neredeyse hepsi QR'ı **telefondan** okutacak. Her şey önce mo
 | Yönlendirme | Hash tabanlı: `#/` ana sayfa, `#/kisi/<id>` kişi sayfası, `#/tarihce`. | GitHub Pages'te sunucu ayarı gerektirmez; ileride her plakaya ayrı QR konabilir. |
 | Animasyon | CSS geçişleri + `IntersectionObserver` + küçük vanilla JS. İhtiyaç olursa yalnızca GSAP (CDN, tek kütüphane). | Telefonda hızlı açılmalı. |
 | Fontlar | Tek aile: **Archivo** (değişken kalınlık + genişlik). Başlıklar geniş kesim (`font-stretch: 125%`) = plaka yazısı; metin normal genişlik. `latin-ext` ile `assets/fonts/` içinde self-host. | Türkçe karakterler (ğ, ş, İ, ı) eksiksiz görünmeli. |
-| İçerik yönetimi | `yonetim/` paneli (sitenin alt bilgisinde "Personel: panoyu düzenle" bağlantısı): personel formla isim ekler/düzenler/kaldırır, "Siteye yayınla" GitHub API ile commit atar (fine-grained token, yalnızca personelin tarayıcısında). Bağlantı yoksa JSON indirilir. | İsim ekleme/çıkarma kod bilmeyen personel tarafından yapılabilmeli. |
+| İçerik yönetimi | `yonetim/` paneli (sitenin alt bilgisinde "Personel: panoyu düzenle" bağlantısı): personel formla isim ekler/düzenler/kaldırır, "Siteye yayınla" GitHub API ile commit atar (fine-grained token, yalnızca personelin tarayıcısında). **Panel kilitli:** anahtar girilmeden yalnızca "Personel girişi" ekranı görünür; anahtar geçersiz/süresi dolmuşsa yeniden kilitlenir. Yayınlama hata verirse giriş yapmış personel JSON indirebilir. | İsim ekleme/çıkarma kod bilmeyen personel tarafından yapılabilmeli. |
 | Dil | Türkçe. Yapı ileride İngilizce eklenebilecek şekilde (metinler `data/` veya tek bir `i18n` nesnesinde). | Prof. Dr. Hisataka Tano gibi yabancı bağışçılar var. |
 
 ## 3. Klasör yapısı

@@ -123,3 +123,19 @@ dialog .kart { border: 0; }
 .bildirim.hata-b { background: #b42318; }
 
 .yardim li { margin-bottom: 8px; }
+
+/* ---------- Kilit: erişim anahtarı yokken yalnızca giriş ekranı ---------- */
+body.kilitli .sekmeler,
+body.kilitli main,
+body.kilitli .yayin-cubugu,
+body.kilitli #baglanti-durum,
+body.kilitli #ayarlar-ac,
+body.kilitli .ust__sag a { display: none !important; }
+body:not(.kilitli) .giris-ekrani { display: none; }
+.giris-ekrani { display: grid; justify-items: center; padding: clamp(24px, 8vh, 80px) 16px; }
+.giris-ekrani .kart { width: 100%; max-width: 460px; display: grid; gap: 14px; }
+.giris-ekrani h1 { margin: 0; font-size: 1.4rem; }
+.giris-ekrani p { margin: 0; }
+.giris-ekrani label { display: grid; gap: 6px; }
+.giris-ekrani details summary { cursor: pointer; }
+.giris-ekrani details .satir2 { margin-top: 10px; }
