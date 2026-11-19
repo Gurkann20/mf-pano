@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Pano Yönetimi · PAÜ MF</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="yonetim.css">
+  <script type="module" src="yonetim.js"></script>
+</head>
+<body>
+  <header class="ust">
+    <div>
+      <strong>Pano Yönetimi</strong>
+      <span class="alt-yazi">PAÜ Mühendislik Fakültesi · Teşekkür Panosu</span>
+    </div>
+    <div class="ust__sag">
+      <span class="baglanti" id="baglanti-durum">Bağlantı yok</span>
+      <button type="button" class="dugme ikincil" id="ayarlar-ac">Bağlantı ayarları</button>
+      <a class="dugme ikincil" href="../" target="_blank" rel="noopener">Siteyi aç ↗</a>
+    </div>
+  </header>
+
+  <nav class="sekmeler" aria-label="Bölümler">
+    <button type="button" class="sekme" aria-pressed="true" data-sekme="pano">Bağışçılar</button>
+    <button type="button" class="sekme" aria-pressed="false" data-sekme="site">İletişim bilgileri</button>
+    <button type="button" class="sekme" aria-pressed="false" data-sekme="yardim">Nasıl kullanılır?</button>
+  </nav>
+
+  <main>
+    <!-- ============ BAĞIŞÇILAR ============ -->
+    <section data-bolum="pano" class="duzen">
+      <div class="sol">
+        <div class="kart">
+          <div class="kart__baslik">
+            <h2>Pano</h2>
+            <span class="soluk" id="pano-ozet"></span>
+          </div>
+          <p class="soluk kucuk">Bir plakaya tıklayıp düzenleyin. Boş (+) bir yere tıklayarak o konuma yeni isim ekleyin.</p>
+          <input type="search" id="liste-ara" placeholder="Listede ara…" class="girdi">
+          <div class="mini-pano" id="mini-pano"></div>
+        </div>
+      </div>
+
+      <div class="sag">
+        <div class="kart" id="bos-durum">
+          <h2>Bir plaka seçin</h2>
+          <p class="soluk">Soldaki panodan düzenlemek istediğiniz ismi seçin ya da boş bir yere tıklayarak yeni bağışçı ekleyin.</p>
+        </div>
+
+        <form class="kart" id="form" hidden novalidate>
+          <div class="kart__baslik">
+            <h2 id="form-baslik">Bağışçı</h2>
+            <button type="button" class="dugme tehlike kucuk" id="sil">Panodan kaldır</button>
+          </div>
+
+          <fieldset>
+            <legend>Plaka</legend>
+            <label>Panodaki ad <span class="zorunlu">*</span>
+              <input name="ad" class="girdi" required maxlength="120" placeholder="Ör. Raşit Özkardeş">
+              <small>Fiziksel panoda yazdığı gibi. Kişilerde soyadı sitede otomatik BÜYÜK harf yazılır.</small>
+            </label>
+            <label>Kısa ad (isteğe bağlı)
+              <input name="kisaAd" class="girdi" maxlength="60" placeholder="Uzun kurum adları için plakadaki kısa hâl">
+            </label>
+            <div class="satir3">
+              <label>Tür
+                <select name="tur" class="girdi">
+                  <option value="kisi">Kişi</option>
+                  <option value="kurum">Kurum / şirket</option>
+                  <option value="dernek-vakif">Dernek / vakıf</option>
+                </select>
+              </label>
+              <label>Satır (1–14)
+                <input name="satir" type="number" min="1" max="14" class="girdi" required>
+              </label>
+              <label>Sütun (1–4)
+                <input name="sutun" type="number" min="1" max="4" class="girdi" required>
+              </label>
+            </div>
+            <p class="kucuk soluk">Bağlantı kimliği: <code id="kimlik">–</code> <span id="kimlik-not"></span></p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Fakülteye katkısı</legend>
+            <div id="katki-liste" class="tekrar"></div>
+            <button type="button" class="dugme ikincil kucuk" data-ekle="katki">+ Katkı ekle</button>
+          </fieldset>
+
+          <fieldset>
+            <legend>Hakkında</legend>
+            <div class="satir3">
+              <label>Unvan / meslek
+                <input name="unvan" class="girdi" maxlength="80" placeholder="Ör. Sanayici">
+              </label>
+              <label>Doğum yılı
+                <input name="dogum" class="girdi" inputmode="numeric" maxlength="4" placeholder="Ör. 1920">
+              </label>
+              <label>Vefat yılı
+                <input name="vefat" class="girdi" inputmode="numeric" maxlength="4" placeholder="Hayattaysa boş">
+              </label>
+            </div>
+            <label>Tek satır özet
+              <input name="ozet" class="girdi" maxlength="160" placeholder="Paylaşım önizlemesinde ve sayfanın üstünde görünür">
+            </label>
+            <label>Biyografi
+              <textarea name="biyografi" class="girdi" rows="8" placeholder="Paragrafları boş bir satırla ayırın. Kendi cümlelerimizle yazın, başka siteden kopyalamayın."></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Kaynaklar</legend>
+            <div id="kaynak-liste" class="tekrar"></div>
+            <button type="button" class="dugme ikincil kucuk" data-ekle="kaynak">+ Kaynak ekle</button>
+          </fieldset>
+
+          <fieldset>
+            <legend>Fotoğraf</legend>
+            <div class="foto-alan">
+              <div class="foto-onizleme" id="foto-onizleme">–</div>
+              <div>
+                <label class="onay"><input type="checkbox" id="foto-izin"> Aile / kurumdan fotoğraf izni alındı</label>
+                <input type="file" id="foto-dosya" accept="image/*" disabled>
+                <button type="button" class="dugme ikincil kucuk" id="foto-kaldir" hidden>Fotoğrafı kaldır</button>
+                <small>İnternetten bulunan fotoğraf eklemeyin. Fotoğraf otomatik küçültülür (WebP).</small>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Yayın</legend>
+            <label>Araştırma durumu
+              <select name="durum" class="girdi">
+                <option value="dogrulandi">Doğrulandı (belge / resmi kaynak var)</option>
+                <option value="ekip-notu">Kaynak bekleniyor</option>
+                <option value="eksik">Bilgi eksik</option>
+              </select>
+            </label>
+            <label class="onay"><input type="checkbox" name="yayinla"> Biyografiyi canlı sitede göster</label>
+            <small>Hayattaki kişilerin biyografisi kendi onayları olmadan açılmaz. Kapalıyken sitede yalnızca ad ve katkı görünür; <code>?demo=1</code> ile hepsi görünür.</small>
+          </fieldset>
+
+          <div class="form-alt">
+            <span class="hata" id="form-hata" role="alert"></span>
+            <button type="button" class="dugme ikincil" id="vazgec">Vazgeç</button>
+            <button type="submit" class="dugme birincil">Değişikliği uygula</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ SİTE / İLETİŞİM ============ -->
+    <section data-bolum="site" hidden>
+      <form class="kart dar" id="site-form">
+        <h2>İletişim bilgileri</h2>
+        <p class="soluk">“Fakülteye katkı sunun” butonuna basınca açılan pencerede görünür.</p>
+        <label>Başlık <input name="baslik" class="girdi"></label>
+        <label>Açıklama <textarea name="aciklama" class="girdi" rows="3"></textarea></label>
+        <div class="satir2">
+          <label>Telefon <input name="telefon" class="girdi"></label>
+          <label>E-posta <input name="eposta" type="email" class="girdi"></label>
+        </div>
+        <label>Adres <input name="adres" class="girdi"></label>
+        <div class="form-alt"><button type="submit" class="dugme birincil">Değişikliği uygula</button></div>
+      </form>
+    </section>
+
+    <!-- ============ YARDIM ============ -->
+    <section data-bolum="yardim" hidden>
+      <div class="kart dar yardim">
+        <h2>Nasıl kullanılır?</h2>
+        <ol>
+          <li><strong>İsim eklemek:</strong> “Bağışçılar” sekmesinde panodaki boş (+) yere tıklayın, formu doldurun, <em>Değişikliği uygula</em>’ya basın.</li>
+          <li><strong>İsim düzenlemek:</strong> Plakaya tıklayın, değiştirin, <em>Değişikliği uygula</em>.</li>
+          <li><strong>İsim kaldırmak:</strong> Plakayı seçip <em>Panodan kaldır</em>.</li>
+          <li><strong>Yayınlamak:</strong> Alttaki çubukta <em>Siteye yayınla</em>’ya basın. Site 1–2 dakika içinde güncellenir. Yayınlamadan sayfayı kapatırsanız değişiklikler kaybolur.</li>
+        </ol>
+        <h3>İlk kurulum (bir kez)</h3>
+        <p>Yayınlamak için bu bilgisayarın GitHub’a bağlanması gerekir. Proje sorumlusundan bir <strong>erişim anahtarı (token)</strong> alın ve <em>Bağlantı ayarları</em>’na girin. Anahtar yalnızca bu tarayıcıda saklanır; ortak bilgisayarlarda iş bitince <em>Bağlantıyı kes</em>’e basın.</p>
+        <p>Bağlantı yoksa <em>JSON indir</em> ile dosyayı indirip proje sorumlusuna gönderebilirsiniz.</p>
+        <h3>Kurallar</h3>
+        <ul>
+          <li>Biyografiler kendi cümlelerimizle yazılır; başka siteden metin kopyalanmaz.</li>
+          <li>Fotoğraf yalnızca aile/kurum izniyle eklenir.</li>
+          <li>Cenaze, sağlık, aile içi olaylar gibi özel ayrıntılar yazılmaz.</li>
+          <li>İç notlar buraya yazılmaz: bu dosyalar herkese açıktır.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Alt çubuk -->
+  <div class="yayin-cubugu" id="yayin-cubugu">
+    <span id="degisiklik-yazi">Değişiklik yok</span>
+    <div>
+      <button type="button" class="dugme ikincil" id="json-indir">JSON indir</button>
+      <button type="button" class="dugme birincil" id="yayinla" disabled>Siteye yayınla</button>
+    </div>
+  </div>
+
+  <!-- Bağlantı ayarları -->
+  <dialog id="ayarlar">
+    <form method="dialog" class="kart" id="ayar-form">
+      <h2>GitHub bağlantısı</h2>
+      <p class="soluk kucuk">Sitenin kodunun bulunduğu depo. Token, yalnızca bu depoya “Contents: Read and write” izni olan <em>fine-grained</em> bir anahtar olmalı.</p>
+      <div class="satir2">
+        <label>Kullanıcı / kurum <input name="sahip" class="girdi" placeholder="ör. pau-mf" required></label>
+        <label>Depo adı <input name="depo" class="girdi" placeholder="ör. tesekkur-panosu" required></label>
+      </div>
+      <div class="satir2">
+        <label>Dal <input name="dal" class="girdi" value="main"></label>
+        <label>Token <input name="token" type="password" class="girdi" autocomplete="off" placeholder="github_pat_…"></label>
+      </div>
+      <p class="hata" id="ayar-hata" role="alert"></p>
+      <div class="form-alt">
+        <button type="button" class="dugme tehlike" id="baglanti-kes">Bağlantıyı kes</button>
+        <button value="iptal" class="dugme ikincil" formnovalidate>Kapat</button>
+        <button type="button" class="dugme birincil" id="baglan">Bağlan ve test et</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="bildirim" id="bildirim" role="status" aria-live="polite"></div>
+</body>
+</html>

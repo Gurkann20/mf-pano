@@ -1,0 +1,17 @@
+# İç notlar: depo herkese açık olduğu için asla yüklenmez
+ozel/
+
+# Orijinal teslim paketi (veri data/ içine taşındı)
+pau-bagiscilar.zip
+
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+
+# Araştırma belgeleri (iç kullanım, yayınlanmaz)
+*.pdf
+
+# Referans için indirilen dosyalar (siteye ait değil)
+paü-mf.htm
+paü.webp

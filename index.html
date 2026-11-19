@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="tr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Teşekkür Panosu · PAÜ Mühendislik Fakültesi</title>
+  <meta name="description" content="Pamukkale Üniversitesi Mühendislik Fakültesi'nin kuruluşuna ve gelişimine katkı sunan kurum ve kişiler.">
+  <meta name="theme-color" content="#3b1f17">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="PAÜ Mühendislik Fakültesi">
+  <meta property="og:title" content="Teşekkür Panosu · PAÜ Mühendislik Fakültesi">
+  <meta property="og:description" content="Fakültemizin kuruluşuna ve gelişimine katkı sunan kurum ve kişiler.">
+  <meta property="og:image" content="assets/logo/muhendislik-logo.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="assets/logo/muhendislik-logo.webp" type="image/webp">
+  <link rel="preload" href="assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/archivo-latin-ext-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css?v=20261119h">
+  <link rel="stylesheet" href="css/base.css?v=20261119h">
+  <link rel="stylesheet" href="css/components.css?v=20261119h">
+  <script>document.documentElement.className = "js";</script>
+  <script type="module" src="js/main.js?v=20261119h"></script>
+</head>
+<body>
+  <a class="atla" href="#/pano">Panoya geç</a>
+
+
+  <header class="ust">
+    <div class="kap ust__ic">
+      <a class="logolar" href="#/" aria-label="Ana sayfa">
+        <span class="logo-yuvasi">
+          <img src="assets/logo/pau-logo.svg" alt="Pamukkale Üniversitesi logosu" width="80" height="80"
+               onerror="this.outerHTML='&lt;span class=&quot;logo-yer-tutucu&quot;&gt;PAÜ&lt;/span&gt;'">
+        </span>
+        <span class="logo-yuvasi">
+          <img src="assets/logo/muhendislik-logo.webp" alt="Mühendislik Fakültesi logosu" width="80" height="80"
+               onerror="this.outerHTML='&lt;span class=&quot;logo-yer-tutucu&quot;&gt;MF&lt;/span&gt;'">
+        </span>
+        <span class="logolar__yazi"><strong>Pamukkale Üniversitesi</strong>Mühendislik Fakültesi</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- ================= ANA SAYFA ================= -->
+    <div data-gorunum="ana" id="gorunum-ana">
+      <!-- Pano: sayfa doğrudan bununla açılır -->
+      <section class="giris" id="pano-bolum" aria-labelledby="giris-baslik">
+        <div class="kap giris__ic">
+          <div class="amblemler">
+            <span class="amblem">
+              <img src="assets/logo/pau-logo.svg" alt="Pamukkale Üniversitesi logosu" width="220" height="220"
+                   onerror="this.outerHTML='&lt;span class=&quot;logo-yer-tutucu&quot;&gt;PAMUKKALE&lt;br&gt;ÜNİVERSİTESİ&lt;/span&gt;'">
+            </span>
+            <span class="amblem">
+              <img src="assets/logo/muhendislik-logo.webp" alt="Mühendislik Fakültesi logosu" width="220" height="220"
+                   onerror="this.outerHTML='&lt;span class=&quot;logo-yer-tutucu&quot;&gt;MÜHENDİSLİK&lt;br&gt;FAKÜLTESİ&lt;/span&gt;'">
+            </span>
+          </div>
+          <p class="giris__kurum">Pamukkale Üniversitesi<br>Mühendislik Fakültesi</p>
+          <h1 id="giris-baslik">Teşekkür Panosu</h1>
+          <p class="giris__alt">Fakültemizin kuruluşuna ve gelişimine katkı sunan kurum ve kişiler. Bir isme dokunarak hikâyesini okuyabilirsiniz.</p>
+        </div>
+
+        <div class="kap">
+          <div class="pano-kontrol">
+            <div class="sekmeler" role="group" aria-label="Türe göre süz" id="sekmeler"></div>
+            <div class="ara" role="search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <label class="sr" for="ara">Panoda isim ara</label>
+              <input id="ara" type="search" placeholder="İsim ara…" autocomplete="off" spellcheck="false" enterkeyhint="search">
+              <button class="ara__temizle" type="button" hidden aria-label="Aramayı temizle">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+              </button>
+            </div>
+          </div>
+          <p class="sonuc-bilgi" id="sonuc-bilgi" aria-live="polite"></p>
+        </div>
+
+        <!-- Pano, gerçeğindeki gibi tuğla duvarda -->
+        <div class="duvar">
+        <div class="kap">
+          <div class="pano-cerceve" id="pano-cerceve">
+            <div class="pano-ic">
+              <div class="pano-madalyon">
+                <img src="assets/logo/muhendislik-logo.webp" alt="Mühendislik Fakültesi logosu" width="160" height="160"
+                     onerror="this.outerHTML='&lt;span class=&quot;logo-yer-tutucu&quot;&gt;PAMUKKALE ÜNİVERSİTESİ&lt;br&gt;MÜHENDİSLİK FAKÜLTESİ&lt;/span&gt;'">
+              </div>
+              <ul class="pano" id="pano" aria-label="Bağışçı plakaları">
+                <li class="yukleniyor">Plakalar yükleniyor…</li>
+              </ul>
+              <p class="bos-sonuc" id="bos-sonuc" hidden></p>
+              <div class="plaka pano-alt-plaka" aria-hidden="true"><span class="plaka__ad">KATKILARINIZDAN DOLAYI TEŞEKKÜR EDERİZ.</span></div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- Tarihçe: ölçüm cetveli -->
+      <section class="bolum hikaye" id="hikaye" aria-labelledby="hikaye-baslik">
+        <div class="kap">
+          <h2 class="bolum__baslik" id="hikaye-baslik">Fakültenin hikâyesi</h2>
+          <p class="bolum__giris">1970'teki ilk girişimden Pamukkale Üniversitesi'ne kadar.</p>
+          <div class="kadife-pano"><div class="kadife-pano__ic"><div class="cetvel" id="cetvel"></div></div></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= KİŞİ SAYFASI ================= -->
+    <div data-gorunum="kisi" id="gorunum-kisi" hidden></div>
+
+  </main>
+
+  <footer class="alt">
+    <div class="kap alt__ic">
+      <div>
+        <h2>Pamukkale Üniversitesi Mühendislik Fakültesi</h2>
+        <p data-adres>Kınıklı Kampüsü, Pamukkale / Denizli</p>
+        <p>Son güncelleme: <time data-son-guncelleme>–</time></p>
+      </div>
+      <div>
+        <h2>Dekanlık</h2>
+        <p data-iletisim-satirlari></p>
+      </div>
+      <div>
+        <h2>Bağlantılar</h2>
+        <p><a href="https://www.pau.edu.tr/mf" rel="noopener">Mühendislik Fakültesi</a></p>
+        <p><a href="https://www.pau.edu.tr" rel="noopener">pau.edu.tr</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- İletişim penceresi (kişi sayfasındaki "Bize ulaşın") -->
+  <dialog class="pencere" id="iletisim-pencere" aria-labelledby="iletisim-baslik">
+    <div class="pencere__ic">
+      <form method="dialog">
+        <button class="pencere__kapat" aria-label="Kapat">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </form>
+      <h2 id="iletisim-baslik">Mühendislik Fakültesi Dekanlığı</h2>
+      <p data-iletisim-aciklama></p>
+      <ul class="iletisim-liste" id="iletisim-liste"></ul>
+    </div>
+  </dialog>
+
+  <noscript><p style="padding:16px;text-align:center">Panoyu görmek için tarayıcınızda JavaScript'i açın.</p></noscript>
+</body>
+</html>

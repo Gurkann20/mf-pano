@@ -1,0 +1,814 @@
+{
+  "_aciklama": {
+    "pano": "Panoda 4 sütun x 14 satır = 56 plaka yeri var. Boş plaka sayısı site tarafından hesaplanır. satir/sutun fiziksel panodaki yerdir (1’den başlar).",
+    "durum": "dogrulandi = belge veya resmi web kaynağıyla doğrulandı | ekip-notu = içerik var ama kaynak linki bekleniyor | eksik = biyografi bilgisi yok",
+    "yayinla": "false olan kayıtların biyografisi canlı sitede gösterilmez; yalnızca adı ve fakülteye katkısı görünür. Demo modunda (?demo=1) hepsi görünür.",
+    "foto": "null ise baş harflerden üretilmiş monogram gösterilir. Fotoğraf yalnızca aile/kurum izniyle eklenir.",
+    "kurallar": "Biyografiler kendi cümlelerimizle yazıldı; hiçbir kaynaktan metin kopyalanmaz. İç notlar bu dosyada TUTULMAZ (depo herkese açık): ozel/notlar.json içindedir ve git’e girmez."
+  },
+  "bagiscilar": [
+    {
+      "id": "yaptirma-ve-yardim-dernegi",
+      "ad": "Devlet Mimarlık ve Mühendislik Yüksekokulu Yaptırma ve Yardım Derneği",
+      "kisaAd": "Yaptırma ve Yardım Derneği",
+      "tur": "dernek-vakif",
+      "satir": 1,
+      "sutun": 1,
+      "ozet": "1971'de, Denizli'ye bir mühendislik okulu kazandırmak için kurulan ilk dernek.",
+      "biyografi": [
+        "4 Şubat 1971'de Vali Münir Güney başkanlığında, İl Genel Meclisi salonunda toplanan Denizli'nin ileri gelenleri tarafından kuruldu. Amacı, şehre bir devlet mimarlık ve mühendislik yüksekokulu kazandırmak için hazırlıkları yürütmekti.",
+        "Dernek her pazartesi valinin başkanlığında toplandı. İlk idare heyetinde Başkan İzzet Ergi, İkinci Başkan Atilla Sayıner, Genel Sekreter Yüksel Kasıkçı, Muhasip Fuat Dağdeviren, Veznedar Raşit Özkardeş ile üyeler Burhan Saraçoğlu ve Münir Kuyumcu yer aldı."
+      ],
+      "katki": [
+        {
+          "yil": "1971",
+          "metin": "Fakülteye giden yolu başlatan dernek"
+        }
+      ],
+      "durum": "dogrulandi",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Cafer Sadık Abalıoğlu Eğitim ve Kültür Vakfı Bülteni, Sayı 63 (Aralık 2021)",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "yaptirma-ve-yasatma-dernegi",
+      "ad": "Yüksekokul Yaptırma ve Yaşatma Derneği",
+      "kisaAd": "Yaptırma ve Yaşatma Derneği",
+      "tur": "dernek-vakif",
+      "satir": 1,
+      "sutun": 2,
+      "ozet": "Kampanyalarıyla akademinin kurulmasını ve yaşamasını sağlayan dernek.",
+      "biyografi": [
+        "Şubat 1974'te 610.000 liralık bütçe onaylayarak yeni bir yardım kampanyası başlattı. 20 Şubat 1976'daki toplantısında akademiye yönelik çalışmaları hızlandırma kararı aldı; 25 Mayıs 1976'da Denizli Devlet Mimarlık ve Mühendislik Akademisi kuruldu.",
+        "Aralık 1976'da, önceki okulda yaşanan sorunların akademide yaşanmaması için yeni bir kampanya açtı; 15 Ocak 1977'ye kadar 55.375 lira toplandı."
+      ],
+      "katki": [
+        {
+          "yil": "1974",
+          "metin": "610.000 liralık bütçe ve yardım kampanyası"
+        },
+        {
+          "yil": "1976-1977",
+          "metin": "Akademi için 55.375 lira toplayan kampanya"
+        }
+      ],
+      "durum": "dogrulandi",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "akademi-koruma-ve-yasatma-dernegi",
+      "ad": "Denizli Devlet Mühendislik ve Mimarlık Akademisi Koruma ve Yaşatma Derneği",
+      "kisaAd": "Akademi Koruma ve Yaşatma Derneği",
+      "tur": "dernek-vakif",
+      "satir": 1,
+      "sutun": 3,
+      "ozet": "Akademi kurulduktan sonra onu korumak ve büyütmek için yeniden örgütlenen dernek.",
+      "biyografi": [
+        "Ana tüzüğü 10 Mart 1977'de yayımlandı. Akademinin kurulmasıyla eski Yaptırma ve Yaşatma Derneği'nin yeniden düzenlenmesinden doğdu.",
+        "Kurucu üyeleri Akademi Başkanı Doç. Dr. Suat Çakmak, İzzet Ergi, Raşit Özkardeş, Yüksel Kasıkçı, Burhan Saraçoğlu, Necdet Güzelaydın, Nezahat Özünlü, İsmail Samanhoğlu, Ali Rıza Dalkara, Musa Kazım Manaşır ve Ramazan Sözgen'di. Bu dönemde akademi, 1978'de satın alınan Çamlık Koleji binasına taşındı."
+      ],
+      "katki": [
+        {
+          "yil": "1977",
+          "metin": "Akademiyi koruma ve yaşatma çalışmaları"
+        }
+      ],
+      "durum": "dogrulandi",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "denizli-yuksekogretim-vakfi",
+      "ad": "Denizli Yükseköğretim Vakfı",
+      "kisaAd": "Denizli Yükseköğretim Vakfı",
+      "tur": "dernek-vakif",
+      "satir": 1,
+      "sutun": 4,
+      "ozet": "1987'den beri Denizli'de yükseköğretim için çalışan, okulun şehirde kalmasını sağlayan vakıf.",
+      "biyografi": [
+        "22 Mayıs 1987'de Vali Necati Bilican başkanlığında, belediye başkanı ve Denizlili hayırsever iş insanlarınca kuruldu. Amacı üniversite için lobi, bağış ve kampüs yapım çalışmalarını organize etmekti.",
+        "42 kurucu üyesi arasında Vali Necati Bilican, Vali Yardımcısı Orhan Aykan, Belediye Başkanı Ziya Tıkıroğlu, Fakülte Dekanı Mustafa Demirsoy, Ticaret Odası Başkanı M. Haluk Müftüler, Sanayi Odası Başkanı M. Feridun Alpat ile Cafer Sadık Abalıoğlu ve Raşit Özkardeş vardı.",
+        "1988'de okulun İzmir'e taşınmaması için akademiye nakdi bağışta bulundu. Bugün de Pamukkale Üniversitesi'nde okuyan, başarılı ve desteğe ihtiyacı olan öğrencilere karşılıksız burs veriyor."
+      ],
+      "katki": [
+        {
+          "yil": "1987",
+          "metin": "Üniversite için lobi, bağış ve kampüs çalışmalarını örgütlemek üzere kuruldu"
+        },
+        {
+          "yil": "1988",
+          "metin": "Okulun İzmir'e taşınmaması için nakdi bağış"
+        },
+        {
+          "yil": "Bugün",
+          "metin": "PAÜ öğrencilerine burs"
+        }
+      ],
+      "durum": "dogrulandi",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
+          "url": null
+        },
+        {
+          "ad": "M. Ensar Yeşilyurt, Denizli Yüksek Öğretim Vakfı'nın PAÜ'nün Kuruluşuna Katkıları (PAÜ Yayınları, 2022)",
+          "url": "https://gcris.pau.edu.tr/handle/11499/39081"
+        }
+      ]
+    },
+    {
+      "id": "denizli-valiligi",
+      "ad": "Denizli Valiliği",
+      "kisaAd": "Denizli Valiliği",
+      "tur": "kurum",
+      "satir": 2,
+      "sutun": 1,
+      "ozet": "Sürecin her aşamasında öncülük eden valiler.",
+      "biyografi": [
+        "1971'de ilk dernek Vali Münir Güney başkanlığında kuruldu ve haftalık toplantıları onun başkanlığında yapıldı. Ocak 1976'da akademinin açılabileceği valiliğe bildirildi.",
+        "1987'de Denizli Yükseköğretim Vakfı, Vali Necati Bilican başkanlığında kuruldu; Vali Yardımcısı Orhan Aykan da kurucu üyeler arasındaydı."
+      ],
+      "katki": [
+        {
+          "yil": "1971",
+          "metin": "Vali Münir Güney: ilk derneğin kurucu başkanı"
+        },
+        {
+          "yil": "1976",
+          "metin": "Akademinin geçici binada açılabileceği bildirimi valiliğe yapıldı"
+        },
+        {
+          "yil": "1987",
+          "metin": "Vali Necati Bilican: Yükseköğretim Vakfı'nın kurucu başkanı"
+        }
+      ],
+      "durum": "dogrulandi",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "denizli-belediyesi",
+      "ad": "Denizli Belediyesi",
+      "kisaAd": "Denizli Belediyesi",
+      "tur": "kurum",
+      "satir": 2,
+      "sutun": 2,
+      "ozet": "1974 kampanyasının en büyük bağışçısı.",
+      "biyografi": [
+        "1974 yardım kampanyasında 95 bin liralık taahhüdüyle en büyük bağışı yaptı; bunun 25 bin lirası ödendi. 1987'de Belediye Başkanı Ziya Tıkıroğlu, Denizli Yükseköğretim Vakfı'nın kurucu üyeleri arasında yer aldı."
+      ],
+      "katki": [
+        {
+          "yil": "1974",
+          "metin": "95.000 lira bağış taahhüdü (kampanyanın en büyüğü)"
+        }
+      ],
+      "durum": "dogrulandi",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "cafer-sadik-abalioglu",
+      "ad": "Cafer Sadık Abalıoğlu",
+      "tur": "kisi",
+      "satir": 2,
+      "sutun": 3,
+      "unvan": "Sanayici",
+      "yasam": {
+        "dogum": "1920",
+        "vefat": "1994"
+      },
+      "ozet": "Abalıoğlu Holding'in kurucusu; okullar yaptırıp bağışlayan sanayici.",
+      "biyografi": [
+        "1920'de Denizli'de doğdu. Babasının 1941'de vefatıyla üniversiteyi bırakıp tabaklıkla iş hayatına girdi; ardından un ve pamuk çırçırı işlerine yöneldi. 1944'te Zaferiye Hanım'la evlendi ve beş çocuğu oldu.",
+        "1966'da oğulları Ali ve İsmet Abalıoğlu ile kurduğu şirket; Dentaş (1975), Er-Bakır (1984) ve Abalıoğlu Tekstil (1991) yatırımlarıyla büyüyerek Abalıoğlu Holding'in temeli oldu.",
+        "Cafer Sadık Abalıoğlu, Zaferiye Abalıoğlu ve Dentaş ilkokullarını yaptırıp Milli Eğitim'e bağışladı. 5 Eylül 1994'te vefat etti. Ardından ailesi ve grup şirketleri Er-Bakır Fen Lisesi'ni, 1999'da Cafer Sadık Abalıoğlu Eğitim ve Kültür Vakfı'nı ve 2017'de Zaferiye Abalıoğlu Bilim ve Sanat Merkezi'ni kurarak bu geleneği sürdürdü."
+      ],
+      "katki": [
+        {
+          "yil": "1974",
+          "metin": "1974 kampanyasına 11.000 lira bağış (dönemin yüksek bağışlarından)"
+        },
+        {
+          "yil": "1987",
+          "metin": "Denizli Yükseköğretim Vakfı kurucu üyesi"
+        }
+      ],
+      "durum": "dogrulandi",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Abalıoğlu Holding – Kurucumuz",
+          "url": "https://abalioglu.com.tr/Corporate.aspx?Id=1&hl=EN"
+        },
+        {
+          "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "tahsin-cem",
+      "ad": "Tahsin Cem",
+      "tur": "kisi",
+      "satir": 2,
+      "sutun": 4,
+      "ozet": "1974 kampanyasının bağışçılarından.",
+      "biyografi": [],
+      "katki": [
+        {
+          "yil": "1974",
+          "metin": "Okul yaptırma kampanyasına bağış"
+        }
+      ],
+      "durum": "eksik",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "ari-kiremit-fabrikasi",
+      "ad": "Arı Kiremit Fabrikası",
+      "tur": "kurum",
+      "satir": 3,
+      "sutun": 1,
+      "ozet": "Denizli'nin ilk kiremit-tuğla fabrikası; 1974 kampanyasının bağışçısı.",
+      "biyografi": [
+        "1967'de Baki Uslu, İzzet Savun, Saadettin Kıbrıslıoğlu, Ahmet Baban ve Mehmet Uslu tarafından Eskihisar'da kuruldu. Denizli'nin ilk sermaye şirketi ve ilk kiremit-tuğla fabrikası olarak anılır; sonraki yıllarda ikinci kuşaktan Ali Uslu ve İbrahim Savun tarafından yönetildi.",
+        "Fabrikanın eski yerleşkesi bugün \"eski Arı Kiremit Fabrikası\" olarak anılıyor ve işyerlerine bölünmüş durumda."
+      ],
+      "katki": [
+        {
+          "yil": "1974",
+          "metin": "Okul yaptırma kampanyasına bağış"
+        }
+      ],
+      "durum": "ekip-notu",
+      "yayinla": false,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Denizli Haber arşivi – 41. yıl haberi",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "orhan-koru",
+      "ad": "Orhan Koru",
+      "tur": "kisi",
+      "satir": 3,
+      "sutun": 2,
+      "ozet": "1974 kampanyasının bağışçılarından.",
+      "biyografi": [],
+      "katki": [
+        {
+          "yil": "1974",
+          "metin": "Okul yaptırma kampanyasına bağış"
+        }
+      ],
+      "durum": "eksik",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "ahmet-nuri-ozsoy",
+      "ad": "Ahmet Nuri Özsoy",
+      "tur": "kisi",
+      "satir": 3,
+      "sutun": 3,
+      "unvan": "Esnaf, hayırsever",
+      "ozet": "Muratdede'deki okulu yaptıran Denizlili hayırsever.",
+      "biyografi": [
+        "Denizli'nin esnaf ve eşrafından bir hayırseverdi. Muratdede Mahallesi'ndeki okulun yapımı 21 Temmuz 1971'de başladı; ilk katı 19 Eylül 1972'de 15 öğretmen ve 471 öğrenciyle açıldı.",
+        "İkinci katı da yaptırma sözü vermişti; vefatından sonra bu sözü eşi Gülfidan Özsoy ve oğlu Bekir Ünsal Özsoy yerine getirdi ve ikinci kat 1982'de açıldı. Ahmet Nuri Özsoy İlkokulu ve Ortaokulu bugün de eğitim veriyor."
+      ],
+      "katki": [
+        {
+          "yil": "1974",
+          "metin": "Okul yaptırma kampanyasına bağış"
+        }
+      ],
+      "durum": "ekip-notu",
+      "yayinla": false,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Ahmet Nuri Özsoy İlkokulu – okul tarihçesi",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "mehmet-kucuker",
+      "ad": "Mehmet Küçüker",
+      "tur": "kisi",
+      "satir": 3,
+      "sutun": 4,
+      "ozet": "1976-77 akademi kampanyasının bağışçılarından.",
+      "biyografi": [],
+      "katki": [
+        {
+          "yil": "1976-1977",
+          "metin": "Akademiyi yaşatma kampanyasına bağış"
+        }
+      ],
+      "durum": "eksik",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "rasit-ozkardes",
+      "ad": "Raşit Özkardeş",
+      "tur": "kisi",
+      "satir": 4,
+      "sutun": 1,
+      "unvan": "İş insanı",
+      "yasam": {
+        "dogum": "1911",
+        "vefat": "2005"
+      },
+      "ozet": "1971'den 1987'ye sürecin her aşamasında yer alan hayırsever.",
+      "biyografi": [
+        "1911'de Denizli'de doğdu. 1929'da babasının yanında manifaturacılıkla işe başladı; 1949'dan sonra otomotiv ve kamyonculuk alanına yöneldi. 1954–1960 yılları arasında Denizli Ticaret Odası başkanlığı yaptığı belirtiliyor.",
+        "Raşit Özkardeş Ortaokulu'nu ve Pakize-Suzan Özkardeş İlkokulu'nu yaptırdı; oğlu Nail Özkardeş bu geleneği bir anaokuluyla sürdürdü. 21 Şubat 2005'te 94 yaşında vefat etti.",
+        "Fakültenin hikâyesinde en çok adı geçen isimlerden biridir: 1971 derneğinin veznedarı, 1976-77 kampanyasının bağışçısı, 1977 Koruma ve Yaşatma Derneği'nin ve 1987 Yükseköğretim Vakfı'nın kurucu üyesi."
+      ],
+      "katki": [
+        {
+          "yil": "1971",
+          "metin": "Yaptırma ve Yardım Derneği veznedarı"
+        },
+        {
+          "yil": "1976-1977",
+          "metin": "Akademiyi yaşatma kampanyasına bağış"
+        },
+        {
+          "yil": "1977",
+          "metin": "Koruma ve Yaşatma Derneği kurucu üyesi"
+        },
+        {
+          "yil": "1987",
+          "metin": "Denizli Yükseköğretim Vakfı kurucu üyesi"
+        }
+      ],
+      "durum": "ekip-notu",
+      "yayinla": false,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "metin-ozkardes",
+      "ad": "Metin Özkardeş",
+      "tur": "kisi",
+      "satir": 4,
+      "sutun": 2,
+      "unvan": "İş insanı",
+      "yasam": {
+        "dogum": "1943",
+        "vefat": "2013"
+      },
+      "ozet": "Özkardeş ailesinden; 1976-77 akademi kampanyasının bağışçısı.",
+      "biyografi": [
+        "1943'te Denizli'de, Raşit ve Pakize Özkardeş'in oğlu olarak doğdu. Babasının mağazasında manifaturacılıkla başladı, ardından aileyle birlikte otomotiv sektöründe çeşitli markaların bayiliklerini yürüttü. 6 Ağustos 2013'te vefat etti."
+      ],
+      "katki": [
+        {
+          "yil": "1976-1977",
+          "metin": "Akademiyi yaşatma kampanyasına bağış"
+        }
+      ],
+      "durum": "ekip-notu",
+      "yayinla": false,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "musa-celikkol",
+      "ad": "Musa Çelikkol",
+      "tur": "kisi",
+      "satir": 4,
+      "sutun": 3,
+      "unvan": "Esnaf temsilcisi",
+      "yasam": {
+        "dogum": "1940",
+        "vefat": null
+      },
+      "ozet": "Denizli esnafının uzun yıllar temsilcisi; 1976-77 akademi kampanyasının bağışçısı.",
+      "biyografi": [
+        "14 Ağustos 1940'ta Denizli'de doğdu; asıl mesleği şoförlük ve nakliyecilik. 1968'de Denizli Şoförler ve Otomobilciler Odası yönetimine girdi, 1970'lerin başından 2005'e kadar odanın başkanlığını yaptı. 1995–2018 arasında Denizli Esnaf ve Sanatkarlar Odaları Birliği Başkanı oldu; TESK ve TESKOMB yönetimlerinde de bulundu.",
+        "Eskihisar'daki Musa-Hatice Çelikkol İlk-Ortaokulu, kendisinin ve eşinin adını taşıyor."
+      ],
+      "katki": [
+        {
+          "yil": "1976-1977",
+          "metin": "Akademiyi yaşatma kampanyasına bağış"
+        }
+      ],
+      "durum": "ekip-notu",
+      "yayinla": false,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "sait-kalaycioglu",
+      "ad": "Sait Kalaycıoğlu",
+      "tur": "kisi",
+      "satir": 4,
+      "sutun": 4,
+      "unvan": "İş insanı, hayırsever",
+      "yasam": {
+        "dogum": null,
+        "vefat": "2018"
+      },
+      "ozet": "\"Eğitimin hamisi\" diye anılan Tavaslı hayırsever.",
+      "biyografi": [
+        "Denizli'nin Tavas ilçesinden yetişen bir iş insanıydı; eğitime verdiği destek nedeniyle Denizli'de \"eğitimin hamisi\" olarak anıldı.",
+        "Devletle iş birliğiyle yaptırdığı Tavas Sait Kalaycıoğlu Ortaokulu'nun temeli 1993'te atıldı; 21 derslikli okul 2 Aralık 1995'te eğitime başladı. 6 Nisan 2018'de vefat etti."
+      ],
+      "katki": [
+        {
+          "yil": "1976-1977",
+          "metin": "Akademiyi yaşatma kampanyasına bağış"
+        }
+      ],
+      "durum": "ekip-notu",
+      "yayinla": false,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "inceoglu-makine",
+      "ad": "İnceoğlu Makine Ticaret A.Ş.",
+      "tur": "kurum",
+      "satir": 5,
+      "sutun": 1,
+      "ozet": "1976-77 akademi kampanyasının bağışçılarından.",
+      "biyografi": [],
+      "katki": [
+        {
+          "yil": "1976-1977",
+          "metin": "Akademiyi yaşatma kampanyasına bağış"
+        }
+      ],
+      "durum": "eksik",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "faruk-basmaci",
+      "ad": "Faruk Basmacı",
+      "tur": "kisi",
+      "satir": 5,
+      "sutun": 2,
+      "ozet": "1976-77 akademi kampanyasının bağışçılarından.",
+      "biyografi": [],
+      "katki": [
+        {
+          "yil": "1976-1977",
+          "metin": "Akademiyi yaşatma kampanyasına bağış"
+        }
+      ],
+      "durum": "eksik",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "ali-yagli",
+      "ad": "Ali Yağlı",
+      "tur": "kisi",
+      "satir": 5,
+      "sutun": 3,
+      "unvan": "Elektrik mühendisi, sanayici",
+      "yasam": {
+        "dogum": "1952",
+        "vefat": null
+      },
+      "ozet": "Aydem Enerji'nin kurucu ortağı.",
+      "biyografi": [
+        "1952'de Denizli'de doğdu, 1976'da İTÜ Elektrik-Elektronik Fakültesi'nden mezun oldu. 1980'de Ceyhan Saldanlı ile Denizli'de Elsan Elektrik'i kurdu; bu şirket Aydem Enerji grubunun ilk adımı oldu."
+      ],
+      "katki": [],
+      "durum": "dogrulandi",
+      "yayinla": false,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Aydem Enerji – Ali Yağlı",
+          "url": "https://aydemenerji.com.tr/kisi/10/ali-yagli?hl=en"
+        },
+        {
+          "ad": "Aydem Enerji – Tarihçe",
+          "url": "https://www.aydemenerji.com.tr/history"
+        }
+      ]
+    },
+    {
+      "id": "ceyhan-saldanli",
+      "ad": "Ceyhan Saldanlı",
+      "tur": "kisi",
+      "satir": 5,
+      "sutun": 4,
+      "unvan": "Elektrik mühendisi, sanayici",
+      "yasam": {
+        "dogum": "1954",
+        "vefat": null
+      },
+      "ozet": "Aydem Holding Yönetim Kurulu Başkanı.",
+      "biyografi": [
+        "1954'te Denizli'de doğdu, 1975'te İTÜ Elektrik-Elektronik Fakültesi'nden mezun oldu. Kamuda çalıştıktan sonra 1980'de Elsan Elektrik'in, ardından Tümaş Mermer'in kurucu ortakları arasında yer aldı; 1991'de Aydem ile enerji sektörüne girdi. Aydem Holding Yönetim Kurulu Başkanı."
+      ],
+      "katki": [],
+      "durum": "dogrulandi",
+      "yayinla": false,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Aydem Enerji – Ceyhan Saldanlı",
+          "url": "https://www.aydemenerji.com.tr/person/1/ceyhan-saldanli/"
+        }
+      ]
+    },
+    {
+      "id": "ahmet-nazif-zorlu",
+      "ad": "Ahmet Nazif Zorlu",
+      "tur": "kisi",
+      "satir": 6,
+      "sutun": 1,
+      "unvan": "Sanayici",
+      "yasam": {
+        "dogum": "1944",
+        "vefat": "2026"
+      },
+      "ozet": "Zorlu Holding'in Yönetim Kurulu Başkanı; Babadağlı sanayici.",
+      "biyografi": [
+        "28 Ağustos 1944'te Denizli'nin Babadağ ilçesinde doğdu. Babası Mehmet Zorlu'nun 1953'te Babadağ'da iki dokuma tezgâhıyla başlattığı aile işini, ağabeyi Zeki Zorlu ile birlikte Türkiye'nin önde gelen sanayi gruplarından Zorlu Holding'e dönüştürdü. 2 Kasım 2026'da İstanbul'da vefat etti."
+      ],
+      "katki": [],
+      "durum": "dogrulandi",
+      "yayinla": false,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Wikipedia – Ahmet Nazif Zorlu",
+          "url": "https://en.wikipedia.org/wiki/Ahmet_Nazif_Zorlu"
+        }
+      ]
+    },
+    {
+      "id": "semsettin-terzioglu",
+      "ad": "Şemsettin Terzioğlu",
+      "tur": "kisi",
+      "satir": 6,
+      "sutun": 2,
+      "ozet": "",
+      "biyografi": [],
+      "katki": [],
+      "durum": "eksik",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": []
+    },
+    {
+      "id": "muhsin-ozcan",
+      "ad": "Muhsin Özcan",
+      "tur": "kisi",
+      "satir": 6,
+      "sutun": 3,
+      "unvan": "Sanayici",
+      "ozet": "Ardöküm A.Ş. Yönetim Kurulu Başkanı; adını taşıyan imalat merkezinin bağışçısı.",
+      "biyografi": [
+        "Denizli'nin köklü sanayi kuruluşlarından Ardöküm Merdane Sanayi A.Ş.'nin Yönetim Kurulu Başkanı."
+      ],
+      "katki": [
+        {
+          "yil": "2025",
+          "metin": "Makine Mühendisliği'ne Pamukkale Üniversitesi Muhsin Özcan Talaşlı İmalat Merkezi: CNC tezgâhları, dik işleme merkezleri, CAD-CAM ve 3B yazıcı laboratuvarları"
+        }
+      ],
+      "durum": "dogrulandi",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "PAÜ Haber – Ardöküm bağışı (15 Eylül 2025)",
+          "url": "https://haber.pau.edu.tr/Haber/pau-adds-a-new-collaboration-to-university-industry-partnerships-meaningful-donation-from-ardokum-as"
+        }
+      ]
+    },
+    {
+      "id": "erhan-boyvat",
+      "ad": "Erhan Boyvat",
+      "tur": "kisi",
+      "satir": 6,
+      "sutun": 4,
+      "ozet": "",
+      "biyografi": [],
+      "katki": [],
+      "durum": "eksik",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": []
+    },
+    {
+      "id": "nalan-devrent",
+      "ad": "Nalan Devrent",
+      "tur": "kisi",
+      "satir": 7,
+      "sutun": 1,
+      "ozet": "",
+      "biyografi": [],
+      "katki": [],
+      "durum": "eksik",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": []
+    },
+    {
+      "id": "nihat-komurcuoglu-vakfi",
+      "ad": "Nihat Kömürcüoğlu Kültür Sanat Vakfı",
+      "tur": "dernek-vakif",
+      "satir": 7,
+      "sutun": 2,
+      "ozet": "",
+      "biyografi": [],
+      "katki": [],
+      "durum": "eksik",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": []
+    },
+    {
+      "id": "omer-aydan",
+      "ad": "Prof. Dr. Ömer Aydan",
+      "tur": "kisi",
+      "satir": 7,
+      "sutun": 3,
+      "unvan": "Kaya mekaniği profesörü",
+      "yasam": {
+        "dogum": "1955",
+        "vefat": null
+      },
+      "ozet": "Japonya'da çalışan kaya mekaniği uzmanı; PAÜ fahri profesörü.",
+      "biyografi": [
+        "1955 doğumlu. İTÜ Maden Mühendisliği'nden (1979) sonra Newcastle Üniversitesi'nde yüksek lisans, Nagoya Üniversitesi'nde doktora (1989) yaptı. Tokai Üniversitesi'nin ardından Ryukyu Üniversitesi'nde profesör olarak çalıştı. 2008'de Pamukkale Üniversitesi'nden fahri profesörlük unvanı aldı."
+      ],
+      "katki": [],
+      "durum": "dogrulandi",
+      "yayinla": false,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "Kitap tanıtımı (CRC Press)",
+          "url": "https://abbeys.com.au/book/time-dependency-in-rock-mechanics-and-rock-engineering-9781032097282.do"
+        }
+      ]
+    },
+    {
+      "id": "hisataka-tano",
+      "ad": "Prof. Dr. Hisataka Tano",
+      "tur": "kisi",
+      "satir": 7,
+      "sutun": 4,
+      "unvan": "Kaya mekaniği araştırmacısı",
+      "ozet": "Japonya–Türkiye heyelan ve deprem çalışmalarında yer alan Japon akademisyen.",
+      "biyografi": [
+        "Japon kaya mekaniği araştırmacısı (田野久貴). Japonya–Türkiye heyelan ve deprem izleme kolokyumlarında yayımlanmış çalışmaları bulunuyor."
+      ],
+      "katki": [],
+      "durum": "dogrulandi",
+      "yayinla": false,
+      "foto": null,
+      "kaynaklar": [
+        {
+          "ad": "researchmap – Hisataka Tano",
+          "url": "https://researchmap.jp/read0028460"
+        }
+      ]
+    },
+    {
+      "id": "emirayse-ramazan-ozen",
+      "ad": "Emirayşe – Ramazan Özen",
+      "tur": "kisi",
+      "satir": 8,
+      "sutun": 1,
+      "ozet": "",
+      "biyografi": [],
+      "katki": [],
+      "durum": "eksik",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": []
+    },
+    {
+      "id": "irfan-yolcular",
+      "ad": "İrfan Yolcular",
+      "tur": "kisi",
+      "satir": 8,
+      "sutun": 2,
+      "ozet": "",
+      "biyografi": [],
+      "katki": [],
+      "durum": "eksik",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": []
+    },
+    {
+      "id": "mehmet-hilmi-serter",
+      "ad": "Mehmet Hilmi Serter",
+      "tur": "kisi",
+      "satir": 8,
+      "sutun": 3,
+      "ozet": "",
+      "biyografi": [],
+      "katki": [],
+      "durum": "eksik",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": []
+    }
+  ]
+}

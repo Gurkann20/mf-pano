@@ -1,0 +1,104 @@
+{
+  "_aciklama": "Fakülte ve bağış tarihçesi. kaynak: 'belge' = dekanlığın verdiği çıktılar (Abalıoğlu Vakfı bülteni Sayı 63, Aralık 2021 ve tarihçe sayfaları); 'pau-mf' = https://www.pau.edu.tr/mf/en/sayfa/history-3 ; 'pau' = PAÜ resmi kaynakları; 'ekip-notu' = kaynak linki henüz eklenmedi.",
+  "olaylar": [
+    {
+      "tarih": "1970",
+      "baslik": "Bir umut doğuyor",
+      "metin": "Sakarya'da bir yüksekokulun açılması, Denizli'de de yükseköğretim kurumu kurulabileceği umudunu doğurur.",
+      "kaynak": "belge"
+    },
+    {
+      "tarih": "4 Şubat 1971",
+      "baslik": "Şehir bir araya geliyor",
+      "metin": "Vali Münir Güney başkanlığında İl Genel Meclisi salonunda toplanan Denizli'nin ileri gelenleri, Devlet Mimarlık ve Mühendislik Yüksekokulu Yaptırma ve Yardım Derneği'ni kurar.",
+      "kaynak": "belge",
+      "vurgu": true
+    },
+    {
+      "tarih": "Şubat 1974",
+      "baslik": "İlk büyük kampanya",
+      "metin": "Milli Eğitim Bakanı Mustafa Üstündağ'ın ön lisans okulu projesi gündeme gelince dernek 610.000 liralık bütçeyi onaylar ve yeni bir yardım kampanyası başlatır. En büyük bağışı Denizli Belediyesi yapar (95.000 lira taahhüt); Cafer Sadık Abalıoğlu 11.000 lira bağışlar. Tahsin Cem, Arı Kiremit Fabrikası, Orhan Koru ve Ahmet Nuri Özsoy da bağışçılar arasındadır.",
+      "kaynak": "belge"
+    },
+    {
+      "tarih": "Ocak 1976",
+      "baslik": "Geçici bina şartı",
+      "metin": "Milli Eğitim Bakanlığı, Kınıklı'daki arazide tesis yapılana kadar geçici bir bina bulunursa akademinin açılabileceğini valiliğe bildirir.",
+      "kaynak": "belge"
+    },
+    {
+      "tarih": "20 Şubat 1976",
+      "baslik": "Çalışmalar hızlanıyor",
+      "metin": "Yüksekokul Yaptırma ve Yaşatma Derneği, akademinin açılması için çalışmaları hızlandırma kararı alır.",
+      "kaynak": "belge"
+    },
+    {
+      "tarih": "25 Mayıs 1976",
+      "baslik": "Akademi kuruluyor",
+      "metin": "Kadro tahsislerinin Resmî Gazete'de yayımlanmasıyla Denizli Devlet Mimarlık ve Mühendislik Akademisi kurulur.",
+      "kaynak": "belge",
+      "vurgu": true
+    },
+    {
+      "tarih": "1976–1977 ders yılı",
+      "baslik": "İlk dersler",
+      "metin": "Akademi, Makine ve İnşaat bölümleriyle, Halk Eğitimi binasının bir bölümünde eğitime başlar.",
+      "kaynak": "pau-mf"
+    },
+    {
+      "tarih": "Aralık 1976 – Ocak 1977",
+      "baslik": "Akademiyi yaşatma kampanyası",
+      "metin": "24 Aralık 1976 – 15 Ocak 1977 arasında önce 34.850, ardından toplam 55.375 lira toplanır. Mehmet Küçüker, Metin ve Raşit Özkardeş, Musa Çelikkol, Sait Kalaycıoğlu, İnceoğlu Makine ve Faruk Basmacı bağışçılar arasındadır.",
+      "kaynak": "belge"
+    },
+    {
+      "tarih": "10 Mart 1977",
+      "baslik": "Koruma ve Yaşatma Derneği",
+      "metin": "Akademinin kurulmasıyla dernek yeniden düzenlenir; Denizli Devlet Mühendislik ve Mimarlık Akademisi Koruma ve Yaşatma Derneği'nin ana tüzüğü yayımlanır.",
+      "kaynak": "belge"
+    },
+    {
+      "tarih": "19 Aralık 1977",
+      "baslik": "Sığınılan binalar",
+      "metin": "Yer sıkıntısı nedeniyle ders yılı gecikmeli başlar; öğrenciler Merkez Ortaokulu'nda ve İl Halk Kütüphanesi'nde okur.",
+      "kaynak": "belge"
+    },
+    {
+      "tarih": "25 Eylül 1978",
+      "baslik": "Çamlık binası",
+      "metin": "Özel Çamlık Koleji arsasıyla birlikte 20 milyon liraya alınır ve akademiye devredilir. Akademi 1978–79 ders yılına Çamlık binasında 458 öğrenciyle devam eder.",
+      "kaynak": "belge"
+    },
+    {
+      "tarih": "1982",
+      "baslik": "Fakülte oluyor",
+      "metin": "Akademi, Dokuz Eylül Üniversitesi Denizli Mühendislik Fakültesi'ne dönüşür. Kınıklı'da yaklaşık 1.000 dönüm arazi kamulaştırılır.",
+      "kaynak": "pau-mf"
+    },
+    {
+      "tarih": "22 Mayıs 1987",
+      "baslik": "Yükseköğretim Vakfı",
+      "metin": "Vali Necati Bilican başkanlığında, belediye başkanı ve Denizlili hayırsever iş insanlarınca Denizli Yükseköğretim Vakfı kurulur.",
+      "kaynak": "belge"
+    },
+    {
+      "tarih": "1988",
+      "baslik": "Okul Denizli'de kalıyor",
+      "metin": "Vakıf, okulun İzmir'e taşınmaması için akademiye nakdi bağışta bulunur.",
+      "kaynak": "belge",
+      "vurgu": true
+    },
+    {
+      "tarih": "11 Temmuz 1992",
+      "baslik": "Pamukkale Üniversitesi",
+      "metin": "3837 sayılı Kanun ile Pamukkale Üniversitesi kurulur; fakülte PAÜ Mühendislik Fakültesi olarak yoluna devam eder.",
+      "kaynak": "pau"
+    },
+    {
+      "tarih": "2006–2007",
+      "baslik": "Kınıklı Kampüsü",
+      "metin": "Fakülte, Kınıklı Kampüsü'ndeki yeni binasına taşınır.",
+      "kaynak": "pau-mf"
+    }
+  ]
+}

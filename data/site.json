@@ -1,0 +1,16 @@
+{
+  "_aciklama": "Sitenin genel ayarları. Yönetim panelinden (yonetim/) veya elle düzenlenebilir. iletisim: alt bilgide ve kişi sayfasındaki 'Bize ulaşın' penceresinde görünen bilgiler.",
+  "pano": { "sutun": 4, "satir": 14 },
+  "sonGuncelleme": "2026-11-19",
+  "iletisim": {
+    "baslik": "Mühendislik Fakültesi Dekanlığı",
+    "aciklama": "Bağışçılarımız hakkında bilgi veya fotoğraf paylaşmak ya da fakültemize katkı sunmak için dekanlığımıza ulaşabilirsiniz.",
+    "telefon": "0258 296 20 00",
+    "eposta": "muhendislik@pau.edu.tr",
+    "adres": "Pamukkale Üniversitesi Mühendislik Fakültesi, Kınıklı Kampüsü, Pamukkale / Denizli"
+  },
+  "baglantilar": {
+    "fakulte": "https://www.pau.edu.tr/mf",
+    "universite": "https://www.pau.edu.tr"
+  }
+}

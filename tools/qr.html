@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>QR Üretici · PAÜ MF</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--font); background: #eef2f7; color: #14223a; }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 60px; display: grid; gap: 24px; }
+    @media (min-width: 860px) { main { grid-template-columns: 1fr 1fr; align-items: start; } }
+    h1 { font-family: var(--font); margin: 0 0 4px; font-size: 1.5rem; }
+    .kart { background: #fff; border: 1px solid #d8e0ea; border-radius: 14px; padding: 20px; }
+    label { display: block; font-weight: 600; font-size: .88rem; margin-top: 14px; }
+    input[type=text], input[type=url], select { width: 100%; margin-top: 4px; padding: 10px 12px; border: 1px solid #c4cfdc; border-radius: 8px; font: inherit; }
+    .onay { display: flex; gap: 8px; align-items: center; font-weight: 500; }
+    .dugmeler { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    button { padding: 10px 16px; border-radius: 8px; border: 1px solid #c4cfdc; background: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+    button.birincil { background: var(--pau-mavi); color: #fff; border-color: transparent; }
+    small { color: #5b6b82; display: block; margin-top: 4px; font-weight: 400; }
+    .uyari { background: #fff8e1; border: 1px solid #f5d27a; border-radius: 8px; padding: 10px 12px; font-size: .88rem; margin-top: 14px; }
+    /* Basılacak etiket */
+    .etiket { background: #fff; border-radius: 18px; padding: 28px; text-align: center; border: 1px solid #d8e0ea; }
+    .etiket__ust { font-family: var(--font); font-weight: 700; letter-spacing: .14em; font-size: .78rem; color: var(--pau-lacivert); text-transform: uppercase; }
+    .etiket__baslik { font-family: var(--font); font-weight: 700; font-size: 1.5rem; margin: 6px 0 16px; color: #0b1a33; }
+    #qr svg { width: 100%; max-width: 320px; height: auto; margin: 0 auto; display: block; }
+    .etiket__alt { margin-top: 14px; font-size: .9rem; color: #33445e; }
+    .etiket__url { margin-top: 6px; font-size: .75rem; color: #5b6b82; word-break: break-all; }
+    @media print {
+      body { background: #fff; }
+      main { display: block; padding: 0; }
+      .kart:not(.etiket) { display: none; }
+      .etiket { border: 0; page-break-inside: avoid; width: 9cm; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <div class="kart">
+    <h1>QR Üretici</h1>
+    <p>Panonun altına konacak QR kodunu buradan üretin. Yalnızca ekip içi kullanım içindir.</p>
+    <label>Adres
+      <input type="url" id="adres" placeholder="https://…">
+      <small>Sitenin kalıcı adresi. Bir kişiye özel QR için sonuna <code>#/kisi/&lt;id&gt;</code> ekleyin.</small>
+    </label>
+    <label>Kişiye özel QR (isteğe bağlı)
+      <select id="kisi"><option value="">— Ana sayfa —</option></select>
+    </label>
+    <label>Başlık <input type="text" id="baslik" value="Bu panonun hikâyesi"></label>
+    <label>Alt yazı <input type="text" id="alt" value="İsimlerin kim olduğunu ve fakülteye ne kazandırdığını okumak için okutun."></label>
+    <label class="onay"><input type="checkbox" id="logo" checked> Ortaya fakülte logosu koy</label>
+    <div class="uyari" id="uyari" hidden></div>
+    <div class="dugmeler">
+      <button class="birincil" id="svg">SVG indir (baskı için)</button>
+      <button id="png">PNG indir</button>
+      <button onclick="print()">Etiketi yazdır</button>
+    </div>
+  </div>
+
+  <div class="etiket kart">
+    <div class="etiket__ust">PAÜ Mühendislik Fakültesi · 50. yıl</div>
+    <div class="etiket__baslik" id="e-baslik"></div>
+    <div id="qr"></div>
+    <div class="etiket__alt" id="e-alt"></div>
+    <div class="etiket__url" id="e-url"></div>
+  </div>
+</main>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const kok = new URL("../", location.href).href;
+$("#adres").value = kok;
+let logoVeri = null;
+
+fetch("../assets/logo/muhendislik-logo.png").then(r => r.ok ? r.blob() : null).then(b => {
+  if (!b) return;
+  const fr = new FileReader(); fr.onload = () => { logoVeri = fr.result; ciz(); }; fr.readAsDataURL(b);
+});
+fetch("../data/bagiscilar.json").then(r => r.json()).then(d => {
+  for (const k of d.bagiscilar) $("#kisi").insertAdjacentHTML("beforeend", `<option value="${k.id}"></option>`), $("#kisi").lastElementChild.textContent = k.ad;
+}).catch(() => {});
+
+function hedefUrl() {
+  const temel = $("#adres").value.trim().replace(/#.*$/, "");
+  const id = $("#kisi").value;
+  return id ? `${temel}#/kisi/${id}` : temel;
+}
+
+function qrSvg(metin, logo) {
+  const qr = qrcode(0, logo ? "H" : "M");
+  qr.addData(unescape(encodeURIComponent(metin)), "Byte");
+  qr.make();
+  const n = qr.getModuleCount(), k = 4, boyut = n + k * 2;
+  let yol = "";
+  for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (qr.isDark(r, c)) yol += `M${c + k} ${r + k}h1v1h-1z`;
+  let orta = "";
+  if (logo && logoVeri) {
+    const l = n * 0.22, x = (boyut - l) / 2;
+    orta = `<circle cx="${boyut / 2}" cy="${boyut / 2}" r="${l / 2 + 0.8}" fill="#fff"/><image href="${logoVeri}" x="${x}" y="${x}" width="${l}" height="${l}"/>`;
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${boyut} ${boyut}" shape-rendering="crispEdges"><rect width="100%" height="100%" fill="#fff"/><path d="${yol}" fill="#0b2d5b"/>${orta}</svg>`;
+}
+
+function ciz() {
+  const url = hedefUrl();
+  $("#qr").innerHTML = qrSvg(url, $("#logo").checked);
+  $("#e-baslik").textContent = $("#baslik").value;
+  $("#e-alt").textContent = $("#alt").value;
+  $("#e-url").textContent = url.replace(/^https?:\/\//, "");
+  const u = $("#uyari");
+  const yerel = /localhost|127\.0\.0\.1|^file:/.test(url);
+  u.hidden = !yerel;
+  u.textContent = yerel ? "Bu adres yalnızca bu bilgisayarda çalışır. Basmadan önce sitenin kalıcı internet adresini girin." : "";
+}
+["adres", "kisi", "baslik", "alt", "logo"].forEach(id => $("#" + id).addEventListener("input", ciz));
+
+function indir(ad, href) { const a = document.createElement("a"); a.href = href; a.download = ad; a.click(); }
+$("#svg").onclick = () => indir("pano-qr.svg", URL.createObjectURL(new Blob([$("#qr").innerHTML], { type: "image/svg+xml" })));
+$("#png").onclick = () => {
+  const img = new Image();
+  img.onload = () => {
+    const cv = document.createElement("canvas"); cv.width = cv.height = 2000;
+    const ctx = cv.getContext("2d"); ctx.imageSmoothingEnabled = false; ctx.drawImage(img, 0, 0, 2000, 2000);
+    indir("pano-qr.png", cv.toDataURL("image/png"));
+  };
+  img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent($("#qr").innerHTML);
+};
+ciz();
+</script>
+</body>
+</html>
