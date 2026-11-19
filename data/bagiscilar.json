@@ -282,7 +282,7 @@
         }
       ],
       "durum": "ekip-notu",
-      "yayinla": false,
+      "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {
@@ -334,7 +334,7 @@
         }
       ],
       "durum": "ekip-notu",
-      "yayinla": false,
+      "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {
@@ -403,7 +403,7 @@
         }
       ],
       "durum": "ekip-notu",
-      "yayinla": false,
+      "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {
@@ -434,7 +434,7 @@
         }
       ],
       "durum": "ekip-notu",
-      "yayinla": false,
+      "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {
@@ -466,7 +466,7 @@
         }
       ],
       "durum": "ekip-notu",
-      "yayinla": false,
+      "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {
@@ -498,7 +498,7 @@
         }
       ],
       "durum": "ekip-notu",
-      "yayinla": false,
+      "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {
@@ -525,7 +525,7 @@
         }
       ],
       "durum": "ekip-notu",
-      "yayinla": false,
+      "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {
@@ -615,7 +615,7 @@
       ],
       "katki": [],
       "durum": "dogrulandi",
-      "yayinla": false,
+      "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {
@@ -667,7 +667,7 @@
       ],
       "katki": [],
       "durum": "ekip-notu",
-      "yayinla": false,
+      "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {
@@ -726,7 +726,7 @@
       ],
       "katki": [],
       "durum": "dogrulandi",
-      "yayinla": false,
+      "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {
@@ -767,7 +767,7 @@
       ],
       "katki": [],
       "durum": "ekip-notu",
-      "yayinla": false,
+      "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {
@@ -793,7 +793,7 @@
       ],
       "katki": [],
       "durum": "dogrulandi",
-      "yayinla": false,
+      "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {
@@ -819,7 +819,7 @@
       ],
       "katki": [],
       "durum": "dogrulandi",
-      "yayinla": false,
+      "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {
@@ -855,7 +855,7 @@
       ],
       "katki": [],
       "durum": "ekip-notu",
-      "yayinla": false,
+      "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {

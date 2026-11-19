@@ -203,7 +203,7 @@ Kurallar:
 
 - Biyografiler kendi cümlelerimizle yazılır. Hiçbir siteden metin kopyalanmaz (Abalıoğlu Holding gibi kaynaklar yalnızca bilgi kaynağıdır).
 - Fotoğraf sadece aile/kurum izniyle eklenir.
-- Hayattaki kişilerin (Musa Çelikkol, Ceyhan Saldanlı, Erhan Boyvat vb.) biyografisi kendilerinin onayı olmadan canlıya alınmaz. (Ali Yağlı 2024'te, Muhsin Özcan 2026'da vefat etti.)
+- ~~Hayattaki kişilerin biyografisi onaysız canlıya alınmaz.~~ **Gürkan'ın kararı (2026-11-19): bütün biyografiler yayında**, hayattakiler (Musa Çelikkol, Ceyhan Saldanlı, Erhan Boyvat, Ömer Aydan, Hisataka Tano) ve kaynak linki eksik ekip notları dahil. Yalnızca kamuya açık mesleki bilgi yazılır; bir kişi ya da aile itiraz ederse kaydı hemen `yayinla: false` yapılır. Dekanlıktan ve kişilerden onay almak yine önerilir. (Ali Yağlı 2024'te, Muhsin Özcan 2026'da vefat etti.)
 - Vefat bilgisi yalnızca bir haber/resmî kaynakla doğrulanınca yazılır.
 - Vefat etmiş bağışçıların biyografisi (kaynakla doğrulanmışsa) yayınlanır (Gürkan, 2026-11-19: "vefat etse bile yaz, onlar da destek vermiş").
 - Cenaze, sağlık, aile içi olaylar gibi özel ayrıntılar yazılmaz.

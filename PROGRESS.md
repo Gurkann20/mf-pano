@@ -156,3 +156,4 @@ python tools/sunucu.py
 - Hâlâ bilgi yok: Faruk Basmacı, Nalan Devrent, Emirayşe – Ramazan Özen, Mehmet Hilmi Serter.
 - Karar bekleyen: Ali Yağlı ve Ahmet Nazif Zorlu vefat ettiği için yayinla:true yapılabilir (Gürkan/dekanlık).
 - Gürkan: vefat edenlerin biyografisi de yayınlansın → Ali Yağlı ve Ahmet Nazif Zorlu yayinla:true. Özkardeşler ve Sait Kalaycıoğlu kaynak eksikliği yüzünden hâlâ gizli.
+- Gürkan "hepsini aç" dedi (AskUserQuestion): 16 gizli biyografi yayinla:true (hayattakiler ve kaynağı eksik ekip notları dahil). İtiraz gelirse ilgili kayıt yayinla:false. Hiç bilgisi olmayan 7 kişi: Tahsin Cem, Orhan Koru, Mehmet Küçüker, Faruk Basmacı, Nalan Devrent, Emirayşe–Ramazan Özen, Mehmet Hilmi Serter.
