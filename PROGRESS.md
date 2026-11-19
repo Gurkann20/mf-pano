@@ -126,3 +126,8 @@ python tools/sunucu.py
 - Takılma sebebi: pano gizlenip geri açılınca (kişi sayfasından dönüş) ~450 harf animasyonu + çerçeve ışığı + başlık ışığı baştan oynuyordu. Kazıma bitince `kazinacak/kaziniyor` sınıfları kaldırılıyor; `isildi` 2.9 sn sonra kaldırılıyor; başlık ışığı `body.acilis-bitti` ile tek sefer. Dönüşte artık yalnızca sayfa geçişi çalışıyor.
 - Telefonda kazıma harf harf değil, plaka başına tek beliriş (lazer çizgisi aynı).
 - Tarihçe cetveli telefonda genişliğe sığıyor (YIL_PX ≈ 8), etiketler 5 yılda bir. Sürüm ?v=20261119l.
+
+## 2026-11-19 (8): iPhone düzeltmeleri
+- Gürkan'ın iPhone'u eski sürümü gösteriyordu (GitHub Pages index.html'i ~10 dk önbellekte tutuyor). Not: değişiklikten sonra telefonda görmek için 10 dk bekle / sekmeyi kapatıp aç.
+- Plaka etrafında kalan çerçeve: iOS'ta :hover dokunulan plakada takılı kalıyordu → hover yalnızca @media (hover:hover). Dönüşteki otomatik odak `sessiz-odak` sınıfıyla çerçevesiz (odak yine plakada, ekran okuyucu için).
+- Cetvel: yalnızca yıl verilen olaylar yılın ortası yerine tam yıl çizgisine oturuyor (konum +0). Sürüm ?v=20261119m.

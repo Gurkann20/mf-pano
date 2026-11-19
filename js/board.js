@@ -1,8 +1,8 @@
 // Dijital pano: plakalar, filtreler, arama.
 
-import { esc, sadelestir, plakaAdi, ilkYil, DEMO } from "./data.js?v=20261119l";
-import { t } from "./i18n.js?v=20261119l";
-import { kaziHtml, kaziGozle, egimBagla, duvarEgimiBagla } from "./effects.js?v=20261119l";
+import { esc, sadelestir, plakaAdi, ilkYil, DEMO } from "./data.js?v=20261119m";
+import { t } from "./i18n.js?v=20261119m";
+import { kaziHtml, kaziGozle, egimBagla, duvarEgimiBagla } from "./effects.js?v=20261119m";
 
 const durum = { tur: "hepsi", sorgu: "" };
 let veri = null;

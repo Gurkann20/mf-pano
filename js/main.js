@@ -4,12 +4,12 @@
 //   #/kisi/<id>   kişi / kurum sayfası
 //   #/tarihce     ana sayfa → tarihçeye kaydır (eski bağlantılar için)
 
-import { veriYukle, DEMO, esc } from "./data.js?v=20261119l";
-import { panoCiz, plakaBul, iletisimBagla } from "./board.js?v=20261119l";
-import { kisiCiz, metaSifirla } from "./person.js?v=20261119l";
-import { cetvelCiz } from "./timeline.js?v=20261119l";
-import { hareketAz } from "./effects.js?v=20261119l";
-import { t } from "./i18n.js?v=20261119l";
+import { veriYukle, DEMO, esc } from "./data.js?v=20261119m";
+import { panoCiz, plakaBul, iletisimBagla } from "./board.js?v=20261119m";
+import { kisiCiz, metaSifirla } from "./person.js?v=20261119m";
+import { cetvelCiz } from "./timeline.js?v=20261119m";
+import { hareketAz } from "./effects.js?v=20261119m";
+import { t } from "./i18n.js?v=20261119m";
 
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
@@ -65,7 +65,14 @@ function goster(rota, onceki) {
     if (onceki === "kisi" && anaKaydirma !== null && (!rota.hedef || rota.hedef === "pano-bolum")) {
       kaydir(anaKaydirma);
       const p = sonKisiId && plakaBul(sonKisiId);
-      if (p) { p.style.viewTransitionName = "plaka-aktif"; p.focus({ preventScroll: true }); }
+      if (p) {
+        p.style.viewTransitionName = "plaka-aktif";
+        // ekran okuyucu yerini kaybetmesin diye odak plakaya döner, ama mavi odak çerçevesi
+        // yalnızca kullanıcı klavyeyle gezinmeye başlayınca görünür
+        p.classList.add("sessiz-odak");
+        p.addEventListener("blur", () => p.classList.remove("sessiz-odak"), { once: true });
+        p.focus({ preventScroll: true });
+      }
     } else if (rota.hedef) {
       ogeyeKaydir(rota.hedef, onceki === "ana");
     } else if (onceki && onceki !== "ana") {

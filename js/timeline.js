@@ -1,9 +1,9 @@
 // Tarihçe: ölçüm cetveli. Olaylar ay hassasiyetiyle cetvele yerleşir;
 // seçili olay üstte büyük okunur. Ok tuşları, kaydırma ve dokunma ile gezilir.
 
-import { esc, guvenliUrl } from "./data.js?v=20261119l";
-import { t } from "./i18n.js?v=20261119l";
-import { hareketAz } from "./effects.js?v=20261119l";
+import { esc, guvenliUrl } from "./data.js?v=20261119m";
+import { t } from "./i18n.js?v=20261119m";
+import { hareketAz } from "./effects.js?v=20261119m";
 
 const DURDUR_IKON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="3.5" height="14" rx="1"/><rect x="14" y="5" width="3.5" height="14" rx="1"/></svg>';
 const OYNAT_IKON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
@@ -12,7 +12,7 @@ const AYLAR = ["ocak", "şubat", "mart", "nisan", "mayıs", "haziran", "temmuz",
 const SOL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>';
 const SAG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>';
 
-/** "4 Şubat 1971" → 1971.12 (yıl + ayın ortası). Ay yoksa yılın ortası. */
+/** "4 Şubat 1971" → 1971.12 (yıl + ayın ortası). Ay yoksa tam yıl çizgisi. */
 function konum(tarih = "") {
   const s = String(tarih).toLocaleLowerCase("tr");
   const m = s.match(/\d{4}/);
@@ -21,7 +21,8 @@ function konum(tarih = "") {
   let ay = -1;
   AYLAR.forEach((a, i) => { if (once.includes(a)) ay = i; });
   if (ay < 0 && s.includes("ders yılı")) ay = 8; // ders yılı Eylül'de başlar
-  return Number(m[0]) + (ay >= 0 ? (ay + 0.5) / 12 : 0.5);
+  // yalnızca yıl verilmişse işaret tam o yılın çizgisine oturur
+  return Number(m[0]) + (ay >= 0 ? (ay + 0.5) / 12 : 0);
 }
 
 /** Olay metnindeki bağışçı adlarını kişi sayfalarına bağlar. */
