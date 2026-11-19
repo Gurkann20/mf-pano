@@ -162,3 +162,7 @@ python tools/sunucu.py
 - PAÜ haberlerinden doğrulandı: Şemsettin Terzioğlu → Deprem Bilimi ve Mühendisliği Laboratuvarı bağışı (protokol Nisan 2021, lab onun adını taşıyor). Ömer Aydan → bu laboratuvara deprem sarsma masası (PAÜ Haber 6.9.2022).
 - Bulunamadı (dekanlığa sorulacak): Ali Yağlı, Ceyhan Saldanlı, Ahmet Nazif Zorlu, Erhan Boyvat, Hisataka Tano, Nihat Kömürcüoğlu Vakfı, İrfan Yolcular, Nalan Devrent, Emirayşe–Ramazan Özen, Mehmet Hilmi Serter katkıları; Tahsin Cem, Orhan Koru, Mehmet Küçüker, Faruk Basmacı hayatları.
 - Dekanlık için soru listesi: ozel/DEKANLIGA-SORULAR.md (git dışı)
+
+## 2026-11-19 (15): Demo modu kaldırıldı, personel bağlantısı
+- Gürkan: sunum normal siteden yapılacak, ayrı link gereksiz → ?demo=1 ve TASLAK etiketi koddan kaldırıldı (ayrıca yayinla:false kayıtları herkese açıyordu).
+- Gürkan: yönetim paneli ayrı link olunca unutulur → sitenin alt bilgisinde küçük "Personel: panoyu düzenle" bağlantısı (yonetim/). Token olmadan panel hiçbir şey değiştiremiyor. Panel depo sahibi/adını adresten kendisi dolduruyor, token tarayıcıda hatırlanıyor (localStorage). Yönetim sayfasına favicon eklendi. Sürüm ?v=20261119s.

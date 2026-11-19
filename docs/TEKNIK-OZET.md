@@ -52,7 +52,7 @@ Fakülte girişindeki bağışçı panosunun dijital karşılığı. Panonun alt
 
 - Analytics, çerez, takip kodu yok.
 - İç notlar herkese açık depoya hiç yüklenmiyor; ayrı, git dışı bir dosyada duruyor.
-- **Hayattaki kişiler:** Biyografileri kendi onayları olmadan yayınlanmıyor. Yayında yalnızca ad ve katkı görünüyor. Sunumda gösterilen taslak sürüm (`?demo=1`) kalıcı QR'a basılmayacak.
+- **Biyografiler:** Yalnızca kamuya açık mesleki bilgiler yazıldı. Bir kişi ya da ailesi itiraz ederse, yönetim panelinden tek tıkla o kişinin biyografisi gizlenebiliyor (yalnızca ad ve katkı kalır).
 - **Fotoğraflar:** Yalnızca aile ya da kurum izniyle; internetten fotoğraf alınmıyor.
 - **Metinler:** Biyografiler kaynaklardan bilgi alınarak kendi cümlelerimizle yazıldı. Kaynaklar her sayfada belirtiliyor.
 

@@ -1,7 +1,6 @@
 // Veri yükleme ve yardımcılar.
 // İsim eklemek/çıkarmak için bu dosyaya DOKUNMA: data/bagiscilar.json düzenlenir.
 
-export const DEMO = new URLSearchParams(location.search).get("demo") === "1";
 
 let onbellek = null;
 
@@ -43,7 +42,7 @@ function temizle(k) {
 
 /** Biyografi bu modda gösterilebilir mi? */
 export function bioGoster(k) {
-  return (k.yayinla !== false || DEMO) && k.biyografi.length > 0;
+  return k.yayinla !== false && k.biyografi.length > 0;
 }
 
 /** Türkçe karakter duyarsız karşılaştırma için sadeleştirir: "Özkardeş" → "ozkardes" */

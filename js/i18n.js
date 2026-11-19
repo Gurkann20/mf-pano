@@ -26,7 +26,6 @@ export const tr = {
   paylas: "Paylaş",
   kopyalandi: "Bağlantı kopyalandı",
   bulunamadi: "Bu plaka bulunamadı.",
-  taslak: "TASLAK",
   durum: { dogrulandi: "Doğrulandı", "ekip-notu": "Kaynak bekleniyor", eksik: "Bilgi eksik" },
   yayindaDegil: "Canlıda biyografi gizli",
   tarihceBaslik: "Fakültenin hikâyesi",

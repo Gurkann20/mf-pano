@@ -1,8 +1,8 @@
 // Dijital pano: plakalar, filtreler, arama.
 
-import { esc, sadelestir, plakaAdi, ilkYil, DEMO } from "./data.js?v=20261119r";
-import { t } from "./i18n.js?v=20261119r";
-import { kaziHtml, kaziGozle, egimBagla, duvarEgimiBagla } from "./effects.js?v=20261119r";
+import { esc, sadelestir, plakaAdi, ilkYil } from "./data.js?v=20261119s";
+import { t } from "./i18n.js?v=20261119s";
+import { kaziHtml, kaziGozle, egimBagla, duvarEgimiBagla } from "./effects.js?v=20261119s";
 
 const durum = { tur: "hepsi", sorgu: "" };
 let veri = null;
@@ -13,7 +13,7 @@ function altSatir(k) {
 }
 
 function aramaMetni(k) {
-  const gorunur = k.yayinla !== false || DEMO;
+  const gorunur = k.yayinla !== false;
   return sadelestir([k.ad, k.kisaAd, gorunur ? k.unvan : ""].filter(Boolean).join(" "));
 }
 

@@ -1,7 +1,7 @@
 // Kişi / kurum sayfası: #/kisi/<id>
 
-import { esc, plakaAdi, basHarfler, yasamMetni, bioGoster, guvenliUrl, DEMO } from "./data.js?v=20261119r";
-import { t } from "./i18n.js?v=20261119r";
+import { esc, plakaAdi, basHarfler, yasamMetni, bioGoster, guvenliUrl } from "./data.js?v=20261119s";
+import { t } from "./i18n.js?v=20261119s";
 
 const OK_SOL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>';
 const PAYLAS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>';
@@ -39,7 +39,7 @@ export function kisiCiz(kap, veri, id) {
     return null;
   }
 
-  const acik = k.yayinla !== false || DEMO;
+  const acik = k.yayinla !== false;
   const bio = bioGoster(k);
   const yasam = acik ? yasamMetni(k) : "";
   const altBilgi = [acik && k.unvan, yasam].filter(Boolean).join(" · ") || t.turTekil[k.tur];
@@ -66,10 +66,6 @@ export function kisiCiz(kap, veri, id) {
        </section>`
     : "";
 
-  const demoEtiketleri = DEMO
-    ? `<span class="etiket etiket--sari">${esc(t.durum[k.durum] || k.durum || "")}</span>${k.yayinla === false ? `<span class="etiket etiket--sari">${esc(t.yayindaDegil)}</span>` : ""}`
-    : "";
-
   kap.innerHTML = `
     <article class="kap kisi">
       <a class="geri" href="#/pano">${OK_SOL}${esc(t.panoyaDon)}</a>
@@ -84,7 +80,6 @@ export function kisiCiz(kap, veri, id) {
           </div>
           <div class="kisi-ust__meta">
             ${altBilgi !== t.turTekil[k.tur] ? `<span class="etiket">${esc(t.turTekil[k.tur] || "")}</span>` : ""}
-            ${demoEtiketleri}
             <button class="paylas" type="button" data-paylas>${PAYLAS}${esc(t.paylas)}</button>
           </div>
           ${acik && k.ozet ? `<p class="kisi-ozet">${esc(k.ozet)}</p>` : ""}

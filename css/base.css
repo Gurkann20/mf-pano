@@ -123,18 +123,13 @@ body[data-gorunum="ana"] .ust { display: none; }
 .alt h2 { font-size: 1rem; font-weight: 600; color: var(--yazi); margin-bottom: 8px; line-height: 1.3; }
 .alt p { margin: 0 0 4px; }
 .alt a { color: var(--yazi); }
+/* personel bağlantısı: ziyaretçinin gözüne batmasın ama personel bulabilsin */
+.alt__personel { margin-top: 14px !important; font-size: .8rem; }
+.alt .alt__personel a { color: var(--yazi-soluk); }
 
 /* ---------- Görünümler ---------- */
 [data-gorunum][hidden] { display: none !important; }
 
-/* TASLAK etiketi (demo modu) */
-.taslak {
-  position: fixed; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 90;
-  padding: 6px 12px; border-radius: 6px;
-  font-weight: 700; font-size: .78rem;
-  background: #f5b400; color: #1a1300;
-  box-shadow: 0 6px 20px rgba(0,0,0,.4);
-}
 
 .yukleniyor { min-height: 30vh; display: grid; place-items: center; color: var(--plaka-2); grid-column: 1 / -1; }
 

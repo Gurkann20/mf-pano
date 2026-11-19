@@ -4,12 +4,12 @@
 //   #/kisi/<id>   kişi / kurum sayfası
 //   #/tarihce     ana sayfa → tarihçeye kaydır (eski bağlantılar için)
 
-import { veriYukle, DEMO, esc } from "./data.js?v=20261119r";
-import { panoCiz, plakaBul, iletisimBagla } from "./board.js?v=20261119r";
-import { kisiCiz, metaSifirla } from "./person.js?v=20261119r";
-import { cetvelCiz } from "./timeline.js?v=20261119r";
-import { hareketAz } from "./effects.js?v=20261119r";
-import { t } from "./i18n.js?v=20261119r";
+import { veriYukle, esc } from "./data.js?v=20261119s";
+import { panoCiz, plakaBul, iletisimBagla } from "./board.js?v=20261119s";
+import { kisiCiz, metaSifirla } from "./person.js?v=20261119s";
+import { cetvelCiz } from "./timeline.js?v=20261119s";
+import { hareketAz } from "./effects.js?v=20261119s";
+import { t } from "./i18n.js?v=20261119s";
 
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
@@ -120,7 +120,6 @@ function altBilgi() {
 }
 
 async function basla() {
-  if (DEMO) document.body.insertAdjacentHTML("beforeend", `<div class="taslak" role="status">${esc(t.taslak)}</div>`);
 
   try {
     veri = await veriYukle();
