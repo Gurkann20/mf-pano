@@ -190,4 +190,4 @@ python tools/sunucu.py
 - Ali Yağlı + Ceyhan Saldanlı: 2007 Temiz Enerji Evi (Bereket Enerji yaptırıp bağışladı; PAÜ Makine sayfası). İTÜ Elektrik Fakültesi (Aydem sayfasındaki ad; bölüm adı kaynakta yok).
 - Zorlu: 2006 dış cephe kaplaması. Ramazan Özen: 50. Yıl Kaynak Eğitim Merkezi, lazer kaynak makinesi (Yakut). Tano: cihaz gönderdi (tarih yok). Aydan: Jeoloji Müh. ile ortak çalışma.
 - Nalan Devrent, Nihat Kömürcüoğlu (vakıf + kendisi, mermer katkısı), Mehmet Hilmi Serter biyografileri yazıldı. Cenaze/hastalık/aile adları yazılmadı.
-- BEKLEYEN (hoca pazartesi): 12. madde "Kaynak Eğitim Merkezi – Elmas sponsor" kime ait; Özsoy çırçır fabrikası; Serter için Başaranlar sitesi açılmadı (1971 kuruluş, DSO/DENMERDER görevleri, cami/Kur'an kursu doğrulanamadı → yazılmadı). Sürüm ?v=20261120b.
+- BEKLEYEN (hoca pazartesi): 12. madde "Kaynak Eğitim Merkezi – Elmas sponsor" kime ait; Özsoy çırçır fabrikası; Serter: Gürkan onayıyla 1971 kuruluş, DSO/DENMERDER görevleri ve 2026 cami/Kur'an kursu/ASM eklendi; Bereket Enerji = Yağlı + Saldanlı (Gürkan teyit etti). Sürüm ?v=20261120b.
