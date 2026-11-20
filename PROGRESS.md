@@ -200,3 +200,6 @@ python tools/sunucu.py
 - Gürkan: tek portre "sade" → tarihçenin ALTINDA, raylı spot lambalarla aydınlatılan 4 fotoğraf + söz + imza (çizim + ray spot fotoğrafı referans).
 - section.ataturk-bolum: ray (.galeri::before), CSS spot (.spot), önde ışık konisi (.isik, screen) + duvarda ışık havuzu. Bölüm ekrana girince .acik → lambalar soldan sağa sırayla yanar (yalnızca opacity); JS yokken/azaltılmış harekette ışıklar açık.
 - Fotoğraflar Wikimedia Commons, hepsi kamu malı: 1923 (Mustafa Kemal Atatürk.png), 1928 (Mustafa Kemal Atatürk (1928).jpg), 1930 (Portrait photograph ... military uniform 1930.jpg), 1932 (Ataturk1930s.jpg) → assets/ataturk/*.webp, 360×450 gri. İmza: "Signature of Mustafa Kemal Atatürk.svg" (kamu malı) → assets/ataturk/imza.svg, CSS mask ile gümüş. Eski tek portre (assets/foto/ataturk.webp) kaldırıldı. Sürüm ?v=20261120d.
+
+## 2026-11-20 (5): Açılışta sol üstte logo yanıp sönmesi
+- Gürkan: yenileyince amblemler önce sol üstte çıkıp 1 sn sonra kayboluyor. Sebep: .ust (kişi sayfası üst çubuğu) ana sayfada body[data-gorunum="ana"] ile gizleniyordu ama bu öznitelik veri yüklendikten sonra JS ile konuyordu. Çözüm: <body data-gorunum="ana"> HTML'de; #/kisi/ linkiyle açılışta küçük satır içi betik "kisi" yapıyor ve CSS ana görünümü gizliyor. Sürüm ?v=20261120e.

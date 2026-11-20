@@ -92,6 +92,7 @@ p { margin: 0 0 1em; }
 /* ---------- Üst çubuk ---------- */
 .ust { padding: 18px 0 0; }
 body[data-gorunum="ana"] .ust { display: none; }
+body[data-gorunum="kisi"] #gorunum-ana { display: none; } /* kişi linkiyle açılışta ana sayfa bir an görünmesin */
 .logolar { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
 .logolar { gap: 14px; }
 .logo-yuvasi {

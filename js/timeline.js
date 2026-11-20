@@ -1,9 +1,9 @@
 // Tarihçe: ölçüm cetveli. Olaylar ay hassasiyetiyle cetvele yerleşir;
 // seçili olay üstte büyük okunur. Ok tuşları, kaydırma ve dokunma ile gezilir.
 
-import { esc, guvenliUrl } from "./data.js?v=20261120d";
-import { t } from "./i18n.js?v=20261120d";
-import { hareketAz } from "./effects.js?v=20261120d";
+import { esc, guvenliUrl } from "./data.js?v=20261120e";
+import { t } from "./i18n.js?v=20261120e";
+import { hareketAz } from "./effects.js?v=20261120e";
 
 const AYLAR = ["ocak", "şubat", "mart", "nisan", "mayıs", "haziran", "temmuz", "ağustos", "eylül", "ekim", "kasım", "aralık"];
 
