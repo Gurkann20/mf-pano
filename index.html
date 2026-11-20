@@ -16,11 +16,11 @@
   <link rel="icon" href="assets/logo/muhendislik-logo.webp" type="image/webp">
   <link rel="preload" href="assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/archivo-latin-ext-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/tokens.css?v=20261120c">
-  <link rel="stylesheet" href="css/base.css?v=20261120c">
-  <link rel="stylesheet" href="css/components.css?v=20261120c">
+  <link rel="stylesheet" href="css/tokens.css?v=20261120d">
+  <link rel="stylesheet" href="css/base.css?v=20261120d">
+  <link rel="stylesheet" href="css/components.css?v=20261120d">
   <script>document.documentElement.className = "js";</script>
-  <script type="module" src="js/main.js?v=20261120c"></script>
+  <script type="module" src="js/main.js?v=20261120d"></script>
 </head>
 <body>
   <a class="atla" href="#/pano">Panoya geç</a>
@@ -103,15 +103,52 @@
         <div class="kap">
           <h2 class="bolum__baslik" id="hikaye-baslik">Fakültenin hikâyesi</h2>
           <p class="bolum__giris">1970'teki ilk girişimden Pamukkale Üniversitesi'ne kadar.</p>
-          <figure class="ataturk">
-            <img src="assets/foto/ataturk.webp" alt="Mustafa Kemal Atatürk portresi" width="320" height="400" loading="lazy" decoding="async"
-                 onerror="this.remove()">
-            <div>
-              <blockquote><p>“Hayatta en hakiki mürşit ilimdir.”</p></blockquote>
-              <figcaption>Mustafa Kemal Atatürk</figcaption>
-            </div>
-          </figure>
           <div class="kadife-pano"><div class="kadife-pano__ic"><div class="cetvel" id="cetvel"></div></div></div>
+        </div>
+      </section>
+
+      <!-- Atatürk: raydaki spotların aydınlattığı fotoğraflar -->
+      <section class="ataturk-bolum" id="ataturk" aria-labelledby="ataturk-baslik">
+        <div class="kap">
+          <h2 class="sr" id="ataturk-baslik">Mustafa Kemal Atatürk</h2>
+          <ul class="galeri">
+            <li class="galeri__oge" style="--i:0">
+              <span class="spot" aria-hidden="true"></span>
+              <span class="isik" aria-hidden="true"></span>
+              <figure class="galeri__cerceve">
+                <img src="assets/ataturk/1923.webp" alt="Mustafa Kemal Atatürk, 1923" width="360" height="450" loading="lazy" decoding="async">
+                <figcaption>1923</figcaption>
+              </figure>
+            </li>
+            <li class="galeri__oge" style="--i:1">
+              <span class="spot" aria-hidden="true"></span>
+              <span class="isik" aria-hidden="true"></span>
+              <figure class="galeri__cerceve">
+                <img src="assets/ataturk/1928.webp" alt="Mustafa Kemal Atatürk, 1928" width="360" height="450" loading="lazy" decoding="async">
+                <figcaption>1928</figcaption>
+              </figure>
+            </li>
+            <li class="galeri__oge" style="--i:2">
+              <span class="spot" aria-hidden="true"></span>
+              <span class="isik" aria-hidden="true"></span>
+              <figure class="galeri__cerceve">
+                <img src="assets/ataturk/1930.webp" alt="Mustafa Kemal Atatürk üniformayla, 1930" width="360" height="450" loading="lazy" decoding="async">
+                <figcaption>1930</figcaption>
+              </figure>
+            </li>
+            <li class="galeri__oge" style="--i:3">
+              <span class="spot" aria-hidden="true"></span>
+              <span class="isik" aria-hidden="true"></span>
+              <figure class="galeri__cerceve">
+                <img src="assets/ataturk/1932.webp" alt="Mustafa Kemal Atatürk, 1932" width="360" height="450" loading="lazy" decoding="async">
+                <figcaption>1932</figcaption>
+              </figure>
+            </li>
+          </ul>
+          <figure class="ataturk-soz">
+            <blockquote><p>“Hayatta en hakiki mürşit ilimdir.”</p></blockquote>
+            <figcaption><span class="imza" role="img" aria-label="Mustafa Kemal Atatürk'ün imzası"></span></figcaption>
+          </figure>
         </div>
       </section>
     </div>

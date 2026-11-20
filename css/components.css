@@ -619,21 +619,93 @@
   .giris h1 { animation: none; background-position: 0 0; }
 }
 
-/* ===== Atatürk (tarihçenin başı) ve bayrak (alt bilgi) ===== */
-.ataturk {
-  display: grid; grid-template-columns: clamp(92px, 22vw, 140px) 1fr; align-items: center;
-  gap: clamp(16px, 4vw, 32px); margin: 0 0 clamp(32px, 6vw, 56px); max-width: 640px;
-}
-.ataturk img {
-  display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover;
-  border: 4px solid var(--gumus); border-radius: 2px;
-  box-shadow: 0 0 0 1px rgba(0,0,0,.5), 0 14px 30px rgba(0,0,0,.6);
-}
-.ataturk blockquote { margin: 0; }
-.ataturk blockquote p {
-  margin: 0; font-weight: 700; font-stretch: var(--yari-genis); line-height: 1.25;
-  font-size: clamp(1.15rem, 4.2vw, 1.75rem); color: var(--yazi); text-shadow: 0 2px 12px rgba(0,0,0,.8);
-}
-.ataturk figcaption { margin-top: 10px; color: #f1e9e4; font-size: var(--t-kucuk); text-shadow: 0 2px 10px rgba(0,0,0,.8); }
-.hikaye .bolum__giris:has(+ .ataturk) { margin-bottom: clamp(24px, 4vw, 36px); }
+/* ===== Alt bilgi bayrağı ===== */
 .alt .bayrak { display: block; width: 48px; height: 32px; margin-bottom: 12px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(255,255,255,.12); }
+
+/* ===== Atatürk: ray + spotlar + fotoğraflar ===== */
+.ataturk-bolum { padding: 0 0 clamp(72px, 12vw, 136px); }
+.galeri {
+  --ust: clamp(64px, 11vw, 112px);             /* ray ile çerçeve arası */
+  list-style: none; margin: 0 auto; padding: 0; max-width: 920px; position: relative;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(12px, 3.4vw, 44px);
+}
+/* Ray */
+.galeri::before {
+  content: ""; position: absolute; left: -2%; right: -2%; top: 0; height: clamp(7px, 1.1vw, 11px);
+  border-radius: 2px; z-index: 2;
+  background: linear-gradient(180deg, #4a4f57 0%, #16181c 35%, #050506 100%);
+  box-shadow: 0 6px 14px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.18);
+}
+.galeri__oge { position: relative; padding-top: var(--ust); display: flex; justify-content: center; }
+
+/* Spot: raya bağlantı + silindir gövde + mercek */
+.spot {
+  position: absolute; top: 0; left: 50%; z-index: 3;
+  width: clamp(16px, 2.6vw, 26px); height: clamp(30px, 5.2vw, 52px);
+  transform: translate(-50%, clamp(10px, 1.6vw, 16px));
+  border-radius: 3px 3px 5px 5px;
+  background: linear-gradient(90deg, #0b0c0e 0%, #3a3e45 30%, #15171a 62%, #050506 100%);
+  box-shadow: 0 8px 16px rgba(0,0,0,.6);
+}
+.spot::before { /* bağlantı kolu */
+  content: ""; position: absolute; left: 50%; bottom: 100%; width: 34%; height: clamp(8px, 1.3vw, 14px);
+  transform: translateX(-50%); background: linear-gradient(90deg, #08090a, #2c3036, #08090a);
+}
+.spot::after { /* mercek */
+  content: ""; position: absolute; left: 8%; right: 8%; bottom: -2px; height: 5px; border-radius: 50%;
+  background: radial-gradient(closest-side, #fff8e6, #ffd58a 55%, rgba(255,200,110,0));
+  box-shadow: 0 0 10px 3px rgba(255,214,140,.75), 0 0 26px 8px rgba(255,200,110,.35);
+}
+
+/* Işık konisi + duvarda ışık havuzu */
+.isik {
+  position: absolute; z-index: 3; pointer-events: none;
+  left: -22%; right: -22%; top: calc(clamp(10px, 1.6vw, 16px) + clamp(30px, 5.2vw, 52px) - 2px);
+  height: calc(var(--ust) + 62%);
+  background:
+    radial-gradient(46% 30% at 50% 62%, rgba(255,232,185,.30), rgba(255,232,185,0) 72%),
+    linear-gradient(180deg, rgba(255,230,180,.55) 0%, rgba(255,226,172,.22) 50%, rgba(255,222,165,0) 100%);
+  clip-path: polygon(44% 0, 56% 0, 96% 100%, 4% 100%);
+  filter: blur(4px); mix-blend-mode: screen;
+}
+.galeri__oge::before { /* duvarda, çerçevenin arkasında ışık havuzu */
+  content: ""; position: absolute; z-index: 0; pointer-events: none;
+  left: -16%; right: -16%; top: calc(var(--ust) - 8%); height: 70%;
+  background: radial-gradient(closest-side, rgba(255,214,150,.30), rgba(255,214,150,0));
+  transition: opacity .7s var(--yumusak) calc(.2s + var(--i, 0) * .35s);
+}
+.js .ataturk-bolum:not(.acik) .galeri__oge::before { opacity: 0; }
+.galeri__cerceve { position: relative; z-index: 2; margin: 0; width: 100%; }
+.galeri__cerceve img {
+  display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover;
+  border: clamp(3px, .6vw, 6px) solid var(--gumus); border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.6), 0 18px 34px rgba(0,0,0,.65);
+}
+.galeri__cerceve::after { /* ışık yanmadan önceki loşluk */
+  content: ""; position: absolute; inset: 0 0 auto 0; aspect-ratio: 4 / 5; background: #000; opacity: 0; pointer-events: none;
+}
+.galeri__cerceve figcaption {
+  margin-top: 10px; text-align: center; font-size: var(--t-kucuk); font-weight: 600; font-stretch: var(--yari-genis);
+  color: #f1e9e4; text-shadow: 0 2px 10px rgba(0,0,0,.85); font-variant-numeric: tabular-nums;
+}
+
+/* Işıklar sırayla yanar (bölüm ekrana girince bir kez) */
+.js .ataturk-bolum:not(.acik) .isik,
+.js .ataturk-bolum:not(.acik) .spot::after { opacity: 0; }
+.js .ataturk-bolum:not(.acik) .galeri__cerceve::after { opacity: .55; }
+.isik, .spot::after, .galeri__cerceve::after { transition: opacity .7s var(--yumusak) calc(.2s + var(--i, 0) * .35s); }
+
+/* Söz ve imza */
+.ataturk-soz { margin: clamp(40px, 7vw, 72px) auto 0; text-align: center; max-width: 760px; }
+.ataturk-soz blockquote { margin: 0; }
+.ataturk-soz p {
+  margin: 0; font-weight: 700; font-stretch: var(--yari-genis); line-height: 1.22;
+  font-size: clamp(1.35rem, 5vw, 2.3rem); color: var(--yazi); text-shadow: 0 2px 14px rgba(0,0,0,.85);
+}
+.imza {
+  display: block; margin: clamp(14px, 2.6vw, 24px) auto 0; width: clamp(160px, 34vw, 260px); aspect-ratio: 572 / 205;
+  background: linear-gradient(180deg, #ffffff 10%, var(--gumus) 55%, #8a95a4 100%);
+  -webkit-mask: url("../assets/ataturk/imza.svg") center / contain no-repeat;
+          mask: url("../assets/ataturk/imza.svg") center / contain no-repeat;
+}
+@media (prefers-reduced-motion: reduce) { .isik, .spot::after, .galeri__cerceve::after { transition: none; } }

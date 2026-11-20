@@ -195,3 +195,8 @@ python tools/sunucu.py
 ## 2026-11-20 (3): Bayrak ve Atatürk
 - Gürkan: "koy gitsin". Köşeler yerine: tarihçenin başında çerçeveli Atatürk portresi + "Hayatta en hakiki mürşit ilimdir." (figure.ataturk), alt bilgide resmî ölçülerde SVG Türk bayrağı.
 - Portre: Wikimedia Commons "Ataturk1930s.jpg" (29 Mart 1932, kamu malı), siyah-beyaz 320×400 WebP → assets/foto/ataturk.webp (~10 KB). Dekanlık resmî bir görsel verirse aynı adla değiştirilir. Sürüm ?v=20261120c.
+
+## 2026-11-20 (4): Atatürk duvarı (Gürkan'ın çizimiyle)
+- Gürkan: tek portre "sade" → tarihçenin ALTINDA, raylı spot lambalarla aydınlatılan 4 fotoğraf + söz + imza (çizim + ray spot fotoğrafı referans).
+- section.ataturk-bolum: ray (.galeri::before), CSS spot (.spot), önde ışık konisi (.isik, screen) + duvarda ışık havuzu. Bölüm ekrana girince .acik → lambalar soldan sağa sırayla yanar (yalnızca opacity); JS yokken/azaltılmış harekette ışıklar açık.
+- Fotoğraflar Wikimedia Commons, hepsi kamu malı: 1923 (Mustafa Kemal Atatürk.png), 1928 (Mustafa Kemal Atatürk (1928).jpg), 1930 (Portrait photograph ... military uniform 1930.jpg), 1932 (Ataturk1930s.jpg) → assets/ataturk/*.webp, 360×450 gri. İmza: "Signature of Mustafa Kemal Atatürk.svg" (kamu malı) → assets/ataturk/imza.svg, CSS mask ile gümüş. Eski tek portre (assets/foto/ataturk.webp) kaldırıldı. Sürüm ?v=20261120d.
