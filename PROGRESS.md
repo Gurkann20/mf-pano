@@ -191,3 +191,7 @@ python tools/sunucu.py
 - Zorlu: 2006 dış cephe kaplaması. Ramazan Özen: 50. Yıl Kaynak Eğitim Merkezi, lazer kaynak makinesi (Yakut). Tano: cihaz gönderdi (tarih yok). Aydan: Jeoloji Müh. ile ortak çalışma.
 - Nalan Devrent, Nihat Kömürcüoğlu (vakıf + kendisi, mermer katkısı), Mehmet Hilmi Serter biyografileri yazıldı. Cenaze/hastalık/aile adları yazılmadı.
 - BEKLEYEN (hoca pazartesi): 12. madde "Kaynak Eğitim Merkezi – Elmas sponsor" kime ait; Özsoy çırçır fabrikası; Serter: Gürkan onayıyla 1971 kuruluş, DSO/DENMERDER görevleri ve 2026 cami/Kur'an kursu/ASM eklendi; Bereket Enerji = Yağlı + Saldanlı (Gürkan teyit etti). Sürüm ?v=20261120b.
+
+## 2026-11-20 (3): Bayrak ve Atatürk
+- Gürkan: "koy gitsin". Köşeler yerine: tarihçenin başında çerçeveli Atatürk portresi + "Hayatta en hakiki mürşit ilimdir." (figure.ataturk), alt bilgide resmî ölçülerde SVG Türk bayrağı.
+- Portre: Wikimedia Commons "Ataturk1930s.jpg" (29 Mart 1932, kamu malı), siyah-beyaz 320×400 WebP → assets/foto/ataturk.webp (~10 KB). Dekanlık resmî bir görsel verirse aynı adla değiştirilir. Sürüm ?v=20261120c.
