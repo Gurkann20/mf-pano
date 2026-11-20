@@ -1,7 +1,10 @@
 {
   "_aciklama": "Sitenin genel ayarları. Yönetim panelinden (yonetim/) veya elle düzenlenebilir. iletisim: alt bilgide ve kişi sayfasındaki 'Bize ulaşın' penceresinde görünen bilgiler.",
-  "pano": { "sutun": 4, "satir": 14 },
-  "sonGuncelleme": "2026-11-19",
+  "pano": {
+    "sutun": 4,
+    "satir": 14
+  },
+  "sonGuncelleme": "2026-11-20",
   "iletisim": {
     "baslik": "Mühendislik Fakültesi Dekanlığı",
     "aciklama": "Bağışçılarımız hakkında bilgi veya fotoğraf paylaşmak ya da fakültemize katkı sunmak için dekanlığımıza ulaşabilirsiniz.",
