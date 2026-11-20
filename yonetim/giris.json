@@ -1,0 +1,11 @@
+{
+  "_aciklama": "Yönetim paneli girişi. GitHub erişim anahtarı kullanıcı adı ve şifreyle şifrelidir (PBKDF2-SHA256 + AES-256-GCM). Şifre bu dosyada yoktur. Yeniden oluşturmak için yonetim/kurulum.html.",
+  "surum": 1,
+  "sahip": "gurkann20",
+  "depo": "mf-pano",
+  "dal": "main",
+  "tur": 600000,
+  "tuz": "OTVGZDBYH8zWUTjxSc6YGQ==",
+  "iv": "02osXsy9MaGPdl2I",
+  "veri": "aIQrlI+mTCAczhyW8dW9yOjxzPmkjfHDzSHr7gjCSMYfIuWEiJuGoUEwOlFh80B6EZYrLw9YH3upk9HMx3O2S62Nv57cZzc+wJoupzqE2qtYkHjSDLj4rmNaX64Ma2ldnY1lH4WgEiaY5axtew=="
+}
