@@ -176,3 +176,7 @@ python tools/sunucu.py
 - Test (sahte token): yanlış şifre/kullanıcı reddedildi; doğru şifre çözdü, GitHub 401 → kilitli kaldı; dosyada token düz metin yok.
 - Yönetim dosyalarına da ?v= eklendi (Gürkan'ın tarayıcısı eski yonetim.js'i gösteriyordu). Sürüm değişince yonetim/index.html ve kurulum.html'deki ?v= de güncellenmeli.
 - SIRADAKİ: Gürkan GitHub'da fine-grained token oluşturup kurulum.html ile girişi kuracak (henüz giris.json yok → panel "Panel henüz kurulmadı" der).
+
+## 2026-11-20: Giriş kuruldu, kaldır düğmesi
+- Gürkan kurulum sayfasıyla girişi kurdu (yonetim/giris.json depoda) ve panelden test kaydı ekledi: "Gürkan Aktaş" (8. satır 4. sütun) — kaldırılması gerekebilir.
+- "Panodan kaldır" yalnızca form başlığında küçük düğmeydi, Gürkan bulamadı → formun altına, Vazgeç/Uygula yanına taşındı. Yönetim sürümü ?v=20261120a.
