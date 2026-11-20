@@ -119,7 +119,7 @@ PAÜ sitesinin (pau.edu.tr) renklerine uyumlu olmalı. Aşağıdaki değerler **
 - Kart/kutu ve dikey çizgi kullanılmaz. Tek yatay çizgi üzerinde olay noktaları; olaylar **eşit aralıkla** dizilir (1976'da 5 olay var, zamanla orantılı dizilince üst üste biniyordu). Çentik, iğne yok (Gürkan: "çizgiler kötü duruyor").
 - Altında yalnızca gerekli yıllar: masaüstünde her yılın ilk olayının altında yıl; telefonda yalnızca seçili olayın yılı.
 - Seçili olay üstte: gümüş dolgulu büyük yıl + tarih, başlık, metin, kaynak. Gezinme: önceki/sonraki okları, noktalar, klavye okları, telefonda yana kaydırma. Oynat/durdur düğmesi yok.
-- **Otomatik ilerleme (slayt sunusu):** Her olay 2,5 sn kalır (Gürkan: "1-2 saniyede bir geçsin"), olay yana kayarak değişir, mavi çizgi hızla (0,45 sn) bir sonraki noktaya uzanır. Bütün olaylar aynı hücrede üst üste durur, pano yüksekliği en uzun olaya göre sabittir. Sondan başa dönüşte çizgi anında sıfırlanır. Hep çalışır; yalnızca bölüm ekranda değilken, sekme gizliyken ve klavyeyle cetvelde gezinilirken bekler. Otomatik geçişte aria-live kapalıdır.
+- **Otomatik ilerleme (slayt sunusu):** Her olay 3,5 sn kalır (Gürkan önce "1-2 saniyede bir geçsin" dedi, 2026-11-20 "biraz hızlı, 1 sn daha" → 3,5 sn), olay yana kayarak değişir, mavi çizgi hızla (0,45 sn) bir sonraki noktaya uzanır. Bütün olaylar aynı hücrede üst üste durur, pano yüksekliği en uzun olaya göre sabittir. Sondan başa dönüşte çizgi anında sıfırlanır. Hep çalışır; yalnızca bölüm ekranda değilken, sekme gizliyken ve klavyeyle cetvelde gezinilirken bekler. Otomatik geçişte aria-live kapalıdır.
 - `#/tarihce` adresi bu bölüme kaydırır.
 
 ### 5.3 Dijital pano (sitenin kalbi)

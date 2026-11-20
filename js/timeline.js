@@ -1,9 +1,9 @@
 // Tarihçe: ölçüm cetveli. Olaylar ay hassasiyetiyle cetvele yerleşir;
 // seçili olay üstte büyük okunur. Ok tuşları, kaydırma ve dokunma ile gezilir.
 
-import { esc, guvenliUrl } from "./data.js?v=20261120e";
-import { t } from "./i18n.js?v=20261120e";
-import { hareketAz } from "./effects.js?v=20261120e";
+import { esc, guvenliUrl } from "./data.js?v=20261120f";
+import { t } from "./i18n.js?v=20261120f";
+import { hareketAz } from "./effects.js?v=20261120f";
 
 const AYLAR = ["ocak", "şubat", "mart", "nisan", "mayıs", "haziran", "temmuz", "ağustos", "eylül", "ekim", "kasım", "aralık"];
 
@@ -119,7 +119,7 @@ export function cetvelCiz(kap, veri) {
      ve olay değişir. Son olaydan sonra başa döner (çizgi geri sarılmaz, sıfırdan başlar).
      Her zaman çalışır; yalnızca bölüm ekranda değilken, sekme gizliyken ve klavyeyle
      cetvelin içinde gezinilirken bekler. Elle seçimden sonra süre baştan sayılır. */
-  const SURE = 2500; // slayt sunusu: her olay 2,5 sn
+  const SURE = 3500; // slayt sunusu: her olay 3,5 sn
   const engeller = new Set();
   let zamanlayici = null;
 

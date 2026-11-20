@@ -203,3 +203,6 @@ python tools/sunucu.py
 
 ## 2026-11-20 (5): Açılışta sol üstte logo yanıp sönmesi
 - Gürkan: yenileyince amblemler önce sol üstte çıkıp 1 sn sonra kayboluyor. Sebep: .ust (kişi sayfası üst çubuğu) ana sayfada body[data-gorunum="ana"] ile gizleniyordu ama bu öznitelik veri yüklendikten sonra JS ile konuyordu. Çözüm: <body data-gorunum="ana"> HTML'de; #/kisi/ linkiyle açılışta küçük satır içi betik "kisi" yapıyor ve CSS ana görünümü gizliyor. Sürüm ?v=20261120e.
+
+## 2026-11-20 (6): Tarihçe yavaşladı
+- Gürkan: "biraz hızlı, 1 sn daha" → her olay 2,5 sn yerine 3,5 sn. Sürüm ?v=20261120f.
