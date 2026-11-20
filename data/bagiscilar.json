@@ -901,6 +901,32 @@
       "yayinla": true,
       "foto": null,
       "kaynaklar": []
+    },
+    {
+      "id": "gurkan-aktas",
+      "ad": "Gürkan Aktaş",
+      "tur": "kisi",
+      "satir": 8,
+      "sutun": 4,
+      "unvan": "Öğrenci",
+      "yasam": {
+        "dogum": "2006",
+        "vefat": null
+      },
+      "ozet": "abc",
+      "biyografi": [
+        "2006 yılında doğmuş eğitim hayatını paü de devam ettirmiş bilgisyar mühendisi olarak mezun olmuş."
+      ],
+      "katki": [
+        {
+          "yil": "2026",
+          "metin": "web sitesi kurulumunda yardım etti"
+        }
+      ],
+      "durum": "eksik",
+      "yayinla": true,
+      "foto": null,
+      "kaynaklar": []
     }
   ]
 }
