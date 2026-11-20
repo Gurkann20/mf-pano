@@ -180,3 +180,4 @@ python tools/sunucu.py
 ## 2026-11-20: Giriş kuruldu, kaldır düğmesi
 - Gürkan kurulum sayfasıyla girişi kurdu (yonetim/giris.json depoda) ve panelden test kaydı ekledi: "Gürkan Aktaş" (8. satır 4. sütun) — kaldırılması gerekebilir.
 - "Panodan kaldır" yalnızca form başlığında küçük düğmeydi, Gürkan bulamadı → formun altına, Vazgeç/Uygula yanına taşındı. Yönetim sürümü ?v=20261120a.
+- İŞKUR belgesi yeniden karşılaştırıldı (Gürkan sordu): doğrulanamadığı için dışarıda bırakılan kısımlar "hepsini aç" kararı üzerine eklendi: Terzioğlu (1951 Babadağ, 1975 Ege Üni., büro), Saldanlı (ELDER 2004-2012, 1975-80 kamu), Tano (Nihon Üni., alanlar), Özcan (okul projelerine katkı), İnceoğlu (1965-66 ortaklık, eleman.net), Zorlu (savunma, ihracat), Aydan (alanlar). Deneme kaydı Gürkan Aktaş Gürkan tarafından panelden kaldırıldı (31 isim).
