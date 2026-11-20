@@ -139,3 +139,6 @@ body:not(.kilitli) .giris-ekrani { display: none; }
 .giris-ekrani label { display: grid; gap: 6px; }
 .giris-ekrani details summary { cursor: pointer; }
 .giris-ekrani details .satir2 { margin-top: 10px; }
+
+/* kaldır düğmesi formun altında, solda: uygula/vazgeç'ten ayrı dursun */
+#sil { margin-right: auto; }

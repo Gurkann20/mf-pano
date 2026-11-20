@@ -2,7 +2,7 @@
 // Personel kullanıcı adı + şifreyle girer; şifre, yonetim/giris.json içindeki şifreli GitHub
 // erişim anahtarını çözer. Veriyi okur, formla düzenletir; "Siteye yayınla" ile GitHub'a
 // commit atar. Kod bilgisi gerekmez.
-import { coz } from "./sifreleme.js?v=20261119t";
+import { coz } from "./sifreleme.js?v=20261120a";
 
 const SATIR = 14, SUTUN = 4;
 const AYAR_ANAHTARI = "pano-yonetim-ayar";
