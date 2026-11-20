@@ -1,7 +1,7 @@
 // Kişi / kurum sayfası: #/kisi/<id>
 
-import { esc, plakaAdi, basHarfler, yasamMetni, bioGoster, guvenliUrl } from "./data.js?v=20261119s";
-import { t } from "./i18n.js?v=20261119s";
+import { esc, plakaAdi, basHarfler, yasamMetni, bioGoster, guvenliUrl } from "./data.js?v=20261120b";
+import { t } from "./i18n.js?v=20261120b";
 
 const OK_SOL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>';
 const PAYLAS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>';
@@ -75,7 +75,7 @@ export function kisiCiz(kap, veri, id) {
         <div class="monogram" aria-hidden="true">${esc(basHarfler(k))}${fotoHtml(k)}</div>
         <div>
           <div class="plaka plaka--buyuk">
-            <h1 class="plaka__ad">${esc(plakaAdi(k))}</h1>
+            <h1 class="plaka__ad">${esc(plakaAdi(k, true))}</h1>
             <span class="plaka__alt">${esc(altBilgi)}</span>
           </div>
           <div class="kisi-ust__meta">

@@ -181,3 +181,13 @@ python tools/sunucu.py
 - Gürkan kurulum sayfasıyla girişi kurdu (yonetim/giris.json depoda) ve panelden test kaydı ekledi: "Gürkan Aktaş" (8. satır 4. sütun) — kaldırılması gerekebilir.
 - "Panodan kaldır" yalnızca form başlığında küçük düğmeydi, Gürkan bulamadı → formun altına, Vazgeç/Uygula yanına taşındı. Yönetim sürümü ?v=20261120a.
 - İŞKUR belgesi yeniden karşılaştırıldı (Gürkan sordu): doğrulanamadığı için dışarıda bırakılan kısımlar "hepsini aç" kararı üzerine eklendi: Terzioğlu (1951 Babadağ, 1975 Ege Üni., büro), Saldanlı (ELDER 2004-2012, 1975-80 kamu), Tano (Nihon Üni., alanlar), Özcan (okul projelerine katkı), İnceoğlu (1965-66 ortaklık, eleman.net), Zorlu (savunma, ihracat), Aydan (alanlar). Deneme kaydı Gürkan Aktaş Gürkan tarafından panelden kaldırıldı (31 isim).
+
+## 2026-11-20 (2): Hocayla gözden geçirme düzeltmeleri
+- Dernek adları panodaki gibi: 1. "Devlet Mimarlık ve Mühendislik Yüksekokulu Yaptırma ve Yaşatma Derneği" (eski "Yardım" yanlıştı), 2. ve 3. dernekte kısa ad kaldırıldı → plakada ve kişi sayfasında tam ad. Kişi sayfasının gümüş başlığı artık her zaman tam adı gösteriyor (plakaAdi(k, true)).
+- PDF'teki OCR hataları düzeltildi: Kaşıkçı, Samanlıoğlu, Manasır (hocanın düzeltmesi).
+- Yükseköğretim Vakfı: bugün burs vermiyor → "Bugün burs" katkısı ve cümlesi kaldırıldı.
+- Özsoy: okul adı özet ve ilk paragrafta. Raşit Özkardeş: Nail Özkardeş Anaokulu. Metin Özkardeş: "İş hayatına". Musa Çelikkol: dil düzeltmesi. İnceoğlu Un.
+- Ali Yağlı + Ceyhan Saldanlı: 2007 Temiz Enerji Evi (Bereket Enerji yaptırıp bağışladı; PAÜ Makine sayfası). İTÜ Elektrik Fakültesi (Aydem sayfasındaki ad; bölüm adı kaynakta yok).
+- Zorlu: 2006 dış cephe kaplaması. Ramazan Özen: 50. Yıl Kaynak Eğitim Merkezi, lazer kaynak makinesi (Yakut). Tano: cihaz gönderdi (tarih yok). Aydan: Jeoloji Müh. ile ortak çalışma.
+- Nalan Devrent, Nihat Kömürcüoğlu (vakıf + kendisi, mermer katkısı), Mehmet Hilmi Serter biyografileri yazıldı. Cenaze/hastalık/aile adları yazılmadı.
+- BEKLEYEN (hoca pazartesi): 12. madde "Kaynak Eğitim Merkezi – Elmas sponsor" kime ait; Özsoy çırçır fabrikası; Serter için Başaranlar sitesi açılmadı (1971 kuruluş, DSO/DENMERDER görevleri, cami/Kur'an kursu doğrulanamadı → yazılmadı). Sürüm ?v=20261120b.

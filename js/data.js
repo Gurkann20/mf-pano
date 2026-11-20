@@ -63,8 +63,8 @@ export function ilkYil(k) {
 }
 
 /** Plaka üzerindeki yazım: kişilerde soyadı büyük harf (fiziksel panodaki gibi). */
-export function plakaAdi(k) {
-  const ad = k.kisaAd || k.ad;
+export function plakaAdi(k, tam = false) {
+  const ad = (!tam && k.kisaAd) || k.ad;
   if (k.tur !== "kisi") return ad;
   const parcalar = ad.trim().split(/\s+/);
   if (parcalar.length < 2) return ad;

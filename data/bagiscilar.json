@@ -9,15 +9,14 @@
   "bagiscilar": [
     {
       "id": "yaptirma-ve-yardim-dernegi",
-      "ad": "Devlet Mimarlık ve Mühendislik Yüksekokulu Yaptırma ve Yardım Derneği",
-      "kisaAd": "Yaptırma ve Yardım Derneği",
+      "ad": "Devlet Mimarlık ve Mühendislik Yüksekokulu Yaptırma ve Yaşatma Derneği",
       "tur": "dernek-vakif",
       "satir": 1,
       "sutun": 1,
       "ozet": "1971'de, Denizli'ye bir mühendislik okulu kazandırmak için kurulan ilk dernek.",
       "biyografi": [
-        "4 Şubat 1971'de Vali Münir Güney başkanlığında, İl Genel Meclisi salonunda toplanan Denizli'nin ileri gelenleri tarafından kuruldu. Amacı, şehre bir devlet mimarlık ve mühendislik yüksekokulu kazandırmak için hazırlıkları yürütmekti.",
-        "Dernek her pazartesi valinin başkanlığında toplandı. İlk idare heyetinde Başkan İzzet Ergi, İkinci Başkan Atilla Sayıner, Genel Sekreter Yüksel Kasıkçı, Muhasip Fuat Dağdeviren, Veznedar Raşit Özkardeş ile üyeler Burhan Saraçoğlu ve Münir Kuyumcu yer aldı."
+        "4 Şubat 1971'de Vali Münir Güney başkanlığında, İl Genel Meclisi salonunda toplanan Denizli'nin ileri gelenleri tarafından kuruldu. Amacı, şehre bir devlet mimarlık ve mühendislik yüksekokulu kazandırmak için gereken hazırlıkları yürütmekti.",
+        "Dernek her pazartesi valinin başkanlığında toplandı. İlk yönetim kurulunda Başkan İzzet Ergi, İkinci Başkan Atilla Sayıner, Genel Sekreter Yüksel Kaşıkçı, Muhasip Fuat Dağdeviren ve Veznedar Raşit Özkardeş görev aldı; Burhan Saraçoğlu ile Münir Kuyumcu da yönetim kurulu üyesiydi."
       ],
       "katki": [
         {
@@ -38,7 +37,6 @@
     {
       "id": "yaptirma-ve-yasatma-dernegi",
       "ad": "Yüksekokul Yaptırma ve Yaşatma Derneği",
-      "kisaAd": "Yaptırma ve Yaşatma Derneği",
       "tur": "dernek-vakif",
       "satir": 1,
       "sutun": 2,
@@ -70,14 +68,13 @@
     {
       "id": "akademi-koruma-ve-yasatma-dernegi",
       "ad": "Denizli Devlet Mühendislik ve Mimarlık Akademisi Koruma ve Yaşatma Derneği",
-      "kisaAd": "Akademi Koruma ve Yaşatma Derneği",
       "tur": "dernek-vakif",
       "satir": 1,
       "sutun": 3,
       "ozet": "Akademi kurulduktan sonra onu korumak ve büyütmek için yeniden örgütlenen dernek.",
       "biyografi": [
-        "Ana tüzüğü 10 Mart 1977'de yayımlandı. Akademinin kurulmasıyla eski Yaptırma ve Yaşatma Derneği'nin yeniden düzenlenmesinden doğdu.",
-        "Kurucu üyeleri Akademi Başkanı Doç. Dr. Suat Çakmak, İzzet Ergi, Raşit Özkardeş, Yüksel Kasıkçı, Burhan Saraçoğlu, Necdet Güzelaydın, Nezahat Özünlü, İsmail Samanhoğlu, Ali Rıza Dalkara, Musa Kazım Manaşır ve Ramazan Sözgen'di. Bu dönemde akademi, 1978'de satın alınan Çamlık Koleji binasına taşındı."
+        "Akademinin kurulmasıyla eski Yaptırma ve Yaşatma Derneği yeniden düzenlendi ve bu dernek doğdu. Ana tüzüğü 10 Mart 1977'de yayımlandı.",
+        "Kurucu üyeleri Akademi Başkanı Doç. Dr. Suat Çakmak, İzzet Ergi, Raşit Özkardeş, Yüksel Kaşıkçı, Burhan Saraçoğlu, Necdet Güzelaydın, Nezahat Özünlü, İsmail Samanlıoğlu, Ali Rıza Dalkara, Musa Kazım Manasır ve Ramazan Sözgen'dir. Bu dönemde akademi, 1978'de satın alınan Çamlık Koleji binasına taşındı."
       ],
       "katki": [
         {
@@ -106,7 +103,7 @@
       "biyografi": [
         "22 Mayıs 1987'de Vali Necati Bilican başkanlığında, belediye başkanı ve Denizlili hayırsever iş insanlarınca kuruldu. Amacı üniversite için lobi, bağış ve kampüs yapım çalışmalarını organize etmekti.",
         "42 kurucu üyesi arasında Vali Necati Bilican, Vali Yardımcısı Orhan Aykan, Belediye Başkanı Ziya Tıkıroğlu, Fakülte Dekanı Mustafa Demirsoy, Ticaret Odası Başkanı M. Haluk Müftüler, Sanayi Odası Başkanı M. Feridun Alpat ile Cafer Sadık Abalıoğlu ve Raşit Özkardeş vardı.",
-        "1988'de okulun İzmir'e taşınmaması için akademiye nakdi bağışta bulundu. Bugün de Pamukkale Üniversitesi'nde okuyan, başarılı ve desteğe ihtiyacı olan öğrencilere karşılıksız burs veriyor."
+        "1988'de okulun İzmir'e taşınmaması için akademiye nakdi bağışta bulundu."
       ],
       "katki": [
         {
@@ -116,10 +113,6 @@
         {
           "yil": "1988",
           "metin": "Okulun İzmir'e taşınmaması için nakdi bağış"
-        },
-        {
-          "yil": "Bugün",
-          "metin": "PAÜ öğrencilerine burs"
         }
       ],
       "durum": "dogrulandi",
@@ -322,9 +315,9 @@
       "satir": 3,
       "sutun": 3,
       "unvan": "Esnaf, hayırsever",
-      "ozet": "Muratdede'deki okulu yaptıran Denizlili hayırsever.",
+      "ozet": "Muratdede'deki Ahmet Nuri Özsoy İlkokulu'nu yaptıran Denizlili hayırsever.",
       "biyografi": [
-        "Denizli'nin esnaf ve eşrafından bir hayırseverdi. Muratdede Mahallesi'ndeki okulun yapımı 21 Temmuz 1971'de başladı; ilk katı 19 Eylül 1972'de 15 öğretmen ve 471 öğrenciyle açıldı.",
+        "Denizli'nin esnaf ve eşrafından bir hayırseverdi. Muratdede Mahallesi'nde bugün kendi adını taşıyan Ahmet Nuri Özsoy İlkokulu'nu yaptırdı. Okulun yapımı 21 Temmuz 1971'de başladı; ilk katı 19 Eylül 1972'de 15 öğretmen ve 471 öğrenciyle açıldı.",
         "İkinci katı da yaptırma sözü vermişti; vefatından sonra bu sözü eşi Gülfidan Özsoy ve oğlu Bekir Ünsal Özsoy yerine getirdi ve ikinci kat 1982'de açıldı. Ahmet Nuri Özsoy İlkokulu ve Ortaokulu bugün de eğitim veriyor."
       ],
       "katki": [
@@ -380,9 +373,9 @@
       },
       "ozet": "1971'den 1987'ye sürecin her aşamasında yer alan hayırsever.",
       "biyografi": [
-        "1911'de Denizli'de doğdu. 1929'da babasının yanında manifaturacılıkla işe başladı; 1949'dan sonra otomotiv ve kamyonculuk alanına yöneldi. 1954–1960 yılları arasında Denizli Ticaret Odası başkanlığı yaptığı belirtiliyor.",
-        "Raşit Özkardeş Ortaokulu'nu ve Pakize-Suzan Özkardeş İlkokulu'nu yaptırdı; oğlu Nail Özkardeş bu geleneği bir anaokuluyla sürdürdü. 21 Şubat 2005'te 94 yaşında vefat etti.",
-        "Fakültenin hikâyesinde en çok adı geçen isimlerden biridir: 1971 derneğinin veznedarı, 1976-77 kampanyasının bağışçısı, 1977 Koruma ve Yaşatma Derneği'nin ve 1987 Yükseköğretim Vakfı'nın kurucu üyesi."
+        "1911'de Denizli'de doğdu. 1929'da babasının yanında manifaturacılıkla işe başladı; 1949'dan sonra otomotiv ve kamyonculuk alanına yöneldi. 1954–1960 yılları arasında Denizli Ticaret Odası başkanlığı yaptığı belirtilmektedir.",
+        "Raşit Özkardeş Ortaokulu'nu ve Pakize-Suzan Özkardeş İlkokulu'nu yaptırdı; oğlu Nail Özkardeş bu geleneği kendi adını taşıyan Nail Özkardeş Anaokulu ile sürdürdü. 21 Şubat 2005'te 94 yaşında vefat etti.",
+        "Fakültenin hikâyesinde adı en çok geçen isimlerden biridir: 1971'de kurulan derneğin veznedarı, 1976-77 kampanyasının bağışçısı, 1977'de kurulan Koruma ve Yaşatma Derneği'nin ve 1987'de kurulan Yükseköğretim Vakfı'nın kurucu üyesidir."
       ],
       "katki": [
         {
@@ -425,7 +418,7 @@
       },
       "ozet": "Özkardeş ailesinden; 1976-77 akademi kampanyasının bağışçısı.",
       "biyografi": [
-        "1943'te Denizli'de, Raşit ve Pakize Özkardeş'in oğlu olarak doğdu. Babasının mağazasında manifaturacılıkla başladı, ardından aileyle birlikte otomotiv sektöründe çeşitli markaların bayiliklerini yürüttü. 6 Ağustos 2013'te vefat etti."
+        "1943'te Denizli'de, Raşit ve Pakize Özkardeş'in oğlu olarak doğdu. İş hayatına babasının mağazasında manifaturacılıkla başladı; ardından aileyle birlikte otomotiv sektöründe çeşitli markaların bayiliklerini yürüttü. 6 Ağustos 2013'te vefat etti."
       ],
       "katki": [
         {
@@ -456,8 +449,9 @@
       },
       "ozet": "Denizli esnafının uzun yıllar temsilcisi; 1976-77 akademi kampanyasının bağışçısı.",
       "biyografi": [
-        "14 Ağustos 1940'ta Denizli'de doğdu; asıl mesleği şoförlük ve nakliyecilik. 1968'de Denizli Şoförler ve Otomobilciler Odası yönetimine girdi, 1970'lerin başından 2005'e kadar odanın başkanlığını yaptı. 1995–2018 arasında Denizli Esnaf ve Sanatkarlar Odaları Birliği Başkanı oldu; TESK ve TESKOMB yönetimlerinde de bulundu.",
-        "Eskihisar'daki Musa-Hatice Çelikkol İlk-Ortaokulu, kendisinin ve eşinin adını taşıyor."
+        "14 Ağustos 1940'ta Denizli'de doğdu. Asıl mesleği şoförlük ve nakliyeciliktir. 1968'de Denizli Şoförler ve Otomobilciler Odası yönetimine girdi; 1970'lerin başından 2005'e kadar odanın başkanlığını yaptı.",
+        "1995–2018 yılları arasında Denizli Esnaf ve Sanatkârlar Odaları Birliği Başkanı olarak görev yaptı; TESK ve TESKOMB yönetimlerinde de bulundu.",
+        "Eskihisar'daki Musa-Hatice Çelikkol İlk-Ortaokulu, kendisinin ve eşinin adını taşımaktadır."
       ],
       "katki": [
         {
@@ -517,7 +511,7 @@
       "biyografi": [
         "Kökleri 1944'e uzanıyor: Hacı Ahmet İnceoğlu, Baki Abalıoğlu ve Cafer Sadık Abalıoğlu'nun ortaklığıyla Denizli'de, Eski Çal Yolu üzerinde günde 25 ton öğüten ilk un fabrikası kuruldu.",
         "1965–1966'da İnceoğlu Makina Ticaret ve Sanayi A.Ş. adıyla Denizli Un Fabrikaları Kollektif Şirketi'nin ortakları arasına girdi. 1976'da İzmir Karayolu üzerinde günde 150 ton kapasiteli yeni fabrika açıldı.",
-        "2006–2007'deki yeniden yapılanmayla ürünler İNCEOĞLUN markasıyla satılmaya başlandı; yenilemelerle kapasite günde 300 tona ulaştı. Şirket bugün Merkezefendi'de un, tahıl ürünleri ve gıda sanayisine yönelik ürünler üretiyor."
+        "2006–2007'deki yeniden yapılanmayla ürünler İnceoğlu Un markasıyla satılmaya başlandı; yenilemelerle kapasite günde 300 tona ulaştı. Şirket bugün Merkezefendi'de un, tahıl ürünleri ve gıda sanayisine yönelik ürünler üretmektedir."
       ],
       "katki": [
         {
@@ -580,10 +574,15 @@
       },
       "ozet": "Aydem Holding'in kurucu ortaklarından; Denizli'nin enerji sanayicisi.",
       "biyografi": [
-        "1952'de Denizli'de doğdu, 1976'da İTÜ Elektrik Fakültesi'ni bitirdi. 1980'de Ceyhan Saldanlı ile birlikte Elsan Elektrik'i kurdu; bu şirket bugünkü Aydem grubunun ilk adımı oldu.",
-        "1995'te Aydem Yenilenebilir Enerji'nin kuruluşunda yer aldı; Aydem Holding'de uzun yıllar yönetim kurulu üyesi ve başkan yardımcısı olarak çalıştı. 2024'te hayatını kaybetti."
+        "1952'de Denizli'de doğdu, 1976'da İstanbul Teknik Üniversitesi (İTÜ) Elektrik Fakültesi'nden mezun oldu. 1980'de Ceyhan Saldanlı ile birlikte Elsan Elektrik'i kurdu; bu şirket bugünkü Aydem grubunun ilk adımı oldu.",
+        "1995'te Aydem Yenilenebilir Enerji'nin kuruluşunda yer aldı; Aydem Holding'de uzun yıllar yönetim kurulu üyesi ve başkan yardımcısı olarak çalıştı. 28 Eylül 2024'te hayatını kaybetti."
       ],
-      "katki": [],
+      "katki": [
+        {
+          "yil": "2007",
+          "metin": "Bereket Enerji'nin yaptırıp üniversiteye bağışladığı Temiz Enerji Evi: Kınıklı Kampüsü'nde güneş, rüzgâr ve hidrojen yakıt pili sistemleriyle kurulan enerji araştırma laboratuvarı (Makine Mühendisliği)"
+        }
+      ],
       "durum": "dogrulandi",
       "yayinla": true,
       "foto": null,
@@ -599,6 +598,10 @@
         {
           "ad": "Hizmet Gazetesi (29 Eylül 2024)",
           "url": "https://www.hizmetgazetesi.com.tr/duayen-is-insani-ali-yagli-hayatini-kaybetti"
+        },
+        {
+          "ad": "PAÜ Makine Mühendisliği – Temiz Enerji Evi",
+          "url": "https://www.pau.edu.tr/makinemuhendisligi/en/sayfa/clean-energy-house"
         }
       ]
     },
@@ -615,10 +618,15 @@
       },
       "ozet": "Aydem Holding Yönetim Kurulu Başkanı.",
       "biyografi": [
-        "1954'te Denizli'de doğdu, 1975'te İTÜ Elektrik Fakültesi'nden mezun oldu. 1975–1980 arasında kamuda çalıştı; 1980'de Elsan Elektrik'in, ardından Tümaş Mermer'in kurucu ortakları arasında yer aldı.",
-        "1991'de Aydem ile elektrik dağıtım ve perakende alanına girdi, 1995'te Aydem Yenilenebilir Enerji'nin kuruluşunda yer aldı. 2004–2012 arasında Elektrik Dağıtım Hizmetleri Derneği'nin (ELDER) yönetim kurulu başkanlığını yaptı. Bugün Aydem Holding Yönetim Kurulu Başkanı."
+        "1954'te Denizli'de doğdu, 1975'te İstanbul Teknik Üniversitesi (İTÜ) Elektrik Fakültesi'nden mezun oldu. 1975–1980 yılları arasında kamuda çalıştı; 1980'de Elsan Elektrik'in, ardından Tümaş Mermer'in kurucu ortakları arasında yer aldı.",
+        "1991'de Aydem ile elektrik dağıtım ve perakende alanına girdi, 1995'te Aydem Yenilenebilir Enerji'nin kuruluşunda yer aldı. 2004–2012 yılları arasında Elektrik Dağıtım Hizmetleri Derneği'nin (ELDER) yönetim kurulu başkanlığını yaptı. Bugün Aydem Holding Yönetim Kurulu Başkanıdır."
       ],
-      "katki": [],
+      "katki": [
+        {
+          "yil": "2007",
+          "metin": "Bereket Enerji'nin yaptırıp üniversiteye bağışladığı Temiz Enerji Evi: Kınıklı Kampüsü'nde güneş, rüzgâr ve hidrojen yakıt pili sistemleriyle kurulan enerji araştırma laboratuvarı (Makine Mühendisliği)"
+        }
+      ],
       "durum": "dogrulandi",
       "yayinla": true,
       "foto": null,
@@ -630,6 +638,10 @@
         {
           "ad": "ELDER – Ceyhan Saldanlı",
           "url": "https://elder.org.tr/index.php/kurullar/yonetim-kurulu/ceyhan-saldanli"
+        },
+        {
+          "ad": "PAÜ Makine Mühendisliği – Temiz Enerji Evi",
+          "url": "https://www.pau.edu.tr/makinemuhendisligi/en/sayfa/clean-energy-house"
         }
       ]
     },
@@ -649,7 +661,12 @@
         "28 Ağustos 1944'te Denizli'nin Babadağ ilçesinde doğdu. Babası Mehmet Zorlu'nun Babadağ'da dokuma tezgâhlarıyla başlattığı aile işini ağabeyi Zeki Zorlu ile birlikte büyüttü.",
         "1970'te işlerini İstanbul'a taşıdı, 1976'da Korteks'i kurdu, 1990'da şirketleri Zorlu Holding çatısında topladı ve 1994'te Vestel'i bünyesine katarak elektronik ve beyaz eşyaya yöneldi. Grup zamanla enerji, gayrimenkul, metalurji ve savunma sanayisine de yayıldı; Türkiye'nin sanayi ve ihracat gücüne katkı sağladı. Mehmet Zorlu Vakfı aracılığıyla eğitim, kültür ve sosyal sorumluluk alanlarında çalışmalar yürüttü. 2 Kasım 2026'da İstanbul'da vefat etti."
       ],
-      "katki": [],
+      "katki": [
+        {
+          "yil": "2006",
+          "metin": "Fakülte binasının dış cephe kaplamasını yaptırdı"
+        }
+      ],
       "durum": "dogrulandi",
       "yayinla": true,
       "foto": null,
@@ -777,13 +794,36 @@
       "tur": "kisi",
       "satir": 7,
       "sutun": 1,
-      "ozet": "",
-      "biyografi": [],
-      "katki": [],
-      "durum": "eksik",
+      "ozet": "PAÜ Tekstil Mühendisliği öğretim görevlisi; anısına ailesi bir araştırma laboratuvarı kazandırıyor.",
+      "biyografi": [
+        "Lisans eğitimini Ege Üniversitesi Mühendislik Fakültesi'nde tamamladı, yüksek lisansını Pamukkale Üniversitesi Fen Bilimleri Enstitüsü Tekstil Mühendisliği Anabilim Dalı'nda yaptı. Uzun yıllar PAÜ Mühendislik Fakültesi Tekstil Mühendisliği Bölümü'nde (Tekstil Bilimleri Anabilim Dalı) öğretim görevlisi olarak çalıştı.",
+        "Lisans derslerinin yanı sıra öğrencilerin bitirme projelerinde ve öğrenci topluluklarında danışmanlık yaptı. Tekstil bilimleri, lif ve malzeme teknolojileri ile teknik tekstiller üzerine çalıştı.",
+        "6 Mart 2026'da hayatını kaybetti. Anısını bilimle yaşatmak isteyen ailesi, Temmuz 2026'da üniversiteyle bir bağış protokolü imzaladı; fakültede onun adını taşıyan bir araştırma laboratuvarı kuruluyor."
+      ],
+      "katki": [
+        {
+          "yil": "2026",
+          "metin": "Ailesinin bağışıyla Mühendislik Fakültesi A Blok'ta kurulan Nalan Devrent Polimer Araştırmaları ve Lif Çekim Laboratuvarı (Tekstil Bilimleri Anabilim Dalı; polimer sentezi, lif çekimi ve lisansüstü Ar-Ge çalışmaları için)"
+        }
+      ],
+      "durum": "ekip-notu",
       "yayinla": true,
       "foto": null,
-      "kaynaklar": []
+      "kaynaklar": [
+        {
+          "ad": "D20 Haber (6 Mart 2026)",
+          "url": "https://d20haber.com/yasam/sivil-yasam/denizli-pau-ogretim-gorevlisi-nalan-devrent-vefat-etti/"
+        },
+        {
+          "ad": "Denizli Post – PAÜ Tekstil Mühendisliği Bölümünün acı kaybı",
+          "url": "https://denizlipost.com/kent/pau-tekstil-muhendisligi-bolumunun-aci-kaybi-akademisyen-nalan-devrent-hayatini-kaybetti/"
+        }
+      ],
+      "unvan": "Öğretim görevlisi, tekstil mühendisi",
+      "yasam": {
+        "dogum": null,
+        "vefat": "2026"
+      }
     },
     {
       "id": "nihat-komurcuoglu-vakfi",
@@ -791,12 +831,19 @@
       "tur": "dernek-vakif",
       "satir": 7,
       "sutun": 2,
-      "ozet": "Heykel sanatını ve Denizli'nin kültürel tanıtımını destekleyen vakıf.",
+      "ozet": "Denizli mermer sanayisinin öncülerinden Nihat Kömürcüoğlu'nun kurduğu vakıf; fakültenin mermerlerini sağladı.",
       "biyografi": [
-        "Nihat Kömürcüoğlu tarafından 2016'da kuruldu. Başta heykel olmak üzere kültür ve sanat çalışmalarını destekliyor, Denizli'nin tarihî ve kültürel zenginliğini tanıtmayı amaçlıyor.",
-        "Düzenlediği Uluslararası Taş Heykel Kolonisi'nde farklı ülkelerden sanatçılar Denizli'de buluşup mermer ve traverten gibi yerel taşlardan eserler üretiyor; sanat öğrencileri de bu üretimi yakından izleme fırsatı buluyor."
+        "Nihat Kömürcüoğlu (1941–2026), 1 Aralık 1941'de Denizli'de doğdu. 1967'de İstanbul Yıldız Teknik Okulu'ndan (bugünkü Yıldız Teknik Üniversitesi) inşaat mühendisi olarak mezun oldu. Karayolları ve DSİ'de mühendis olarak çalıştıktan sonra 1973'te Denizli'de kendi mühendislik bürosunu açtı.",
+        "1982'de Kömürcüoğlu Mermer'i kurarak Denizli'nin ilk prefabrik mermer fabrikasını faaliyete geçirdi. Denizli mermer ve travertenini doğrudan yurt dışına satan ilk isimlerden biri oldu; şirket uzun yıllar yönetim kurulu başkanlığını yürüttüğü köklü bir aile şirketine dönüştü. 24 Ağustos 2026'da hayatını kaybetti.",
+        "Kültür ve sanata verdiği desteği kurumsallaştırmak için 2016'da Nihat Kömürcüoğlu Kültür Sanat Vakfı'nı kurdu. Vakıf başta heykel olmak üzere kültür ve sanat çalışmalarını destekliyor, Denizli'nin tarihî ve kültürel zenginliğini tanıtmayı amaçlıyor.",
+        "Kömürcüoğlu'nun öncülüğünde düzenlenen Uluslararası Taş Heykel Kolonisi'nde farklı ülkelerden sanatçılar Denizli'de buluşup mermer ve traverten gibi yerel taşlardan eserler üretiyor; bu eserlerin birçoğu bugün kentin meydan ve bulvarlarında sergileniyor."
       ],
-      "katki": [],
+      "katki": [
+        {
+          "yil": "",
+          "metin": "Fakültenin mermerlerini sağladı ve işçiliğini yaptırdı; farklı dönemlerde fakültenin mermer ihtiyacını karşıladı"
+        }
+      ],
       "durum": "ekip-notu",
       "yayinla": true,
       "foto": null,
@@ -804,8 +851,20 @@
         {
           "ad": "Nihat Kömürcüoğlu Kültür Sanat Vakfı",
           "url": "https://nkvakfi.wixsite.com/"
+        },
+        {
+          "ad": "Hizmet Gazetesi – Mermer sektörünün duayeni Nihat Kömürcüoğlu",
+          "url": "https://www.hizmetgazetesi.com.tr/mermer-sektorunun-duayeni-nihat-komurcuoglu-hayatini-kaybetti"
+        },
+        {
+          "ad": "Denizli Haber – Nihat Kömürcüoğlu vefat etti",
+          "url": "https://www.denizlihaber.com/guncel/denizlili-sanayici-sanat-ve-hayirsever-nihat-komurcuoglu-vefat-etti/"
         }
-      ]
+      ],
+      "yasam": {
+        "dogum": "1941",
+        "vefat": "2026"
+      }
     },
     {
       "id": "omer-aydan",
@@ -821,7 +880,7 @@
       "ozet": "Japonya'da çalışan kaya mekaniği uzmanı; PAÜ fahri profesörü.",
       "biyografi": [
         "1955 doğumlu. İTÜ Maden Mühendisliği'nden (1979) sonra Newcastle Üniversitesi'nde yüksek lisans (1982), Nagoya Üniversitesi'nde doktora (1989) yaptı. Tokai Üniversitesi'nin ardından Ryukyus Üniversitesi'nde profesör olarak çalıştı; kaya mekaniği, deprem mühendisliği, doğal afetler ve yeraltı yapıları üzerine araştırmalar yürüttü. 2008'de Pamukkale Üniversitesi'nden fahri profesörlük unvanı aldı.",
-        "Uluslararası Kaya Mekaniği ve Kaya Mühendisliği Birliği'nin başkan yardımcılarından; 2022'de Ryukyus Üniversitesi'nden bir bilim heyetiyle PAÜ'yü ziyaret ederek Salda Gölü ve Sillyon Antik Kenti üzerine ortak çalışmalar planladı."
+        "Uluslararası Kaya Mekaniği ve Kaya Mühendisliği Birliği'nin başkan yardımcılarındandır. 2022'de Ryukyus Üniversitesi'nden bir bilim heyetiyle PAÜ'yü ziyaret ederek Salda Gölü ve Sillyon Antik Kenti üzerine ortak çalışmalar planladı. Fakültemizin Jeoloji Mühendisliği Bölümü ile ortak çalışmaları hâlâ sürmektedir."
       ],
       "katki": [
         {
@@ -859,7 +918,12 @@
         "Japon akademisyen (田野久貴). Nihon Üniversitesi Mühendislik Fakültesi İnşaat Mühendisliği Bölümü'nde profesör olarak çalıştı; kaya mekaniği, jeoloji mühendisliği ve afetlerden korunma mühendisliği alanlarında uzmanlaştı.",
         "Kaya kütlelerinin mekanik özellikleri, arazide ölçüm yöntemleri ve tarihî kaya yapıların dayanıklılığı üzerine çalıştı; Japonya–Türkiye heyelan ve deprem izleme kolokyumlarında yayımlanmış çalışmaları bulunuyor."
       ],
-      "katki": [],
+      "katki": [
+        {
+          "yil": "",
+          "metin": "Fakülteye araştırma projelerinde kullanılmak üzere cihazlar gönderdi"
+        }
+      ],
       "durum": "dogrulandi",
       "yayinla": true,
       "foto": null,
@@ -880,9 +944,14 @@
       "tur": "kisi",
       "satir": 8,
       "sutun": 1,
-      "ozet": "",
+      "ozet": "50. Yıl Kaynak Eğitim Merkezi'nin Yakut sponsoru.",
       "biyografi": [],
-      "katki": [],
+      "katki": [
+        {
+          "yil": "2026",
+          "metin": "50. Yıl Kaynak Eğitim Merkezi'ne lazer kaynak makinesi (Yakut sponsor)"
+        }
+      ],
       "durum": "eksik",
       "yayinla": true,
       "foto": null,
@@ -917,13 +986,17 @@
       "tur": "kisi",
       "satir": 8,
       "sutun": 3,
-      "ozet": "",
-      "biyografi": [],
+      "ozet": "Denizli'nin köklü sanayi kuruluşlarından Başaranlar'ın kurucu ortaklarından.",
+      "biyografi": [
+        "Denizli'de inşaat malzemeleri, mermer ve hazır beton alanlarında faaliyet gösteren Başaranlar A.Ş.'nin kurucu ortaklarındandır. Temel inşaat malzemeleri ticaretiyle başlayan şirket, zamanla Denizli Organize Sanayi Bölgesi'ndeki üretim tesisleriyle bölgenin önemli sanayi kuruluşlarından biri hâline geldi.",
+        "Başaranlar bugün Denizli ve çevre illerdeki ocaklarından çıkardığı mermer, traverten ve kireç taşını işleyerek dünyanın pek çok ülkesine ihraç etmektedir."
+      ],
       "katki": [],
-      "durum": "eksik",
+      "durum": "ekip-notu",
       "yayinla": true,
       "foto": null,
-      "kaynaklar": []
+      "kaynaklar": [],
+      "unvan": "Sanayici"
     }
   ]
 }
