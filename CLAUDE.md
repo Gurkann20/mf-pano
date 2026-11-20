@@ -57,7 +57,7 @@ Ziyaretçilerin neredeyse hepsi QR'ı **telefondan** okutacak. Her şey önce mo
 │   └── site.json          ← iletişim bilgisi, son güncelleme, pano boyutu
 ├── yonetim/               ← personel paneli (index.html, yonetim.js, yonetim.css)
 ├── tools/qr.html          ← QR üretici (ekip içi)
-├── docs/                  ← TEKNIK-OZET.md (hocaya/teknik sunum), openapi.yaml + swagger.html (veri ve yayın API dokümanı)
+├── docs/                  ← TEKNIK-OZET.md (hocaya/teknik sunum), TASARIM-REHBERI.md (tasarım + yaklaşım, başka projede kullanmak için), openapi.yaml + swagger.html
 ├── ozel/notlar.json       ← İÇ NOTLAR, .gitignore'da, asla yüklenmez
 └── assets/
     ├── logo/              ← pau-logo.svg, muhendislik-logo.svg (Gürkan ekleyecek)

@@ -206,3 +206,6 @@ python tools/sunucu.py
 
 ## 2026-11-20 (6): Tarihçe yavaşladı
 - Gürkan: "biraz hızlı, 1 sn daha" → her olay 2,5 sn yerine 3,5 sn. Sürüm ?v=20261120f.
+
+## 2026-11-20 (7): Tasarım rehberi
+- Gürkan başka projede kullanmak için istedi → docs/TASARIM-REHBERI.md: malzeme yaklaşımı, renk/font, CSS teknikleri, hareket kuralları, mimari, sunucusuz panel, içerik kuralları, QR, yeni projede adımlar.
