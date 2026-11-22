@@ -209,3 +209,7 @@ python tools/sunucu.py
 
 ## 2026-11-20 (7): Tasarım rehberi
 - Gürkan başka projede kullanmak için istedi → docs/TASARIM-REHBERI.md: malzeme yaklaşımı, renk/font, CSS teknikleri, hareket kuralları, mimari, sunucusuz panel, içerik kuralları, QR, yeni projede adımlar.
+
+## 2026-11-22: Hocanın el yazısı notları
+- Biyografi eklendi (durum: ekip-notu, kaynak "Mühendislik Fakültesi öğretim üyesinin bilgi notu (Kasım 2026)"): Mehmet Küçüker (Küçüker Tekstil kurucu ortağı; şirket paragrafı Hakkımızda sayfasından kendi cümlelerimizle, link share.google), Tahsin Cem (oto yedek parça/lastik bayisi, Musa Kazım Manasır ile ortak), Orhan Koru (manifatura, Koru Otel ortağı), Ahmet Nuri Özsoy (Pamuk Kralı, çırçır, OFAR, Altınyağ, Ticaret Borsası başkanı; okul paragrafının önüne).
+- Açık: notta "Salih Basmacı" yazıyor, panoda "Faruk Basmacı" → eklenmedi, Gürkan'a/hocaya soruldu. Özsoy'un ortağı olduğu iplik fabrikasının adı okunamadı ("Göveçlik'teki"?).

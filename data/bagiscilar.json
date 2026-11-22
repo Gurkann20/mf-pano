@@ -239,23 +239,30 @@
       "tur": "kisi",
       "satir": 2,
       "sutun": 4,
-      "ozet": "1974 kampanyasının bağışçılarından.",
-      "biyografi": [],
+      "ozet": "Oto yedek parça ve lastik bayisi; 1974 kampanyasının bağışçılarından.",
+      "biyografi": [
+        "Denizli'de oto yedek parça ve lastik bayiliği yaptı. Bu işi, DENTAŞ ve Denizli Boya Basma Sanayii (DEBA) gibi şirketlerin kurucu hissedarlarından olan, şehirdeki birçok hayır kuruluşunun yönetiminde de görev alan Musa Kazım Manasır ile ortak olarak yürüttü."
+      ],
       "katki": [
         {
           "yil": "1974",
           "metin": "Okul yaptırma kampanyasına bağış"
         }
       ],
-      "durum": "eksik",
+      "durum": "ekip-notu",
       "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {
           "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
           "url": null
+        },
+        {
+          "ad": "Mühendislik Fakültesi öğretim üyesinin bilgi notu (Kasım 2026)",
+          "url": null
         }
-      ]
+      ],
+      "unvan": "Esnaf"
     },
     {
       "id": "ari-kiremit-fabrikasi",
@@ -290,23 +297,30 @@
       "tur": "kisi",
       "satir": 3,
       "sutun": 2,
-      "ozet": "1974 kampanyasının bağışçılarından.",
-      "biyografi": [],
+      "ozet": "Manifatura tüccarı, Pamukkale'deki Koru Otel'in ortaklarından; 1974 kampanyasının bağışçılarından.",
+      "biyografi": [
+        "Ticarete Denizli'de manifatura ve tuhafiye mağazalarıyla başladı. Daha sonra turizme de yöneldi; bir dönem Pamukkale'nin gözde otellerinden olan Koru Otel'in ortakları arasında yer aldı."
+      ],
       "katki": [
         {
           "yil": "1974",
           "metin": "Okul yaptırma kampanyasına bağış"
         }
       ],
-      "durum": "eksik",
+      "durum": "ekip-notu",
       "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {
           "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
           "url": null
+        },
+        {
+          "ad": "Mühendislik Fakültesi öğretim üyesinin bilgi notu (Kasım 2026)",
+          "url": null
         }
-      ]
+      ],
+      "unvan": "Tüccar, turizmci"
     },
     {
       "id": "ahmet-nuri-ozsoy",
@@ -314,10 +328,11 @@
       "tur": "kisi",
       "satir": 3,
       "sutun": 3,
-      "unvan": "Esnaf, hayırsever",
+      "unvan": "Sanayici, hayırsever",
       "ozet": "Muratdede'deki Ahmet Nuri Özsoy İlkokulu'nu yaptıran Denizlili hayırsever.",
       "biyografi": [
-        "Denizli'nin esnaf ve eşrafından bir hayırseverdi. Muratdede Mahallesi'nde bugün kendi adını taşıyan Ahmet Nuri Özsoy İlkokulu'nu yaptırdı. Okulun yapımı 21 Temmuz 1971'de başladı; ilk katı 19 Eylül 1972'de 15 öğretmen ve 471 öğrenciyle açıldı.",
+        "Denizli'de bir dönem çırçır fabrikası işletti ve Ege Bölgesi'nde \"Pamuk Kralı\" olarak anıldı. Bir iplik fabrikasının büyük ortaklarından, OFAR Otomobil Farları Fabrikası'nın kurucu ortaklarından ve İzmir'deki Altınyağ Yağ Fabrikası'nın büyük ortaklarındandı. Denizli Ticaret Borsası'nın başkanlığını uzun yıllar yürüttü.",
+        "Muratdede Mahallesi'nde bugün kendi adını taşıyan Ahmet Nuri Özsoy İlkokulu'nu yaptırdı. Okulun yapımı 21 Temmuz 1971'de başladı; ilk katı 19 Eylül 1972'de 15 öğretmen ve 471 öğrenciyle açıldı.",
         "İkinci katı da yaptırma sözü vermişti; vefatından sonra bu sözü eşi Gülfidan Özsoy ve oğlu Bekir Ünsal Özsoy yerine getirdi ve ikinci kat 1982'de açıldı. Ahmet Nuri Özsoy İlkokulu ve Ortaokulu bugün de eğitim veriyor."
       ],
       "katki": [
@@ -333,6 +348,10 @@
         {
           "ad": "Ahmet Nuri Özsoy İlkokulu – okul tarihçesi",
           "url": null
+        },
+        {
+          "ad": "Mühendislik Fakültesi öğretim üyesinin bilgi notu (Kasım 2026)",
+          "url": null
         }
       ]
     },
@@ -342,23 +361,36 @@
       "tur": "kisi",
       "satir": 3,
       "sutun": 4,
-      "ozet": "1976-77 akademi kampanyasının bağışçılarından.",
-      "biyografi": [],
+      "ozet": "Küçüker Tekstil'in kurucu ortağı; 1976-77 akademi kampanyasının bağışçılarından.",
+      "biyografi": [
+        "Denizlili sanayici ve hayırsever. 1977'de Denizli'de kurulan Küçüker Tekstil San. ve Tic. A.Ş.'nin kurucu ortağıdır.",
+        "Şirket bugün 60.000 m² alan üzerinde çalışan entegre bir tekstil kompleksidir. Çözgü ve haşıldan havlu ve bez dokumaya, iplik boyamadan düz, baskılı ve dijital baskıya, dikiş ipliğinden havlu, bornoz ve nevresim konfeksiyonuna kadar üretimin hemen her aşaması aynı çatı altındadır.",
+        "Üretiminin önemli bir kısmını Avrupa Birliği ülkelerine ihraç eder; iç piyasada da tanınmış giyim ve ev tekstili markalarına üretim yapar. Kalite, hızlı hizmet, çevre ve insan sağlığına özen ile Ar-Ge çalışmaları şirketin öne çıkardığı ilkelerdir."
+      ],
       "katki": [
         {
           "yil": "1976-1977",
           "metin": "Akademiyi yaşatma kampanyasına bağış"
         }
       ],
-      "durum": "eksik",
+      "durum": "ekip-notu",
       "yayinla": true,
       "foto": null,
       "kaynaklar": [
         {
           "ad": "Abalıoğlu Vakfı Bülteni, Sayı 63",
           "url": null
+        },
+        {
+          "ad": "Mühendislik Fakültesi öğretim üyesinin bilgi notu (Kasım 2026)",
+          "url": null
+        },
+        {
+          "ad": "Hakkımızda – Küçüker Tekstil San. ve Tic. A.Ş.",
+          "url": "https://share.google/SDX3XKisGCO9nS3Ukd"
         }
-      ]
+      ],
+      "unvan": "Sanayici, hayırsever"
     },
     {
       "id": "rasit-ozkardes",
