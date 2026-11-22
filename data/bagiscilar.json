@@ -976,18 +976,27 @@
       "tur": "kisi",
       "satir": 8,
       "sutun": 1,
-      "ozet": "50. Yıl Kaynak Eğitim Merkezi'nin Yakut sponsoru.",
-      "biyografi": [],
+      "ozet": "Tekkeköylü Özen çifti; 50. Yıl Kaynak Eğitim Merkezi'ne lazer kaynak makinesi bağışladı.",
+      "biyografi": [
+        "Ramazan Özen 1936'da Denizli'nin Tekkeköy Mahallesi'nde doğdu. Askerliğini 1957-1959 arasında yaptı; son yılını Kore'de geçirdi. 1961'de Emirayşe Özen ile evlendi. 1963'te Almanya'ya, Salzgitter'e gitti ve ilk olarak bir dökümhanede çalıştı. 1970'te Hamburg'a yerleşti; 1988'de emekli olana kadar postanede çeşitli görevlerde bulundu. Emeklilikten sonra Tekkeköy'e döndü ve 2024'te orada vefat etti.",
+        "Emirayşe Özen 1947'de yine Tekkeköy'de doğdu. 1969'da Almanya'ya gitti; önce Neumünster'de bir televizyon fabrikasında, ardından Hamburg'da bir hastanede çalıştı ve 1988'de emekli oldu. Çift o yıl Tekkeköy'e döndü.",
+        "Özen ailesinin bağışladığı FLM 2000W lazer kaynak makinesi, öğrencilerin ileri kaynak teknolojilerini uygulamalı olarak öğrenmesini sağlıyor."
+      ],
       "katki": [
         {
           "yil": "2026",
-          "metin": "50. Yıl Kaynak Eğitim Merkezi'ne lazer kaynak makinesi (Yakut sponsor)"
+          "metin": "50. Yıl Kaynak Eğitim Merkezi'ne FLM 2000W lazer kaynak makinesi (Yakut sponsor)"
         }
       ],
-      "durum": "eksik",
+      "durum": "dogrulandi",
       "yayinla": true,
       "foto": null,
-      "kaynaklar": []
+      "kaynaklar": [
+        {
+          "ad": "50. Yıl Kaynak Eğitim Merkezi kataloğu, PAÜ Mühendislik Fakültesi Makine Mühendisliği Bölümü",
+          "url": null
+        }
+      ]
     },
     {
       "id": "irfan-yolcular",

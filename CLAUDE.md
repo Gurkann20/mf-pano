@@ -256,5 +256,5 @@ Her adım bitince çalışır durumda commit at.
 - Logolar pau.edu.tr'den alındı. Fakülte logosu yalnızca 113 px PNG; dekanlıktan SVG/yüksek çözünürlüklü hâli istenmeli.
 - Kalıcı adres: PAÜ alt alan adı mı, yönlendirme mi?
 - Dekanlık iletişim bilgisi (alt bilgi ve "Bize ulaşın" için) onaylanmalı.
-- Satır 5–8: İŞKUR araştırması (2026-11-19) işlendi. Hâlâ bilgi yok: Faruk Basmacı, Nalan Devrent, Emirayşe – Ramazan Özen, Mehmet Hilmi Serter. Doğrulanacaklar ozel/notlar.json içinde.
+- Satır 5–8: İŞKUR araştırması (2026-11-19) işlendi. Hâlâ bilgi yok: Faruk Basmacı, Nalan Devrent, Mehmet Hilmi Serter. Doğrulanacaklar ozel/notlar.json içinde.
 - İngilizce sürüm gerekip gerekmediği.
