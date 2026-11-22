@@ -201,7 +201,7 @@ Kurallar:
 
 ## 8. Gizlilik ve içerik kuralları
 
-- Biyografiler kendi cümlelerimizle yazılır. Hiçbir siteden metin kopyalanmaz (Abalıoğlu Holding gibi kaynaklar yalnızca bilgi kaynağıdır).
+- ~~Biyografiler kendi cümlelerimizle yazılır.~~ **Gürkan (2026-11-22): hocanın notları, bölüm kataloğu ve hocanın ilettiği şirket metinleri olduğu gibi aktarılır** (yalnızca yazım düzeltmesi), kaynak olarak belirtilir. Diğer sitelerden (ör. Abalıoğlu Holding) metin yine kopyalanmaz.
 - Fotoğraf sadece aile/kurum izniyle eklenir.
 - ~~Hayattaki kişilerin biyografisi onaysız canlıya alınmaz.~~ **Gürkan'ın kararı (2026-11-19): bütün biyografiler yayında**, hayattakiler (Musa Çelikkol, Ceyhan Saldanlı, Erhan Boyvat, Ömer Aydan, Hisataka Tano) ve kaynak linki eksik ekip notları dahil. Yalnızca kamuya açık mesleki bilgi yazılır; bir kişi ya da aile itiraz ederse kaydı hemen `yayinla: false` yapılır. Dekanlıktan ve kişilerden onay almak yine önerilir. (Ali Yağlı 2024'te, Muhsin Özcan 2026'da vefat etti.)
 - Vefat bilgisi yalnızca bir haber/resmî kaynakla doğrulanınca yazılır.
@@ -256,5 +256,5 @@ Her adım bitince çalışır durumda commit at.
 - Logolar pau.edu.tr'den alındı. Fakülte logosu yalnızca 113 px PNG; dekanlıktan SVG/yüksek çözünürlüklü hâli istenmeli.
 - Kalıcı adres: PAÜ alt alan adı mı, yönlendirme mi?
 - Dekanlık iletişim bilgisi (alt bilgi ve "Bize ulaşın" için) onaylanmalı.
-- Satır 5–8: İŞKUR araştırması (2026-11-19) işlendi. Hâlâ bilgi yok: Faruk Basmacı, Nalan Devrent, Mehmet Hilmi Serter. Doğrulanacaklar ozel/notlar.json içinde.
+- Satır 5–8: İŞKUR araştırması (2026-11-19) işlendi. Hâlâ bilgi yok: Nalan Devrent, Mehmet Hilmi Serter. Doğrulanacaklar ozel/notlar.json içinde.
 - İngilizce sürüm gerekip gerekmediği.
