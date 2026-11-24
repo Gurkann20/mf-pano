@@ -218,5 +218,5 @@ python tools/sunucu.py
 
 ## 2026-11-24: Kalıcı adres = PAÜ sayfası (iframe)
 - Behlül hoca alt alan adı veremedi; siteyi https://www.pau.edu.tr/mf/tr/sayfa/bagis-panosu içine iframe ile gömdü (min-height 4450px, mobil 4250px, scrolling="no", src gurkann20.github.io/mf-pano/).
-- QR bu PAÜ adresine üretildi (segno, hata düzeltme H): Desktop/QR-Bagis-Panosu/ (svg, pdf, png 1960px), çözümleme doğrulandı. Dekana verildi.
+- QR bu PAÜ adresine üretildi (segno, hata düzeltme H): qr-baski/ (svg, pdf, png 1960px), çözümleme doğrulandı. Dekana verildi.
 - Akşam yapılacak: iframe içinde rota değişince window.scrollTo işe yaramıyor → scrollIntoView ile üst sayfayı kaydır; effects.js kaydırma eğimi iframe'de kapalı; sabit yükseklik yüzünden kişi sayfası altı boş.
