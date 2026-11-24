@@ -143,3 +143,7 @@ body[data-gorunum="kisi"] #gorunum-ana { display: none; } /* kişi linkiyle aç�
     scroll-behavior: auto !important;
   }
 }
+
+/* PAÜ sayfasındaki 4000+ px'lik iframe: iPhone'un boyama yükünü azalt
+   (tuğla pürüzü katmanı bütün alan boyunca mix-blend hesaplatıyordu) */
+.gomulu body::after { display: none; }
