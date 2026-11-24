@@ -1,8 +1,8 @@
 // Dijital pano: plakalar, filtreler, arama.
 
-import { esc, sadelestir, plakaAdi, ilkYil } from "./data.js?v=20261120f";
-import { t } from "./i18n.js?v=20261120f";
-import { kaziHtml, kaziGozle, egimBagla, duvarEgimiBagla } from "./effects.js?v=20261120f";
+import { esc, sadelestir, plakaAdi, ilkYil } from "./data.js?v=20261124a";
+import { t } from "./i18n.js?v=20261124a";
+import { kaziHtml, kaziGozle, egimBagla, duvarEgimiBagla } from "./effects.js?v=20261124a";
 
 const durum = { tur: "hepsi", sorgu: "" };
 let veri = null;
@@ -112,7 +112,17 @@ export function iletisimBagla(site) {
   document.getElementById("iletisim-liste").innerHTML = satirlar.join("");
 
   document.addEventListener("click", (e) => {
-    if (e.target.closest("[data-iletisim-ac]")) pencere.showModal();
+    const ac = e.target.closest("[data-iletisim-ac]");
+    if (!ac) return;
+    // PAÜ sayfasındaki sabit yükseklikli iframe'de pencere 4000+ px'lik alanın ortasına,
+    // yani ekranın dışına düşer (açılınca odak da üst sayfayı oraya kaydırır):
+    // açmadan önce düğmenin hemen üstüne konumla, açınca gerçek yüksekliğe göre düzelt.
+    const gomulu = document.documentElement.classList.contains("gomulu");
+    const y = ac.getBoundingClientRect().top;
+    const konumla = (h) => { pencere.style.margin = `${Math.max(12, y - h - 16)}px auto auto`; };
+    if (gomulu) konumla(500);
+    pencere.showModal();
+    if (gomulu) konumla(pencere.offsetHeight);
   });
   pencere.addEventListener("click", (e) => { if (e.target === pencere) pencere.close(); });
 }

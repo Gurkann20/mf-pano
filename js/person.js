@@ -1,7 +1,7 @@
 // Kişi / kurum sayfası: #/kisi/<id>
 
-import { esc, plakaAdi, basHarfler, yasamMetni, bioGoster, guvenliUrl } from "./data.js?v=20261120f";
-import { t } from "./i18n.js?v=20261120f";
+import { esc, plakaAdi, basHarfler, yasamMetni, bioGoster, guvenliUrl } from "./data.js?v=20261124a";
+import { t } from "./i18n.js?v=20261124a";
 
 const OK_SOL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>';
 const PAYLAS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>';
@@ -124,16 +124,28 @@ export function kisiCiz(kap, veri, id) {
   const paylasDugme = kap.querySelector("[data-paylas]");
   paylasDugme.addEventListener("click", async () => {
     const veriPaylas = { title: k.ad, text: aciklama, url: location.href };
-    try {
-      if (navigator.share) await navigator.share(veriPaylas);
-      else {
-        await navigator.clipboard.writeText(location.href);
-        paylasDugme.lastChild.textContent = t.kopyalandi;
-      }
-    } catch { /* kullanıcı vazgeçti */ }
+    if (navigator.share) {
+      try { await navigator.share(veriPaylas); return; }
+      catch (h) { if (h?.name === "AbortError") return; /* kullanıcı vazgeçti */ }
+      // NotAllowedError: PAÜ sayfasındaki iframe'de paylaşım menüsü engelli → kopyala
+    }
+    if (await kopyala(location.href)) paylasDugme.lastChild.textContent = t.kopyalandi;
   });
 
   return k;
+}
+
+// Site PAÜ sayfasındaki iframe'de de çalıştığı için Clipboard API izin vermezse eski yöntemle kopyalar.
+async function kopyala(metin) {
+  try { await navigator.clipboard.writeText(metin); return true; } catch { /* iframe izni yok */ }
+  const ta = Object.assign(document.createElement("textarea"), { value: metin, readOnly: true });
+  ta.style.cssText = "position:fixed;opacity:0;pointer-events:none";
+  document.body.append(ta);
+  ta.select();
+  let oldu = false;
+  try { oldu = document.execCommand("copy"); } catch { /* desteklenmiyor */ }
+  ta.remove();
+  return oldu;
 }
 
 const VARSAYILAN = new Map();

@@ -4,12 +4,12 @@
 //   #/kisi/<id>   kişi / kurum sayfası
 //   #/tarihce     ana sayfa → tarihçeye kaydır (eski bağlantılar için)
 
-import { veriYukle, esc } from "./data.js?v=20261120f";
-import { panoCiz, plakaBul, iletisimBagla } from "./board.js?v=20261120f";
-import { kisiCiz, metaSifirla } from "./person.js?v=20261120f";
-import { cetvelCiz } from "./timeline.js?v=20261120f";
-import { hareketAz, gorununce } from "./effects.js?v=20261120f";
-import { t } from "./i18n.js?v=20261120f";
+import { veriYukle, esc } from "./data.js?v=20261124a";
+import { panoCiz, plakaBul, iletisimBagla } from "./board.js?v=20261124a";
+import { kisiCiz, metaSifirla } from "./person.js?v=20261124a";
+import { cetvelCiz } from "./timeline.js?v=20261124a";
+import { hareketAz, gorununce } from "./effects.js?v=20261124a";
+import { t } from "./i18n.js?v=20261124a";
 
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
@@ -33,11 +33,22 @@ function rotaCoz() {
   return { gorunum: "ana", hedef: HEDEFLER[bolum] };
 }
 
+// Site pau.edu.tr/mf/tr/sayfa/bagis-panosu içinde sabit yükseklikli, kaydırmasız bir
+// iframe'de de gösteriliyor. Orada window.scrollTo işe yaramaz (kayan, üstteki PAÜ
+// sayfasıdır); scrollIntoView ise üst sayfayı da kaydırır.
+const gomulu = (() => { try { return window.self !== window.top; } catch { return true; } })();
+if (gomulu) document.documentElement.classList.add("gomulu");
+
+function gorunureGetir(el, blok = "start", yumusak = false) {
+  el?.scrollIntoView({ block: blok, behavior: yumusak && !hareketAz() ? "smooth" : "instant" });
+}
 function kaydir(y, yumusak) {
+  if (gomulu) return;
   window.scrollTo({ top: y, behavior: yumusak && !hareketAz() ? "smooth" : "instant" });
 }
 function ogeyeKaydir(id, yumusak) {
   const o = document.getElementById(id);
+  if (gomulu) return gorunureGetir(o, "start", yumusak);
   if (o) kaydir(o.getBoundingClientRect().top + window.scrollY - 12, yumusak);
 }
 
@@ -56,7 +67,8 @@ function goster(rota, onceki) {
   if (rota.gorunum === "kisi") {
     kisiCiz(gorunumler.kisi, veri, rota.id);
     sonKisiId = rota.id;
-    kaydir(0);
+    if (gomulu) gorunureGetir(gorunumler.kisi);
+    else kaydir(0);
     odakla(gorunumler.kisi);
   } else {
     metaSifirla();
@@ -65,6 +77,7 @@ function goster(rota, onceki) {
     if (onceki === "kisi" && anaKaydirma !== null && (!rota.hedef || rota.hedef === "pano-bolum")) {
       kaydir(anaKaydirma);
       const p = sonKisiId && plakaBul(sonKisiId);
+      if (gomulu) gorunureGetir(p || document.getElementById("pano-bolum"), p ? "center" : "start");
       if (p) {
         p.style.viewTransitionName = "plaka-aktif";
         // ekran okuyucu yerini kaybetmesin diye odak plakaya döner, ama mavi odak çerçevesi
@@ -76,7 +89,8 @@ function goster(rota, onceki) {
     } else if (rota.hedef) {
       ogeyeKaydir(rota.hedef, onceki === "ana");
     } else if (onceki && onceki !== "ana") {
-      kaydir(anaKaydirma ?? 0);
+      if (gomulu) gorunureGetir(document.getElementById("pano-bolum"));
+      else kaydir(anaKaydirma ?? 0);
     }
   }
   mevcut = rota.gorunum;

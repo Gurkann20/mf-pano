@@ -254,7 +254,7 @@ Her adım bitince çalışır durumda commit at.
 
 - ~~PAÜ renklerinin gerçek değerleri~~ → pau.edu.tr stil dosyasından alındı: `#0085d0`, `#004684` (tokens.css).
 - Logolar pau.edu.tr'den alındı. Fakülte logosu yalnızca 113 px PNG; dekanlıktan SVG/yüksek çözünürlüklü hâli istenmeli.
-- Kalıcı adres: Behlül hoca (2026-11-24) alt alan adı veremedi; siteyi PAÜ sayfasına iframe ile gömdü: https://www.pau.edu.tr/mf/tr/sayfa/bagis-panosu (sabit yükseklik 4450/4250 px, scrolling=no). **QR bu adrese basıldı.** Yapılacak: iframe içinde plaka tıklanınca üst sayfayı kaydırma (scrollIntoView), kaydırma eğimini kapatma.
+- Kalıcı adres: Behlül hoca (2026-11-24) alt alan adı veremedi; siteyi PAÜ sayfasına iframe ile gömdü: https://www.pau.edu.tr/mf/tr/sayfa/bagis-panosu (sabit yükseklik 4450/4250 px, scrolling=no). **QR bu adrese basıldı.** iframe içinde gezinme düzeltildi (2026-11-24, main.js `gomulu`).
 - Dekanlık iletişim bilgisi (alt bilgi ve "Bize ulaşın" için) onaylanmalı.
 - Satır 5–8: İŞKUR araştırması (2026-11-19) işlendi. Hâlâ bilgi yok: Nalan Devrent, Mehmet Hilmi Serter. Doğrulanacaklar ozel/notlar.json içinde.
 - İngilizce sürüm gerekip gerekmediği.
