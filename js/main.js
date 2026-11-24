@@ -4,12 +4,12 @@
 //   #/kisi/<id>   kişi / kurum sayfası
 //   #/tarihce     ana sayfa → tarihçeye kaydır (eski bağlantılar için)
 
-import { veriYukle, esc } from "./data.js?v=20261124a";
-import { panoCiz, plakaBul, iletisimBagla } from "./board.js?v=20261124a";
-import { kisiCiz, metaSifirla } from "./person.js?v=20261124a";
-import { cetvelCiz } from "./timeline.js?v=20261124a";
-import { hareketAz, gorununce } from "./effects.js?v=20261124a";
-import { t } from "./i18n.js?v=20261124a";
+import { veriYukle, esc } from "./data.js?v=20261124b";
+import { panoCiz, plakaBul, iletisimBagla } from "./board.js?v=20261124b";
+import { kisiCiz, metaSifirla } from "./person.js?v=20261124b";
+import { cetvelCiz } from "./timeline.js?v=20261124b";
+import { hareketAz, gorununce } from "./effects.js?v=20261124b";
+import { t } from "./i18n.js?v=20261124b";
 
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
@@ -38,6 +38,11 @@ function rotaCoz() {
 // sayfasıdır); scrollIntoView ise üst sayfayı da kaydırır.
 const gomulu = (() => { try { return window.self !== window.top; } catch { return true; } })();
 if (gomulu) document.documentElement.classList.add("gomulu");
+// iframe'den tam ekrana geçerken adrese ?pau eklenir; okununca adresten silinir
+// (paylaşılan bağlantıda kalmasın).
+const pauDan = !gomulu && new URLSearchParams(location.search).has("pau") && history.length > 1;
+if (location.search.includes("pau")) history.replaceState(null, "", location.pathname + location.hash);
+const ilkGecmis = history.length;
 
 function gorunureGetir(el, blok = "start", yumusak = false) {
   el?.scrollIntoView({ block: blok, behavior: yumusak && !hareketAz() ? "smooth" : "instant" });
@@ -101,7 +106,8 @@ function git() {
   const rota = rotaCoz();
   const onceki = mevcut;
   const gecis = onceki !== null && (onceki !== rota.gorunum || rota.gorunum === "kisi");
-  if (gecis && document.startViewTransition && !hareketAz()) {
+  // iframe'de geçiş, 4000+ px'lik görünümün tamamının görüntüsünü alır: telefonda donar.
+  if (gecis && document.startViewTransition && !hareketAz() && !gomulu) {
     const vt = document.startViewTransition(() => goster(rota, onceki));
     vt.finished.finally(() => {
       document.querySelectorAll("#pano .plaka").forEach((p) => { p.style.viewTransitionName = ""; });
@@ -115,6 +121,20 @@ function git() {
 document.addEventListener("click", (e) => {
   const a = e.target.closest('a[href^="#/"]');
   if (!a) return;
+  // PAÜ sayfasındaki iframe'de kişi sayfası tam ekran, sitenin kendi adresinde açılır
+  // (iframe sabit yükseklikte; iPhone'da kısa sayfa, kaydırma ve boyama sorun çıkarıyor).
+  // Telefonun geri tuşu PAÜ sayfasına döndürür.
+  if (gomulu && a.getAttribute("href").startsWith("#/kisi/")) {
+    e.preventDefault();
+    window.open(location.origin + location.pathname + "?pau" + a.getAttribute("href"), "_top");
+    return;
+  }
+  // PAÜ sayfasından tam ekran kişi sayfasına gelindiyse "Panoya dön" PAÜ sayfasına döner
+  if (pauDan && a.classList.contains("geri")) {
+    e.preventDefault();
+    history.go(-(history.length - ilkGecmis + 1));
+    return;
+  }
   const p = a.closest("#pano .plaka");
   if (p && !hareketAz()) p.style.viewTransitionName = "plaka-aktif";
   // Aynı adrese tekrar tıklanınca da çalışsın (ör. #/pano)

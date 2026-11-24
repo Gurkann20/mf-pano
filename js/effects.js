@@ -97,7 +97,9 @@ export function egimBagla(kap) {
 
 /** Pano ekrana girerken eğik açıdan karşıya döner (kaydırmaya bağlı). */
 export function duvarEgimiBagla(cerceve) {
-  if (hareketAz() || !cerceve) return;
+  // PAÜ sayfasındaki iframe'de kaydıran üst sayfadır; iPhone'da eğim yarıda kalıp
+  // panonun üstünü ve MF amblemini kesiyordu. Orada pano hep düz durur.
+  if (hareketAz() || !cerceve || document.documentElement.classList.contains("gomulu")) return;
   let bekliyor = false;
   const guncelle = () => {
     bekliyor = false;
