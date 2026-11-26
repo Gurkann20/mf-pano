@@ -813,7 +813,12 @@
         "1975'te Ankara'da doğdu, 1998'de Pamukkale Üniversitesi Makine Mühendisliği Bölümü'nden mezun oldu.",
         "2001'de Ankara'da evsel atıkların daha verimli taşınması üzerine çalışmaya başladı; atık taşıma treylerleri, çöp aktarma istasyonları ve tıbbi atık tesisleri alanında faaliyet gösteren EMS Makina'yı büyüttü. 2010'da Ankara Sanayi Odası 2. Organize Sanayi Bölgesi'nde fabrikanın temelini attı. EMS Makina Yönetim Kurulu Başkanı."
       ],
-      "katki": [],
+      "katki": [
+        {
+          "yil": "2026",
+          "metin": "50. Yıl Kaynak Eğitim Merkezi altyapı desteğini sağladı"
+        }
+      ],
       "durum": "dogrulandi",
       "yayinla": true,
       "foto": null,
@@ -821,6 +826,10 @@
         {
           "ad": "EMS Makina – Kurumsal",
           "url": "https://emsmakina.com/tr/kurumsal"
+        },
+        {
+          "ad": "Mühendislik Fakültesi öğretim üyesinin bilgi notu (Kasım 2026)",
+          "url": null
         }
       ],
       "unvan": "Makine mühendisi, sanayici",
@@ -1042,11 +1051,21 @@
         "Denizli Sanayi Odası Yönetim Kurulu Başkan Yardımcılığı ve Denizli Madenciler ve Mermerciler Derneği (DENMERDER) Başkanlığı görevlerini yürütmektedir.",
         "Ailesiyle birlikte Denizli'de çeşitli sosyal sorumluluk projelerine destek verdi. Pamukkale ilçesinde yaptırdıkları Valide Sultan Camii, Gülsüm Serter 4-6 Yaş Kur'an Kursu ve Gülsüm Serter Aile Sağlığı Merkezi 2026'da hizmete açıldı."
       ],
-      "katki": [],
+      "katki": [
+        {
+          "yil": "2026",
+          "metin": "Fakültemizin mescitlerinin yenilenmesini sağladı"
+        }
+      ],
       "durum": "ekip-notu",
       "yayinla": true,
       "foto": null,
-      "kaynaklar": [],
+      "kaynaklar": [
+        {
+          "ad": "Mühendislik Fakültesi öğretim üyesinin bilgi notu (Kasım 2026)",
+          "url": null
+        }
+      ],
       "unvan": "Sanayici"
     }
   ]
